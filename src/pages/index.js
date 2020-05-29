@@ -1,21 +1,23 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Shows from "../components/shows"
+import Merch from "../components/merch"
+import Info from "../components/info"
+import { GlobalStateContext } from "../context/provider"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  const state = useContext(GlobalStateContext)
+  return (
+    <Layout>
+      <SEO title="Home" />
+      {state.navButtonActive === "shows" && <Shows />}
+      {state.navButtonActive === "merch" && <Merch />}
+      {state.navButtonActive === "info" && <Info />}
+    </Layout>
+  )
+}
 
 export default IndexPage
