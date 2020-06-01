@@ -6,17 +6,17 @@ import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
 import StyledHeader from "../styles/StyledHeader"
 import { StyledNav, Start, End, NavButton } from "../styles/StyledNav"
 
-const Header = ({ siteTitle, ytplayer }) => {
-  const audioElm = document.getElementById("backgroundVideo")
+const Header = ({ siteTitle, handleSoundClick }) => {
+  // const audioElm = document.getElementById("backgroundVideo")
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
 
-  const handleSoundClick = () => {
-    dispatch({ type: "TOGGLE_SOUND" })
-    state.isMuted
-      ? ytplayer && ytplayer.internalPlayer.unMute()
-      : ytplayer && ytplayer.internalPlayer.mute()
-  }
+  // const handleSoundClick = () => {
+  //   dispatch({ type: "TOGGLE_SOUND" })
+  //   state.isMuted
+  //     ? ytplayer && ytplayer.internalPlayer.unMute()
+  //     : ytplayer && ytplayer.internalPlayer.mute()
+  // }
 
   return (
     <StyledHeader>
