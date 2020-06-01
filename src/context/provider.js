@@ -19,19 +19,19 @@ function reducer(state, action) {
     case "SHOWS_ACTIVE": {
       return {
         ...state,
-        navButtonActive: "shows",
+        navButtonActive: state.navButtonActive === "shows" ? "" : "shows",
       }
     }
     case "MERCH_ACTIVE": {
       return {
         ...state,
-        navButtonActive: "merch",
+        navButtonActive: state.navButtonActive === "merch" ? "" : "merch",
       }
     }
     case "INFO_ACTIVE": {
       return {
         ...state,
-        navButtonActive: "info",
+        navButtonActive: state.navButtonActive === "info" ? "" : "info",
       }
     }
     case "CLOSE_NAV_BUTTON": {

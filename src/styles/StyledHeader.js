@@ -5,7 +5,7 @@ const StyledHeader = styled.header`
   left: 0;
   box-sizing: border-box;
   z-index: 3;
-  height: 10rem;
+  height: ${props => props.theme.headerHeight};
   background: ${props => props.theme.blue};
   color: ${props => props.theme.offWhite};
   a {

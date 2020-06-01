@@ -5,7 +5,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider, createGlobalStyle } from "styled-components"
 import Header from "./header"
 import { VideoBackground, VideoForeground } from "../styles/VideoPlayer"
-import ContentContainer from "../styles/ContentContainer"
 import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
 // import "./layout.css"
 
@@ -18,6 +17,7 @@ export const theme = {
   offWhite: "#EDEDED",
   maxWidth: "1000px",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)",
+  headerHeight: "10rem",
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -93,7 +93,6 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Header
         siteTitle={data.site.siteMetadata.title}
-        // ytplayer={videoRef.current}
         handleSoundClick={handleSoundClick}
         ref={videoRef}
       />
@@ -108,11 +107,7 @@ const Layout = ({ children }) => {
           />
         </VideoForeground>
       </VideoBackground>
-      <ContentContainer>
-        <div></div>
-        {children}
-        <div></div>
-      </ContentContainer>
+      <main>{children}</main>
     </ThemeProvider>
   )
 }
