@@ -6,11 +6,7 @@ import { ThemeProvider, createGlobalStyle } from "styled-components"
 import Header from "./header"
 import { VideoBackground, VideoForeground } from "../styles/VideoPlayer"
 import ContentContainer from "../styles/ContentContainer"
-<<<<<<< HEAD
-import { GlobalStateContext } from "../context/provider"
-=======
 import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
->>>>>>> 0.01
 // import "./layout.css"
 
 export const theme = {
@@ -55,10 +51,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Layout = ({ children }) => {
   const state = useContext(GlobalStateContext)
-<<<<<<< HEAD
-=======
   const dispatch = useContext(GlobalDispatchContext)
->>>>>>> 0.01
   const videoRef = useRef()
   const youTubeOptions = {
     playerVars: {
@@ -77,8 +70,6 @@ const Layout = ({ children }) => {
   const onEnd = e => {
     e.target.playVideo()
   }
-<<<<<<< HEAD
-=======
 
   const handleSoundClick = () => {
     dispatch({ type: "TOGGLE_SOUND" })
@@ -87,7 +78,6 @@ const Layout = ({ children }) => {
       : videoRef.current.internalPlayer.mute()
   }
 
->>>>>>> 0.01
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -103,13 +93,9 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Header
         siteTitle={data.site.siteMetadata.title}
-<<<<<<< HEAD
-        ytplayer={videoRef.current}
-=======
         // ytplayer={videoRef.current}
         handleSoundClick={handleSoundClick}
         ref={videoRef}
->>>>>>> 0.01
       />
       <VideoBackground>
         <VideoForeground>
@@ -123,13 +109,9 @@ const Layout = ({ children }) => {
         </VideoForeground>
       </VideoBackground>
       <ContentContainer>
-<<<<<<< HEAD
-        <main>{children}</main>
-=======
         <div></div>
         {children}
         <div></div>
->>>>>>> 0.01
       </ContentContainer>
     </ThemeProvider>
   )
