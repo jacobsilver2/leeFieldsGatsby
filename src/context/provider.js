@@ -6,6 +6,8 @@ export const GlobalDispatchContext = React.createContext()
 const initialState = {
   isMuted: true,
   navButtonActive: "",
+  secondaryMenuActive: false,
+  video: "--nTlj66uRE",
 }
 
 function reducer(state, action) {
@@ -38,6 +40,36 @@ function reducer(state, action) {
       return {
         ...state,
         navButtonActive: "",
+      }
+    }
+    case "TOGGLE_SECONDARY_MENU": {
+      return {
+        ...state,
+        secondaryMenuActive: !state.secondaryMenuActive,
+      }
+    }
+    case "SECONDARY_MENU_OFF": {
+      return {
+        ...state,
+        secondaryMenuActive: false,
+      }
+    }
+    case "SECONDARY_MENU_ON": {
+      return {
+        ...state,
+        secondaryMenuActive: true,
+      }
+    }
+    case "DONT_LEAVE_ME_THIS_WAY": {
+      return {
+        ...state,
+        video: "--nTlj66uRE",
+      }
+    }
+    case "FAITHFUL_MAN": {
+      return {
+        ...state,
+        video: "94o5Lli-9gA",
       }
     }
 
