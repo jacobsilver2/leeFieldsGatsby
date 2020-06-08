@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: ${props => props.theme.black};
+    color: ${props => props.theme.offWhite};
   }
   button {  font-family: 'Lato'; }
 `

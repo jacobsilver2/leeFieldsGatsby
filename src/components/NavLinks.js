@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
-import { NavButton } from "../styles/StyledNav"
+import { NavButton, StyledLink } from "../styles/StyledNav"
 import { Link } from "gatsby"
 
 const NavLinks = ({ handleSoundClick }) => {
@@ -9,22 +9,50 @@ const NavLinks = ({ handleSoundClick }) => {
 
   return (
     <>
-      <NavButton>
-        <Link to="/shows">Shows</Link>
-      </NavButton>
-      <NavButton>
-        <Link to="/merch">Merch</Link>
-      </NavButton>
-      <NavButton>
-        <Link to="/info">Info</Link>
-      </NavButton>
-      <NavButton onClick={() => dispatch({ type: "DONT_LEAVE_ME_THIS_WAY" })}>
+      <StyledLink
+        open={state.secondaryMenuActive}
+        to="/shows"
+        onClick={() => dispatch({ type: "SECONDARY_MENU_OFF" })}
+      >
+        <NavButton open={state.secondaryMenuActive}>SHOWS</NavButton>
+      </StyledLink>
+
+      <StyledLink
+        open={state.secondaryMenuActive}
+        to="/merch"
+        onClick={() => dispatch({ type: "SECONDARY_MENU_OFF" })}
+      >
+        <NavButton open={state.secondaryMenuActive}>MERCH</NavButton>
+      </StyledLink>
+
+      <StyledLink
+        open={state.secondaryMenuActive}
+        to="/info"
+        onClick={() => dispatch({ type: "SECONDARY_MENU_OFF" })}
+      >
+        <NavButton open={state.secondaryMenuActive}>INFO</NavButton>
+      </StyledLink>
+
+      <NavButton
+        open={state.secondaryMenuActive}
+        onClick={() => {
+          dispatch({ type: "DONT_LEAVE_ME_THIS_WAY" })
+          dispatch({ type: "SECONDARY_MENU_OFF" })
+        }}
+      >
         DON'T LEAVE ME THIS WAY
       </NavButton>
-      <NavButton onClick={() => dispatch({ type: "FAITHFUL_MAN" })}>
+      <NavButton
+        open={state.secondaryMenuActive}
+        onClick={() => {
+          dispatch({ type: "FAITHFUL_MAN" })
+          dispatch({ type: "SECONDARY_MENU_OFF" })
+        }}
+      >
         FAITHFUL MAN
       </NavButton>
       <NavButton
+        open={state.secondaryMenuActive}
         onClick={() => {
           handleSoundClick()
         }}

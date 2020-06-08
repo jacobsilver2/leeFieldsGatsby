@@ -1,5 +1,4 @@
 import React, { useContext, useRef } from "react"
-import PropTypes from "prop-types"
 import YouTube from "react-youtube"
 import { useStaticQuery, graphql } from "gatsby"
 import { ThemeProvider } from "styled-components"
@@ -69,10 +68,6 @@ const Layout = ({ children }) => {
       <main>{children}</main>
     </ThemeProvider>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

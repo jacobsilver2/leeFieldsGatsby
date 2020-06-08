@@ -3,22 +3,22 @@ import styled from "styled-components"
 export const StyledMobileMenu = styled.nav`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   background: ${({ theme }) => theme.primaryLight};
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-  height: 100vh;
+  height: calc(100vh - ${({ theme }) => theme.headerHeight});
   text-align: left;
   padding: 2rem;
   position: absolute;
-  top: 0;
+  top: ${({ theme }) => theme.headerHeight};
   right: 0;
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
   }
 
-  a {
+  /* a {
     font-size: 2rem;
     text-transform: uppercase;
     padding: 2rem 0;
@@ -36,5 +36,5 @@ export const StyledMobileMenu = styled.nav`
     &:hover {
       color: ${({ theme }) => theme.primaryHover};
     }
-  }
+  } */
 `
