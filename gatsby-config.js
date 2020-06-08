@@ -1,11 +1,30 @@
 module.exports = {
   siteMetadata: {
-    title: `Lee Fields & The Expressions`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Lee Fields and The Expressions`,
+    description: `Lee Fields & The Expressions homepage`,
+    author: `Jacob Silver`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`cambay\:400,700`, `arvo\:400, 700,`, `ubuntu mono\:400, 700,`],
+      },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: `keyY11TcpoTR646Fh`,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: `appF7yJr2igkrU9jh`,
+            tableName: `Shows`,
+          },
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,

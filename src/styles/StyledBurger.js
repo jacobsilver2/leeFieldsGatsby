@@ -19,7 +19,7 @@ export const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ theme, open }) => theme.offWhite};
+    background: ${({ theme, open }) => theme.color.offWhite};
     border-radius: 10px;
     transition: all 0.1s linear;
     position: relative;

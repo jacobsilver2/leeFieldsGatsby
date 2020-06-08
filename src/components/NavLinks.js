@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
-import { NavButton, StyledLink } from "../styles/StyledNav"
+import { NavButton, StyledLink, StyledGatsbyLink } from "../styles/StyledNav"
 import { Link } from "gatsby"
 
 const NavLinks = ({ handleSoundClick }) => {
@@ -9,7 +9,12 @@ const NavLinks = ({ handleSoundClick }) => {
 
   return (
     <>
-      <StyledLink
+      <StyledGatsbyLink to="/info">Info</StyledGatsbyLink>
+      <StyledGatsbyLink to="/watch">Watch</StyledGatsbyLink>
+      <StyledGatsbyLink to="/listen">Listen</StyledGatsbyLink>
+      <StyledGatsbyLink to="/tour">Tour</StyledGatsbyLink>
+      <StyledGatsbyLink to="/store">Store</StyledGatsbyLink>
+      {/* <StyledLink
         open={state.secondaryMenuActive}
         to="/shows"
         onClick={() => dispatch({ type: "SECONDARY_MENU_OFF" })}
@@ -58,7 +63,7 @@ const NavLinks = ({ handleSoundClick }) => {
         }}
       >
         {state.isMuted ? "TURN SOUND ON" : "TURN SOUND OFF"}
-      </NavButton>
+      </NavButton> */}
     </>
   )
 }

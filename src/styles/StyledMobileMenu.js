@@ -4,7 +4,7 @@ export const StyledMobileMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background: ${({ theme }) => theme.primaryLight};
+  background: ${({ theme }) => theme.color.primaryLight};
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   height: calc(100vh - ${({ theme }) => theme.headerHeight});

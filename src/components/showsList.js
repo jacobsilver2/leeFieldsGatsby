@@ -1,0 +1,20 @@
+import React from "react"
+import Show from "./show"
+import styled from "styled-components"
+
+const ShowsListContainer = styled.div`
+  display: block;
+  border-bottom: 1px solid black;
+`
+
+const ShowsList = ({ shows }) => {
+  return (
+    <ShowsListContainer>
+      {shows.map(show => (
+        <Show show={show} />
+      ))}
+    </ShowsListContainer>
+  )
+}
+
+export default ShowsList

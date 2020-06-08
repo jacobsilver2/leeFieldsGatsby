@@ -3,48 +3,59 @@ import { Link } from "gatsby"
 
 export const StyledNav = styled.nav`
   display: flex;
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 100%;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  /* height: 100%; */
+  /* border: 5px solid black; */
 `
 
-export const StyledLink = styled(Link)`
-  color: ${props => props.theme.offWhite};
-  font-size: 1.5rem;
+export const StyledGatsbyLink = styled(Link)`
+  color: ${({ theme }) => theme.color.black};
+  padding: 0 ${({ theme }) => theme.spacing[2]};
+  font-size: ${({ theme }) => theme.fontSize["2xl"]};
   text-align: center;
-  text-transform: uppercase;
-  font-weight: bold;
+  /* text-transform: uppercase; */
+  font-weight: ${({ theme }) => theme.fontWeight.light};
   letter-spacing: ${({ open }) => (open ? "0.5rem" : "")};
-  transition: color 0.3s linear;
+  /* transition: color 0.3s linear; */
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    font-size: 1.5rem;
+    font-size: ${({ theme }) => theme.fontSize.xl};
     text-align: center;
   }
 `
-
-export const Start = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+export const StyledLogo = styled.h1`
+  /* font-family: ${({ theme }) => theme.font.serif}; */
+  font-size: ${({ theme }) => theme.spacing[32]};
+  letter-spacing: ${({ theme }) => theme.letterSpacing.tightest};
 `
-
-export const End = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+export const StyledLink = styled.a`
+  color: ${({ theme }) => theme.color.black};
+  padding: 0 ${({ theme }) => theme.spacing[2]};
+  font-size: ${({ theme }) => theme.fontSize["2xl"]};
+  text-align: center;
+  /* text-transform: uppercase; */
+  font-weight: ${({ theme }) => theme.fontWeight.light};
+  letter-spacing: ${({ open }) => (open ? "0.5rem" : "")};
+  /* transition: color 0.3s linear; */
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    font-size: ${({ theme }) => theme.fontSize.xl};
+    text-align: center;
+  }
 `
 
 export const NavButton = styled.div`
   font-size: 1.5rem;
   font-weight: bold;
-  color: ${props => (props.open ? props.theme.black : props.theme.offWhite)};
+  color: ${props =>
+    props.open ? props.theme.color.black : props.theme.color.offWhite};
   padding: 0 1rem;
   margin: 0 1rem;
   letter-spacing: ${({ open }) => (open ? "0.5rem" : "")};
   border: 1px solid ${props =>
-    props.open ? props.theme.black : props.theme.offWhite};
+    props.open ? props.theme.color.black : props.theme.color.offWhite};
   background: none;
   cursor: pointer;
   text-align: center;
@@ -56,6 +67,6 @@ export const NavButton = styled.div`
   } */
   &:hover {
     background: white;
-    color: ${props => props.theme.blue};
+    color: ${props => props.theme.color.blue};
   }
 `
