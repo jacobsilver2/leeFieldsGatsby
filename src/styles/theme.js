@@ -28,6 +28,7 @@ export const theme = {
     "5xl": "3rem",
     "6xl": "4rem",
     "8xl": "6rem",
+    cnn: "25rem",
   },
   letterSpacing: {
     tightest: "-0.10em",
@@ -39,6 +40,7 @@ export const theme = {
     widest: "0.1em",
   },
   lineHeight: {
+    tiny: "0.75",
     none: "1",
     tight: "1.25",
     snug: "1.375",
@@ -52,6 +54,7 @@ export const theme = {
     primaryHover: "#343078",
     black: "#000000",
     grey: "#3A3A3A",
+    mediumgrey: "7e7b79",
     lightgrey: "#E1E1E1",
     offWhite: "#fdf6f2",
     red: "#FF0000",

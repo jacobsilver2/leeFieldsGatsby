@@ -8,6 +8,7 @@ const initialState = {
   navButtonActive: "",
   secondaryMenuActive: false,
   video: "--nTlj66uRE",
+  cnnInView: true,
 }
 
 function reducer(state, action) {
@@ -70,6 +71,18 @@ function reducer(state, action) {
       return {
         ...state,
         video: "94o5Lli-9gA",
+      }
+    }
+    case "CNN_OFF": {
+      return {
+        ...state,
+        cnnInView: false,
+      }
+    }
+    case "CNN_ON": {
+      return {
+        ...state,
+        cnnInView: true,
       }
     }
 

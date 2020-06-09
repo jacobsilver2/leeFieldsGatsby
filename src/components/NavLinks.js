@@ -7,13 +7,27 @@ const NavLinks = ({ handleSoundClick }) => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
 
+  const handleClick = () => {
+    dispatch({ type: "CNN_OFF" })
+  }
+
   return (
     <>
-      <StyledGatsbyLink to="/info">Info</StyledGatsbyLink>
-      <StyledGatsbyLink to="/watch">Watch</StyledGatsbyLink>
-      <StyledGatsbyLink to="/listen">Listen</StyledGatsbyLink>
-      <StyledGatsbyLink to="/tour">Tour</StyledGatsbyLink>
-      <StyledGatsbyLink to="/store">Store</StyledGatsbyLink>
+      <StyledGatsbyLink onClick={handleClick} to="/info">
+        Info
+      </StyledGatsbyLink>
+      <StyledGatsbyLink onClick={handleClick} to="/watch">
+        Watch
+      </StyledGatsbyLink>
+      <StyledGatsbyLink onClick={handleClick} to="/listen">
+        Listen
+      </StyledGatsbyLink>
+      <StyledGatsbyLink onClick={handleClick} to="/tour">
+        Tour
+      </StyledGatsbyLink>
+      <StyledGatsbyLink onClick={handleClick} to="/store">
+        Store
+      </StyledGatsbyLink>
       {/* <StyledLink
         open={state.secondaryMenuActive}
         to="/shows"

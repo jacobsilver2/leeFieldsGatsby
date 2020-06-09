@@ -9,12 +9,9 @@ import { GlobalDispatchContext } from "../context/provider"
 const Shows = () => {
   const dispatch = useContext(GlobalDispatchContext)
   return (
-    <StyledShowsComponent>
-      <CloseButton onClick={() => dispatch({ type: "CLOSE_NAV_BUTTON" })}>
-        Close
-      </CloseButton>
-      <ContentWrapper>Hello from the Merch Component</ContentWrapper>
-    </StyledShowsComponent>
+    <div>
+      <h1>Hello From The Merch Page</h1>
+    </div>
   )
 }
 

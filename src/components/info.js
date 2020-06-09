@@ -14,16 +14,7 @@ const StyledImgWrapper = styled.div`
 
 const Shows = ({ image }) => {
   const dispatch = useContext(GlobalDispatchContext)
-  return (
-    <StyledShowsComponent>
-      <CloseButton onClick={() => dispatch({ type: "CLOSE_NAV_BUTTON" })}>
-        Close
-      </CloseButton>
-      <ContentWrapper>
-        <Img image={image} alt="Lee Fields At Haldern" />
-      </ContentWrapper>
-    </StyledShowsComponent>
-  )
+  return <Img image={image} />
 }
 
 export default Shows

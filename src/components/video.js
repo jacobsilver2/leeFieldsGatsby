@@ -25,6 +25,16 @@ const Video = () => {
   const handlePause = () => {
     setPlaying(!playing)
   }
+
+  const handleEnded = () => {
+    if (currentVideo === videoLibary[2]) {
+      setCurrentVideo(videoLibary[0])
+    } else {
+      const currentIndex = videoLibary.indexOf(currentVideo)
+      setCurrentVideo(videoLibary[currentIndex + 1])
+    }
+  }
+
   return (
     <Wrapper>
       <VideoContainer>
@@ -34,18 +44,39 @@ const Video = () => {
           config={reactPlayerOptions}
           muted={muted}
           volume={0.75}
+          onEnded={handleEnded}
         />
       </VideoContainer>
       <ControlsAndTitleWrapper>
         <VidPicker>
-          <Vid onClick={() => setCurrentVideo(videoLibary[0])}>01</Vid>
-          <Vid onClick={() => setCurrentVideo(videoLibary[1])}>02</Vid>
-          <Vid onClick={() => setCurrentVideo(videoLibary[2])}>03</Vid>
+          <Vid
+            role="button"
+            active={currentVideo === videoLibary[0]}
+            onClick={() => setCurrentVideo(videoLibary[0])}
+          >
+            01
+          </Vid>
+          <Vid
+            role="button"
+            active={currentVideo === videoLibary[1]}
+            onClick={() => setCurrentVideo(videoLibary[1])}
+          >
+            02
+          </Vid>
+          <Vid
+            role="button"
+            active={currentVideo === videoLibary[2]}
+            onClick={() => setCurrentVideo(videoLibary[2])}
+          >
+            03
+          </Vid>
         </VidPicker>
         <Title>{currentVideo.title}</Title>
         <PauseAndSoundWrapper>
-          <PauseAndSound onClick={handlePause}>Pause</PauseAndSound>
-          <PauseAndSound onClick={handleToggleMuted}>
+          <PauseAndSound role="button" onClick={handlePause}>
+            Pause
+          </PauseAndSound>
+          <PauseAndSound role="button" onClick={handleToggleMuted}>
             Turn Sound {muted ? "On" : "Off"}
           </PauseAndSound>
         </PauseAndSoundWrapper>

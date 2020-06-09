@@ -24,8 +24,12 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
+    "react-intersection-observer": "^8.26.2",
     "react-player": "^2.2.0",
+    "react-slick": "^0.26.1",
+    "react-use-dimensions": "^1.2.1",
     "react-youtube": "^7.11.2",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1",
     "styled-reset": "^4.1.5"
   },

@@ -41,6 +41,11 @@ export const PauseAndSound = styled.div`
 
 export const Vid = styled.div`
   padding: ${({ theme }) => theme.spacing[3]};
+  color: ${({ theme, active }) =>
+    active ? theme.color.black : theme.color.lightgrey};
+  &:hover {
+    color: ${({ theme }) => theme.color.black};
+  }
   cursor: pointer;
 `
 

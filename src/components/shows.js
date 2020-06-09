@@ -36,18 +36,6 @@ const Shows = () => {
         }
       )
   }, [])
-  console.log(shows)
-
-  const showsList = shows.map(show => {
-    return (
-      <div>
-        <p>{show.Date}</p>
-        <p>{show.Location}</p>
-        <p>{show.Venue}</p>
-        <p>{show.URL}</p>
-      </div>
-    )
-  })
 
   return (
     <Wrapper>
