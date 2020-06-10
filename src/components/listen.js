@@ -43,8 +43,8 @@ const Listen = () => {
     <>
       <Title>Listen</Title>
       <Slider {...settings}>
-        {edges.map(album => (
-          <Border>
+        {edges.map((album, i) => (
+          <Border key={i}>
             <a href="http://www.spotify.com">
               <Img image={album.node} />
             </a>

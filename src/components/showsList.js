@@ -11,7 +11,7 @@ const ShowsList = ({ shows }) => {
   return (
     <ShowsListContainer>
       {shows.map(show => (
-        <Show show={show} />
+        <Show key={show.id} show={show} />
       ))}
     </ShowsListContainer>
   )

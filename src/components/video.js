@@ -45,6 +45,8 @@ const Video = () => {
           muted={muted}
           volume={0.75}
           onEnded={handleEnded}
+          width="100%"
+          height="100%"
         />
       </VideoContainer>
       <ControlsAndTitleWrapper>

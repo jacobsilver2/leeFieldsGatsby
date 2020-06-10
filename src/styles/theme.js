@@ -28,6 +28,7 @@ export const theme = {
     "5xl": "3rem",
     "6xl": "4rem",
     "8xl": "6rem",
+    cnnlite: "6.5rem",
     cnn: "25rem",
   },
   letterSpacing: {

@@ -1,11 +1,11 @@
 import React, { useContext } from "react"
-import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
-import { NavButton, StyledLink, StyledGatsbyLink } from "../styles/StyledNav"
-import { Link } from "gatsby"
+import { GlobalDispatchContext } from "../context/provider"
+import { StyledGatsbyLink } from "../styles/StyledNav"
+// import { Link } from "gatsby"
 
 const NavLinks = ({ handleSoundClick }) => {
   const dispatch = useContext(GlobalDispatchContext)
-  const state = useContext(GlobalStateContext)
+  // const state = useContext(GlobalStateContext)
 
   const handleClick = () => {
     dispatch({ type: "CNN_OFF" })

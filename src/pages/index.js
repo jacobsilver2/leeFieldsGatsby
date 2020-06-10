@@ -6,7 +6,7 @@ import Video from "../components/video"
 import Shows from "../components/shows"
 import Listen from "../components/listen"
 import SEO from "../components/seo"
-import { StyledBigLogo, BigLogoWrapper } from "../styles/StyledBigLogo"
+import { StyledBigLogo } from "../styles/StyledBigLogo"
 
 export const query = graphql`
   query HomePageQuery {

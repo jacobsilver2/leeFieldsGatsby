@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react"
 import Airtable from "airtable"
-import {
-  StyledShowsComponent,
-  ContentWrapper,
-  CloseButton,
-  Title,
-  Wrapper,
-} from "../styles/StyledShowsComponent"
+import { Title, Wrapper } from "../styles/StyledShowsComponent"
 import ShowsList from "./showsList"
 
-const base = new Airtable({ apiKey: "keyY11TcpoTR646Fh" }).base(
+const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
   "appF7yJr2igkrU9jh"
 )
 
