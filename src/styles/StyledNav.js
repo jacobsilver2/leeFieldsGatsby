@@ -28,8 +28,10 @@ export const StyledGatsbyLink = styled(Link)`
 `
 export const StyledLogo = styled.h1`
   /* font-family: ${({ theme }) => theme.font.serif}; */
-  font-size: ${({ theme }) => theme.spacing[32]};
+  font-size: ${({ theme }) => theme.fontSize["8xl"]};
   letter-spacing: ${({ theme }) => theme.letterSpacing.tightest};
+  margin-top: 1.75rem;
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
 `
 export const StyledLink = styled.a`
   color: ${({ theme }) => theme.color.black};

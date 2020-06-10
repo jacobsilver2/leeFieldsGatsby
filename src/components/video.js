@@ -11,6 +11,11 @@ import {
   Title,
   PauseAndSoundWrapper,
   PauseAndSound,
+  VideoOverlayWrapper,
+  StyledPlayButton,
+  StyledPauseButton,
+  StyledSoundOnButton,
+  StyledSoundOffButton,
 } from "../styles/VideoPlayer"
 
 const Video = () => {
@@ -38,6 +43,22 @@ const Video = () => {
   return (
     <Wrapper>
       <VideoContainer>
+        <VideoOverlayWrapper>
+          {playing ? (
+            <div style={{ position: "absolute", bottom: "0px", left: "0px" }}>
+              <StyledPauseButton onClick={handlePause} />
+            </div>
+          ) : (
+            <StyledPlayButton onClick={handlePause} />
+          )}
+          <div style={{ position: "absolute", bottom: "0px", right: "10px" }}>
+            {muted ? (
+              <StyledSoundOffButton onClick={handleToggleMuted} />
+            ) : (
+              <StyledSoundOnButton onClick={handleToggleMuted} />
+            )}
+          </div>
+        </VideoOverlayWrapper>
         <ReactPlayer
           playing={playing}
           url={currentVideo.url}
