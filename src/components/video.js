@@ -43,7 +43,7 @@ const Video = () => {
   return (
     <Wrapper>
       <VideoContainer>
-        <VideoOverlayWrapper>
+        {/* <VideoOverlayWrapper>
           {playing ? (
             <div style={{ position: "absolute", bottom: "0px", left: "0px" }}>
               <StyledPauseButton onClick={handlePause} />
@@ -58,13 +58,15 @@ const Video = () => {
               <StyledSoundOnButton onClick={handleToggleMuted} />
             )}
           </div>
-        </VideoOverlayWrapper>
+        </VideoOverlayWrapper> */}
         <ReactPlayer
+          className="react-player"
           playing={playing}
           url={currentVideo.url}
           config={reactPlayerOptions}
           muted={muted}
           volume={0.75}
+          controls={true}
           onEnded={handleEnded}
           width="100%"
           height="100%"
@@ -96,12 +98,12 @@ const Video = () => {
         </VidPicker>
         <Title>{currentVideo.title}</Title>
         <PauseAndSoundWrapper>
-          <PauseAndSound role="button" onClick={handlePause}>
+          {/* <PauseAndSound role="button" onClick={handlePause}>
             Pause
           </PauseAndSound>
           <PauseAndSound role="button" onClick={handleToggleMuted}>
             Turn Sound {muted ? "On" : "Off"}
-          </PauseAndSound>
+          </PauseAndSound> */}
         </PauseAndSoundWrapper>
       </ControlsAndTitleWrapper>
     </Wrapper>

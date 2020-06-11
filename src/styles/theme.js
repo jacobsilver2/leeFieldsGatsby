@@ -1,4 +1,3 @@
-// import "./layout.css"
 export const theme = {
   font: {
     sans: "Cambay, sans-serif",
@@ -31,6 +30,7 @@ export const theme = {
     header: "8rem",
     cnnlite: "6.5rem",
     cnn: "25rem",
+    cnnvw: "14vw",
   },
   letterSpacing: {
     tightest: "-0.10em",

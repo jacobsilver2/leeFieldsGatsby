@@ -28,6 +28,7 @@ export const CloseButton = styled.button`
 
 export const Title = styled.h1`
   font-size: ${({ theme }) => theme.fontSize["8xl"]};
+  /* font-size: 3.5vw; */
   font-weight: ${({ theme }) => theme.fontWeight.extrabold};
 `
 export const Wrapper = styled.div`
