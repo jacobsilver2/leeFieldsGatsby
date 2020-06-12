@@ -88,4 +88,5 @@ export const theme = {
   headerHeight: "10rem",
   mobileWidth: 1280,
   mobile: "576px",
+  fluidTypographyRatio: 0.7,
 }

@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     background-color: ${props => props.theme.color.offWhite};
-    font-size: 2rem;
+    font-size: calc(1rem + ${({ theme }) => theme.fluidTypographyRatio} * 1vw);
     line-height: 1.5;
     letter-spacing: ${({ theme }) => theme.letterSpacing.normal};
     font-weight: ${({ theme }) => theme.fontWeight.normal};
