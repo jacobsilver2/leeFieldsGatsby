@@ -63,8 +63,9 @@ export const StyledSoundOffButton = styled(SoundOff)`
 
 export const ControlsAndTitleWrapper = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* justify-content: space-between; */
   align-items: center;
 `
 
@@ -91,4 +92,6 @@ export const Vid = styled.div`
   cursor: pointer;
 `
 
-export const Title = styled.div``
+export const Title = styled.div`
+  text-align: center;
+`

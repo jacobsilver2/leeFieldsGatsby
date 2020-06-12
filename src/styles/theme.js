@@ -29,7 +29,7 @@ export const theme = {
     "8xl": "6rem",
     header: "8rem",
     cnnlite: "6.5rem",
-    cnn: "25rem",
+    cnn: "21rem",
     cnnvw: "14vw",
   },
   letterSpacing: {
@@ -83,7 +83,7 @@ export const theme = {
     "56": "14rem",
     "64": "16rem",
   },
-  maxWidth: "1200px",
+  maxWidth: "1600px",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)",
   headerHeight: "10rem",
   mobileWidth: 1280,
