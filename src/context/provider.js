@@ -85,7 +85,6 @@ function reducer(state, action) {
         cnnInView: true,
       }
     }
-
     default:
       throw new Error("Bad Action Type")
   }

@@ -57,13 +57,23 @@ const StyledSlider = styled(Slider)`
 const Listen = () => {
   const size = useWindowSize()
   const data = useStaticQuery(graphql`
-    query albumsQuery {
-      albums: allFile(filter: { sourceInstanceName: { eq: "albums" } }) {
+    query MyQuery {
+      allAirtable(filter: { table: { eq: "Records" } }) {
         edges {
           node {
-            childImageSharp {
-              fluid(maxWidth: 400) {
-                ...GatsbyImageSharpFluid
+            id
+            data {
+              Buy
+              Record
+              Listen
+              Image {
+                localFiles {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
               }
             }
           }
@@ -72,7 +82,7 @@ const Listen = () => {
     }
   `)
 
-  const { edges } = data.albums
+  const { edges } = data.allAirtable
 
   const slidesIWannaShow = () => {
     let slides
@@ -103,11 +113,16 @@ const Listen = () => {
     <>
       <Title>Listen</Title>
       <StyledSlider {...settings}>
-        {edges.map((album, i) => (
-          <a key={i} href="http://www.spotify.com">
-            <Img image={album.node} />
-          </a>
-        ))}
+        {edges.map(edge => {
+          const { id, data } = edge.node
+          console.log(data)
+
+          return (
+            <a key={id} href={data.Listen}>
+              <Img image={data.Image.localFiles[0]} />
+            </a>
+          )
+        })}
       </StyledSlider>
     </>
   )

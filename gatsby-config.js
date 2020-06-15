@@ -23,8 +23,9 @@ module.exports = {
         concurrency: 5,
         tables: [
           {
-            baseId: `appF7yJr2igkrU9jh`,
-            tableName: `Shows`,
+            baseId: `app9H2woW0pkX1sAp`,
+            tableName: `Records`,
+            mapping: { Image: `fileNode` },
           },
         ],
       },
@@ -57,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Lee Fields & The Expressions`,
+        short_name: `Lee Fields`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
