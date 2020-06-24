@@ -11,12 +11,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`cambay\:400,700`, `arvo\:400, 700,`, `ubuntu mono\:400, 700,`],
-      },
-    },
-    {
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: `keyY11TcpoTR646Fh`,

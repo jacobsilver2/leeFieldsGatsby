@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
       <StyledBigLogo ref={ref}>{title.toUpperCase()}</StyledBigLogo>
       <Video />
       <Shows />
-      <Listen />
+      {/* <Listen /> */}
     </>
   )
 }

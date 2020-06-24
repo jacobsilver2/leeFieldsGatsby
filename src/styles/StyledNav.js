@@ -5,7 +5,6 @@ export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   /* margin-left: 10px;
   margin-right: 10px; */
   /* height: 100%; */
@@ -13,26 +12,22 @@ export const StyledNav = styled.nav`
 `
 
 export const StyledGatsbyLink = styled(Link)`
-  color: ${({ theme }) => theme.color.black};
   padding: 0 ${({ theme }) => theme.spacing[2]};
-  font-size: ${({ theme }) => theme.fontSize["2xl"]};
   text-align: center;
-  /* text-transform: uppercase; */
-  font-weight: ${({ theme }) => theme.fontWeight.light};
-  letter-spacing: ${({ open }) => (open ? "0.5rem" : "")};
-  /* transition: color 0.3s linear; */
+  &:hover {
+    text-decoration: underline;
+  }
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    font-size: ${({ theme }) => theme.fontSize.xl};
+    /* font-size: ${({ theme }) => theme.fontSize.xl}; */
     text-align: center;
   }
 `
-export const StyledLogo = styled.h1`
-  /* font-family: ${({ theme }) => theme.font.serif}; */
-  /* font-size: ${({ theme }) => theme.fontSize["8xl"]}; */
-  font-size: calc(5rem + ${({ theme }) => theme.fluidTypographyRatio} * 1vw);
-  letter-spacing: ${({ theme }) => theme.letterSpacing.tightest};
+export const StyledLogo = styled.h3`
+  visibility: ${props => (props.visible ? "visible" : "hidden")};
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  transition: ${({ visible }) =>
+    visible ? "opacity 1s linear" : "visibility 0s 0.5s, opacity 0.5s linear"};
   margin-top: 1.75rem;
-  font-weight: ${({ theme }) => theme.fontWeight.bold};
 `
 export const StyledLink = styled.a`
   color: ${({ theme }) => theme.color.black};

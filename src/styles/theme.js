@@ -1,7 +1,7 @@
 export const theme = {
   font: {
-    sans: "Cambay, sans-serif",
-    serif: "Arvo, serif",
+    banner: "Forma DJR Disp Med",
+    text: "Forma DJR Disp Reg",
     monospace: '"Ubuntu Mono", monospace',
   },
   fontWeight: {
@@ -29,8 +29,13 @@ export const theme = {
     "8xl": "6rem",
     header: "8rem",
     cnnlite: "6.5rem",
-    cnn: "21rem",
     cnnvw: "14vw",
+    p: "2rem",
+    pLarge: "9rem",
+    h1: "26rem",
+    h2: "12.5rem",
+    h3: "4.8rem",
+    h4: "4.5rem",
   },
   letterSpacing: {
     tightest: "-0.10em",
@@ -49,6 +54,7 @@ export const theme = {
     normal: "1.5",
     relaxed: "1.625",
     loose: "2",
+    h1: "22rem",
   },
   color: {
     primaryDark: "#0D0C1D",
@@ -59,6 +65,7 @@ export const theme = {
     mediumgrey: "7e7b79",
     lightgrey: "#E1E1E1",
     offWhite: "#fdf6f2",
+    white: "#ffffff",
     red: "#FF0000",
     blue: "#017ad9",
   },
@@ -83,7 +90,7 @@ export const theme = {
     "56": "14rem",
     "64": "16rem",
   },
-  maxWidth: "1600px",
+  maxWidth: "1800px",
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)",
   headerHeight: "10rem",
   mobileWidth: 1280,

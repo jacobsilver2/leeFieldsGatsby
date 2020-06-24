@@ -2,21 +2,7 @@ import React, { useState } from "react"
 import ReactPlayer from "react-player/lazy"
 import reactPlayerOptions from "../lib/reactPlayerOptions"
 import videoLibary from "../lib/videoLibrary"
-import {
-  Wrapper,
-  VideoContainer,
-  ControlsAndTitleWrapper,
-  VidPicker,
-  Vid,
-  Title,
-  PauseAndSoundWrapper,
-  PauseAndSound,
-  VideoOverlayWrapper,
-  StyledPlayButton,
-  StyledPauseButton,
-  StyledSoundOnButton,
-  StyledSoundOffButton,
-} from "../styles/VideoPlayer"
+import { Wrapper, VideoContainer } from "../styles/VideoPlayer"
 
 const Video = () => {
   const [muted, setMuted] = useState(true)
@@ -72,7 +58,7 @@ const Video = () => {
           height="100%"
         />
       </VideoContainer>
-      <ControlsAndTitleWrapper>
+      {/* <ControlsAndTitleWrapper>
         <VidPicker>
           <Vid
             role="button"
@@ -104,8 +90,8 @@ const Video = () => {
           <PauseAndSound role="button" onClick={handleToggleMuted}>
             Turn Sound {muted ? "On" : "Off"}
           </PauseAndSound> */}
-        </PauseAndSoundWrapper>
-      </ControlsAndTitleWrapper>
+      {/* </PauseAndSoundWrapper> */}
+      {/* </ControlsAndTitleWrapper> */}
     </Wrapper>
   )
 }

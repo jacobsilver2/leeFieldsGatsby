@@ -4,32 +4,30 @@ import useWindowSize from "../hooks/useWindowSize"
 import StyledHeader from "../styles/StyledHeader"
 import { StyledLogo } from "../styles/StyledNav"
 import Burger from "./Burger"
-import NavLinks from "./NavLinks"
+import NavLinksGroupOne from "./NavLinksGroupOne"
+import NavLinksGroupTwo from "./NavLinksGroupTwo"
 import SocialLinks from "./socialLinks"
 import { theme } from "../styles/theme"
 import { GlobalStateContext } from "../context/provider"
 
-const Header = ({ siteTitle, handleSoundClick }) => {
+const Header = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
   const size = useWindowSize()
+
   return (
-    <StyledHeader>
-      <div>
-        {size.width >= theme.mobileWidth ? (
-          <NavLinks handleSoundClick={handleSoundClick} />
-        ) : (
-          <Burger handleSoundClick={handleSoundClick} />
-        )}
-      </div>
-      <div>
-        {!state.cnnInView && (
-          <StyledLogo>
+    <StyledHeader cnnIsVisible={state.cnnInView}>
+      <div className="inner">
+        <div>
+          {size.width >= theme.mobileWidth ? <NavLinksGroupOne /> : <Burger />}
+        </div>
+        <div>
+          <StyledLogo visible={!state.cnnInView}>
             <Link to="/">{siteTitle.toUpperCase()}</Link>
           </StyledLogo>
-        )}
-      </div>
-      <div>
-        <SocialLinks />
+        </div>
+        <div>
+          <NavLinksGroupTwo />
+        </div>
       </div>
     </StyledHeader>
   )

@@ -27,10 +27,9 @@ export const CloseButton = styled.button`
 `
 
 export const Title = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize["8xl"]};
-  /* font-size: 3.5vw; */
-  font-weight: ${({ theme }) => theme.fontWeight.extrabold};
+  text-align: center;
 `
 export const Wrapper = styled.div`
-  margin: ${({ theme }) => theme.spacing[8]} 0;
+  /* margin: ${({ theme }) => theme.spacing[40]} 0; */
+  padding: ${({ theme }) => theme.spacing[20]} 0;
 `

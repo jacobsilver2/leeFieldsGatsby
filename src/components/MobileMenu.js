@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { StyledMobileMenu } from "../styles/StyledMobileMenu"
 import { GlobalStateContext } from "../context/provider"
-import NavLinks from "./NavLinks"
+import NavLinks from "./NavLinksGroupOne"
 
 const MobileMenu = ({ handleSoundClick }) => {
   const state = useContext(GlobalStateContext)
