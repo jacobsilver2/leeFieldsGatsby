@@ -25,6 +25,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: `keyY11TcpoTR646Fh`,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: `app6qEeLArKEzLqYs`,
+            tableName: `Info`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {

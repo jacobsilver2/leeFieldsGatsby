@@ -1,15 +1,35 @@
-import React, { useEffect, useContext } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
-import { GlobalDispatchContext } from "../context/provider"
 import InfoComponent from "../components/info"
 
+// export const query = graphql`
+//   query {
+//     leeHaldern: file(relativePath: { eq: "leeHaldern.jpg" }) {
+//       childImageSharp {
+//         fluid(maxWidth: 400) {
+//           ...GatsbyImageSharpFluid
+//         }
+//       }
+//     }
+//   }
+// `
+
 export const query = graphql`
-  query {
-    leeHaldern: file(relativePath: { eq: "leeHaldern.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 400) {
-          ...GatsbyImageSharpFluid
+  query GetInfo {
+    allAirtable(filter: { table: { eq: "Info" } }) {
+      edges {
+        node {
+          id
+          data {
+            Agency
+            Email1
+            Email2
+            Name1
+            Name2
+            Role
+            Order
+          }
         }
       }
     }
@@ -17,18 +37,10 @@ export const query = graphql`
 `
 
 const Info = ({ data }) => {
-  const dispatch = useContext(GlobalDispatchContext)
-  useEffect(() => {
-    // if (firstUpdate.current) {
-    //   firstUpdate.current = false
-    //   return
-    // }
-    dispatch({ type: "CNN_OFF" })
-  }, [])
   return (
     <>
       <SEO title="Info" />
-      <InfoComponent image={data.leeHaldern} />
+      <InfoComponent data={data} />
     </>
   )
 }
