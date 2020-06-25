@@ -8,14 +8,19 @@ export const StyledSignup = styled.div`
 
 export const Wrapper = styled.div`
   border-top: 1px solid black;
-  min-height: 35rem;
+  min-height: 40rem;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 `
 
-export const Title = styled.h2`
+export const Content = styled.div`
+  /* display: block; */
+  max-width: 1300px;
+`
+
+export const Title = styled.h3`
+  text-align: center;
   /* margin: 5rem auto; */
 `
 
@@ -26,39 +31,43 @@ export const StyledFormik = styled(Form)`
 `
 
 export const StyledForm = styled.div`
+  margin: auto;
+  /* padding: 5rem 0; */
+  max-width: 80%;
   min-width: 50%;
   input[type="text"] {
+    flex-grow: 1;
     border: 0;
     background-color: ${({ theme }) => theme.color.offWhite};
-    font-size: ${({ theme }) => theme.fontSize.h4};
+    font-size: ${({ theme }) => theme.fontSize.h5};
     ::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
-      font-size: ${({ theme }) => theme.fontSize.h4};
+      font-size: ${({ theme }) => theme.fontSize.h5};
       color: ${({ theme }) => theme.color.black};
       opacity: 1;
     }
     ::-moz-placeholder {
       /* Firefox 19+ */
-      font-size: ${({ theme }) => theme.fontSize.h4};
+      font-size: ${({ theme }) => theme.fontSize.h5};
       color: ${({ theme }) => theme.color.black};
       opacity: 1;
     }
     :-ms-input-placeholder {
       /* IE 10+ */
-      font-size: ${({ theme }) => theme.fontSize.h4};
+      font-size: ${({ theme }) => theme.fontSize.h5};
       color: ${({ theme }) => theme.color.black};
       opacity: 1;
     }
     :-moz-placeholder {
       /* Firefox 18- */
-      font-size: ${({ theme }) => theme.fontSize.h4};
+      font-size: ${({ theme }) => theme.fontSize.h5};
       color: ${({ theme }) => theme.color.black};
       opacity: 1;
     }
   }
   button[type="submit"] {
     /* font-size: 100px; */
-    font-size: ${({ theme }) => theme.fontSize.h4};
+    font-size: ${({ theme }) => theme.fontSize.h5};
     font-weight: normal;
     border: 0;
     background-color: ${({ theme }) => theme.color.offWhite};

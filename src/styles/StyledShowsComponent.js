@@ -26,7 +26,9 @@ export const CloseButton = styled.button`
   right: 10px;
 `
 
-export const Title = styled.h1`
+export const Title = styled.h2`
+  max-width: 1600px;
+  margin: auto;
   text-align: center;
 `
 export const Wrapper = styled.div`

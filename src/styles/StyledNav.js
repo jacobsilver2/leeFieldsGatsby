@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
+import LargeBodyText from "./LargeBodyText"
 
 export const StyledNav = styled.nav`
   display: flex;
@@ -22,12 +23,13 @@ export const StyledGatsbyLink = styled(Link)`
     text-align: center;
   }
 `
-export const StyledLogo = styled.h3`
+export const StyledLogo = styled.h5`
   visibility: ${props => (props.visible ? "visible" : "hidden")};
   opacity: ${({ visible }) => (visible ? 1 : 0)};
   transition: ${({ visible }) =>
     visible ? "opacity 1s linear" : "visibility 0s 0.5s, opacity 0.5s linear"};
-  margin-top: 1.75rem;
+  /* text doesn't totally center so this value needs to be adjusted manually according to font size */
+  margin-top: 0.8rem;
 `
 export const StyledLink = styled.a`
   color: ${({ theme }) => theme.color.black};

@@ -13,6 +13,8 @@ export const StyledBigLogo = styled.h1`
 `
 
 export const BigLogoWrapper = styled.div`
+  max-width: 1800px;
+  margin: auto;
 /* background-color: ${({ theme }) => theme.color.black}; */
   /* height: 50vh; */
 `

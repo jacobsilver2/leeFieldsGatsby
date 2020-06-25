@@ -6,7 +6,7 @@ import Video from "../components/video"
 import Shows from "../components/shows"
 import Listen from "../components/listen"
 import SEO from "../components/seo"
-import { StyledBigLogo } from "../styles/StyledBigLogo"
+import { StyledBigLogo, BigLogoWrapper } from "../styles/StyledBigLogo"
 
 export const query = graphql`
   query HomePageQuery {
@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
   const dispatch = useContext(GlobalDispatchContext)
   // const videoRef = useRef()
   const firstUpdate = useRef(true)
-  const [ref, inView] = useInView({ threshold: 0.5 })
+  const [ref, inView] = useInView({ threshold: 0.25 })
 
   useLayoutEffect(() => {
     if (firstUpdate.current) {
@@ -35,7 +35,9 @@ const IndexPage = ({ data }) => {
   return (
     <>
       <SEO title="Home" />
-      <StyledBigLogo ref={ref}>{title.toUpperCase()}</StyledBigLogo>
+      <BigLogoWrapper>
+        <StyledBigLogo ref={ref}>{title.toUpperCase()}</StyledBigLogo>
+      </BigLogoWrapper>
       <Video />
       <Shows />
       {/* <Listen /> */}

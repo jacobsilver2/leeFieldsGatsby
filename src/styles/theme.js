@@ -1,8 +1,9 @@
 export const theme = {
   font: {
-    banner: "Forma DJR Disp Med",
-    text: "Forma DJR Disp Reg",
-    monospace: '"Ubuntu Mono", monospace',
+    banner: "Forma DJR Ban Bd",
+    bannerMedium: "Forma DJR Ban Med",
+    bold: "Forma DJR Text Med",
+    text: "Forma DJR Text Reg",
   },
   fontWeight: {
     hairline: "100",
@@ -32,10 +33,11 @@ export const theme = {
     cnnvw: "14vw",
     p: "2rem",
     pLarge: "9rem",
-    h1: "26rem",
-    h2: "12.5rem",
-    h3: "4.8rem",
-    h4: "4.5rem",
+    h1: "27.5rem",
+    h2: "26rem",
+    h3: "12.5rem",
+    h4: "4.8rem",
+    h5: "4.5rem",
   },
   letterSpacing: {
     tightest: "-0.10em",

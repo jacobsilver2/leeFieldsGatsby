@@ -24,18 +24,18 @@ const Show = ({ show }) => {
   return (
     <StyledShow>
       <div>
-        <h4>{moment(show.Date).format("MMM DD")}</h4>
+        <h5>{moment(show.Date).format("MMM DD")}</h5>
       </div>
       <div>
-        <h4>{show.Venue}</h4>
+        <h5>{show.Venue}</h5>
       </div>
       <div style={{ textAlign: "right" }}>
-        <h4>{show.Location}</h4>
+        <h5>{show.Location}</h5>
       </div>
       <BuyLink>
-        <h4>
+        <h5>
           <a href={show.URL}>Tickets</a>
-        </h4>
+        </h5>
       </BuyLink>
     </StyledShow>
   )

@@ -15,6 +15,11 @@ export const wrapRootElement = ({ element }) => {
           rel="stylesheet"
           type="text/css"
         />
+        <link
+          href="//cloud.typenetwork.com/projects/3977/fontface.css/"
+          rel="stylesheet"
+          type="text/css"
+        ></link>
       </Helmet>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
