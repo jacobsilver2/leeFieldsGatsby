@@ -70,9 +70,6 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: ${props => props.theme.color.black};
   }
-  button {  
-    font-family: ${({ theme }) => theme.font.banner};
-   }
 `
 
 export default GlobalStyle
