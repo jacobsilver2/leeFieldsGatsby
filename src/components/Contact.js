@@ -6,7 +6,7 @@ const ContactCard = styled.div`
 `
 
 const Contact = ({ data }) => {
-  const mappedData = data.allAirtable.edges
+  const mappedData = data.edges
     .sort((a, b) => a.node.data.Order - b.node.data.Order)
     .map(contact => {
       const { data, id } = contact.node

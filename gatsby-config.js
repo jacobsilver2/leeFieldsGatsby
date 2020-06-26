@@ -18,7 +18,7 @@ module.exports = {
         tables: [
           {
             baseId: `app9H2woW0pkX1sAp`,
-            tableName: `Records`,
+            tableName: `Music`,
             mapping: { Image: `fileNode` },
           },
         ],
@@ -32,7 +32,21 @@ module.exports = {
         tables: [
           {
             baseId: `app6qEeLArKEzLqYs`,
-            tableName: `Info`,
+            tableName: `Contact`,
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: `keyY11TcpoTR646Fh`,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: `app6qEeLArKEzLqYs`,
+            tableName: `About`,
+            mapping: { AboutPic: `fileNode` },
           },
         ],
       },

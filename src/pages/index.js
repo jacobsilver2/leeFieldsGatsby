@@ -4,7 +4,6 @@ import { useInView } from "react-intersection-observer"
 import { GlobalDispatchContext } from "../context/provider"
 import Video from "../components/video"
 import Shows from "../components/shows"
-import Listen from "../components/listen"
 import SEO from "../components/seo"
 import { StyledBigLogo, BigLogoWrapper } from "../styles/StyledBigLogo"
 
@@ -19,7 +18,6 @@ export const query = graphql`
 `
 const IndexPage = ({ data }) => {
   const dispatch = useContext(GlobalDispatchContext)
-  // const videoRef = useRef()
   const firstUpdate = useRef(true)
   const [ref, inView] = useInView({ threshold: 0.25 })
 
@@ -40,7 +38,6 @@ const IndexPage = ({ data }) => {
       </BigLogoWrapper>
       <Video />
       <Shows />
-      {/* <Listen /> */}
     </>
   )
 }

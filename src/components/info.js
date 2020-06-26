@@ -16,7 +16,6 @@ const Selector = styled.p`
 
 const Shows = ({ data }) => {
   const [active, setActive] = useState("About")
-
   return (
     <Wrapper>
       <div>
@@ -33,8 +32,8 @@ const Shows = ({ data }) => {
           Contact
         </Selector>
       </div>
-      {active === "About" && <About />}
-      {active === "Contact" && <Contact data={data} />}
+      {active === "About" && <About data={data.about} />}
+      {active === "Contact" && <Contact data={data.contact} />}
     </Wrapper>
   )
 }
