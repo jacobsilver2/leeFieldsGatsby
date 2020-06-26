@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-const NavLinks = ({ handleSoundClick }) => {
+const NavLinks = () => {
   const dispatch = useContext(GlobalDispatchContext)
   // const state = useContext(GlobalStateContext)
 
@@ -17,10 +17,10 @@ const NavLinks = ({ handleSoundClick }) => {
 
   return (
     <Wrapper>
-      <StyledGatsbyLink onClick={handleClick} to="/info">
+      <StyledGatsbyLink isRight onClick={handleClick} to="/info">
         <p>Info</p>
       </StyledGatsbyLink>
-      <StyledGatsbyLink onClick={handleClick} to="/shop">
+      <StyledGatsbyLink isRight onClick={handleClick} to="/shop">
         <p>Shop</p>
       </StyledGatsbyLink>
     </Wrapper>

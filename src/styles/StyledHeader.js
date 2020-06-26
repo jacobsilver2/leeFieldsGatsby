@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 const StyledHeader = styled.header`
+display: block;
 border-bottom: ${({ cnnIsVisible }) => (cnnIsVisible ? "" : "2px solid black")};
 position: -webkit-sticky; /* Safari */
 position: sticky;
@@ -15,18 +16,13 @@ background-color: ${({ theme }) => theme.color.offWhite};
 /* flex-direction: column; */
 /* align-items: center; */
 /* justify-content: center; */
-display: block;
 .inner {
-  width: 100%;
-  /* margin: auto ${({ theme }) => theme.spacing[4]}; */
+  /* width: 100%; */
+  margin: 0 ${({ theme }) => theme.spacing[4]};
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-/* margin-bottom: ${({ theme }) => theme["4xl"]}; */
-  /* position: relative; */
-  /* left: 0; */
-  /* height: ${props => props.theme.headerHeight}; */
 `
 
 export default StyledHeader

@@ -5,9 +5,12 @@ import styled from "styled-components"
 const Wrapper = styled.div`
   display: flex;
   .item {
-    padding: 0 ${({ theme }) => theme.spacing[2]};
+    padding: 0 ${({ theme }) => theme.spacing[8]};
     &:hover {
       text-decoration: underline;
+    }
+    &:last-child {
+      padding-right: 0;
     }
   }
 `

@@ -13,7 +13,8 @@ export const StyledNav = styled.nav`
 `
 
 export const StyledGatsbyLink = styled(Link)`
-  padding: 0 ${({ theme }) => theme.spacing[2]};
+  padding-right: ${({ theme, isLeft }) => (isLeft ? theme.spacing[8] : "")};
+  padding-left: ${({ theme, isRight }) => (isRight ? theme.spacing[8] : "")};
   text-align: center;
   &:hover {
     text-decoration: underline;

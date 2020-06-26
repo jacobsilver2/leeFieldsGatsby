@@ -3,18 +3,6 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import InfoComponent from "../components/info"
 
-// export const query = graphql`
-//   query {
-//     leeHaldern: file(relativePath: { eq: "leeHaldern.jpg" }) {
-//       childImageSharp {
-//         fluid(maxWidth: 400) {
-//           ...GatsbyImageSharpFluid
-//         }
-//       }
-//     }
-//   }
-// `
-
 export const query = graphql`
   query GetInfo {
     allAirtable(filter: { table: { eq: "Info" } }) {

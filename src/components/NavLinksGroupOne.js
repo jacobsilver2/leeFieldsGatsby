@@ -6,9 +6,10 @@ import styled from "styled-components"
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: flex-start;
 `
 
-const NavLinksGroupOne = ({ handleSoundClick }) => {
+const NavLinksGroupOne = () => {
   const dispatch = useContext(GlobalDispatchContext)
   // const state = useContext(GlobalStateContext)
 
@@ -18,13 +19,13 @@ const NavLinksGroupOne = ({ handleSoundClick }) => {
 
   return (
     <Wrapper>
-      <StyledGatsbyLink onClick={handleClick} to="/music">
+      <StyledGatsbyLink isLeft onClick={handleClick} to="/music">
         <p>Music</p>
       </StyledGatsbyLink>
-      <StyledGatsbyLink onClick={handleClick} to="/video">
+      <StyledGatsbyLink isLeft onClick={handleClick} to="/video">
         <p>Video</p>
       </StyledGatsbyLink>
-      <StyledGatsbyLink onClick={handleClick} to="/tour">
+      <StyledGatsbyLink isLeft onClick={handleClick} to="/tour">
         <p>Tour</p>
       </StyledGatsbyLink>
     </Wrapper>
