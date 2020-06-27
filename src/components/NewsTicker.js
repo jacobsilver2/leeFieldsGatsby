@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import Ticker from "react-ticker"
 import styled from "styled-components"
 import PageVisibility from "react-page-visibility"
+import { GlobalDispatchContext } from "../context/provider"
 
 function isEven(value) {
   if (value % 2 == 0) return true
@@ -42,8 +43,9 @@ const CloseButton = styled.button`
   }
 `
 
-const NewsTicker = ({ setTickerIsVisible }) => {
+const NewsTicker = () => {
   const [pageIsVisible, setPageIsVisible] = useState(true)
+  const dispatch = useContext(GlobalDispatchContext)
   const handleVisibilityChange = isVisible => {
     setPageIsVisible(isVisible)
   }
@@ -63,7 +65,7 @@ const NewsTicker = ({ setTickerIsVisible }) => {
             </Ticker>
           )}
         </TickerContainer>
-        <CloseButton onClick={() => setTickerIsVisible(false)}>
+        <CloseButton onClick={() => dispatch({ type: "TICKER_OFF" })}>
           &#x2715;
         </CloseButton>
       </Wrapper>

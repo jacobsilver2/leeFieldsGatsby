@@ -11,9 +11,40 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-modal-routing`,
+      options: {
+        modalProps: {
+          style: {
+            overlay: {
+              position: `fixed`,
+              zIndex: 11,
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: `black`,
+            },
+            content: {
+              position: `absolute`,
+              border: `none`,
+              background: `none`,
+              padding: 0,
+              top: 0,
+              bottom: 0,
+              right: 0,
+              left: 0,
+              overflow: `hidden`,
+              WebkitOverflowScrolling: `touch`,
+            },
+          },
+          contentLabel: `Modal`,
+        },
+      },
+    },
+    {
       resolve: `gatsby-source-airtable`,
       options: {
-        apiKey: `keyY11TcpoTR646Fh`,
+        apiKey: `${process.env.GATSBY_AIRTABLE_API}`,
         concurrency: 5,
         tables: [
           {
@@ -27,7 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-source-airtable`,
       options: {
-        apiKey: `keyY11TcpoTR646Fh`,
+        apiKey: `${process.env.GATSBY_AIRTABLE_API}`,
         concurrency: 5,
         tables: [
           {
@@ -40,13 +71,26 @@ module.exports = {
     {
       resolve: `gatsby-source-airtable`,
       options: {
-        apiKey: `keyY11TcpoTR646Fh`,
+        apiKey: `${process.env.GATSBY_AIRTABLE_API}`,
         concurrency: 5,
         tables: [
           {
             baseId: `app6qEeLArKEzLqYs`,
             tableName: `About`,
             mapping: { AboutPic: `fileNode` },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: `${process.env.GATSBY_AIRTABLE_API}`,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: `appYs2klR189DEnJM`,
+            tableName: `Videos`,
           },
         ],
       },

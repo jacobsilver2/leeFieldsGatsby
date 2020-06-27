@@ -5,10 +5,12 @@ import { StyledBigLogo } from "../styles/StyledBigLogo"
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  grid-gap: 20px;
 `
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+  max-height: 400px;
 `
 
 const Purchase = styled.div`
@@ -26,7 +28,7 @@ const Purchase = styled.div`
 `
 
 const ShopComponent = ({ items }) => {
-  console.log(items)
+  // console.log(items)
 
   const mappedItems = items
     .sort((a, b) => a.Order - b.Order)

@@ -1,30 +1,11 @@
 import React, { useState } from "react"
 import ReactPlayer from "react-player/lazy"
 import reactPlayerOptions from "../lib/reactPlayerOptions"
-import videoLibary from "../lib/videoLibrary"
 import { Wrapper, VideoContainer } from "../styles/VideoPlayer"
 
-const Video = () => {
+const Video = ({ video }) => {
   const [muted, setMuted] = useState(true)
   const [playing, setPlaying] = useState(true)
-  const [currentVideo, setCurrentVideo] = useState(videoLibary[0])
-
-  const handleToggleMuted = () => {
-    setMuted(!muted)
-  }
-
-  const handlePause = () => {
-    setPlaying(!playing)
-  }
-
-  const handleEnded = () => {
-    if (currentVideo === videoLibary[2]) {
-      setCurrentVideo(videoLibary[0])
-    } else {
-      const currentIndex = videoLibary.indexOf(currentVideo)
-      setCurrentVideo(videoLibary[currentIndex + 1])
-    }
-  }
 
   return (
     <Wrapper>
@@ -48,12 +29,11 @@ const Video = () => {
         <ReactPlayer
           className="react-player"
           playing={playing}
-          url={currentVideo.url}
+          url={video}
           config={reactPlayerOptions}
           muted={muted}
-          volume={0.75}
           controls={true}
-          onEnded={handleEnded}
+          loop={true}
           width="100%"
           height="100%"
         />

@@ -12,13 +12,18 @@ const ULWrapper = styled.ul`
   display: flex;
 `
 
+const LIElement = styled.li`
+  padding-right: 1rem;
+  cursor: pointer;
+`
+
 const ShopPage = props => {
   const [isLoading, setIsLoading] = useState(true)
   const [items, setItems] = useState([])
   const [category, setCategory] = useState("all")
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {
-    dispatch({ type: "CNN_OFF" })
+    dispatch({ type: "CNN_OFF", type: "TICKER_OFF" })
     base("Shop")
       .select({ view: "Shop", maxRecords: 100 })
       .eachPage(
@@ -63,21 +68,21 @@ const ShopPage = props => {
     <>
       <SEO title="Store" />
       <ULWrapper>
-        <li>
-          <button onClick={() => setCategory("all")}>Shop All</button>
-        </li>
-        <li>
-          <button onClick={() => setCategory("music")}>Music</button>
-        </li>
-        <li>
-          <button onClick={() => setCategory("apparel")}>Apparel</button>
-        </li>
-        <li>
-          <button onClick={() => setCategory("posters")}>Posters</button>
-        </li>
-        <li>
-          <button onClick={() => setCategory("etc")}>Etc.</button>
-        </li>
+        <LIElement onClick={() => setCategory("all")}>
+          <p>Shop All</p>
+        </LIElement>
+        <LIElement onClick={() => setCategory("music")}>
+          <p>Music</p>
+        </LIElement>
+        <LIElement onClick={() => setCategory("apparel")}>
+          <p>Apparel</p>
+        </LIElement>
+        <LIElement onClick={() => setCategory("posters")}>
+          <p>Posters</p>
+        </LIElement>
+        <LIElement onClick={() => setCategory("etc")}>
+          <p>Etc.</p>
+        </LIElement>
       </ULWrapper>
       {isLoading ? <p>Loading...</p> : <ShopComponent items={filteredItems} />}
     </>

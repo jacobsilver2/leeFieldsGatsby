@@ -35,7 +35,7 @@ export const query = graphql`
 const MusicPage = ({ data }) => {
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {
-    dispatch({ type: "CNN_OFF" })
+    dispatch({ type: "CNN_OFF", type: "TICKER_OFF" })
   }, [])
   return (
     <>

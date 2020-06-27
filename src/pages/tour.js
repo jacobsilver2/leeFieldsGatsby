@@ -6,11 +6,7 @@ import SEO from "../components/seo"
 const TourPage = props => {
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {
-    // if (firstUpdate.current) {
-    //   firstUpdate.current = false
-    //   return
-    // }
-    dispatch({ type: "CNN_OFF" })
+    dispatch({ type: "CNN_OFF", type: "TICKER_OFF" })
   }, [])
   return (
     <>

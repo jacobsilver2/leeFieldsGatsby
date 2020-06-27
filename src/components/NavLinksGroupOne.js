@@ -22,7 +22,14 @@ const NavLinksGroupOne = () => {
       <StyledGatsbyLink isLeft onClick={handleClick} to="/music">
         <p>Music</p>
       </StyledGatsbyLink>
-      <StyledGatsbyLink isLeft onClick={handleClick} to="/video">
+      <StyledGatsbyLink
+        state={{
+          modal: true,
+        }}
+        isLeft
+        onClick={handleClick}
+        to="/video"
+      >
         <p>Video</p>
       </StyledGatsbyLink>
       <StyledGatsbyLink isLeft onClick={handleClick} to="/tour">

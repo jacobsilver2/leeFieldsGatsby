@@ -10,7 +10,7 @@ left: 0;
 right: 0;
 /* max-height: ${({ theme }) => theme.spacing[32]}; */
 min-height: ${({ theme }) => theme.headerHeight};
-z-index: 999;
+z-index: 10;
 background-color: ${({ theme }) => theme.color.offWhite};
 /* display: flex; */
 /* flex-direction: column; */

@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useLayoutEffect } from "react"
+import React, { useContext, useRef, useLayoutEffect, useEffect } from "react"
 import { graphql } from "gatsby"
 import { useInView } from "react-intersection-observer"
 import { GlobalDispatchContext } from "../context/provider"
@@ -9,9 +9,21 @@ import { StyledBigLogo, BigLogoWrapper } from "../styles/StyledBigLogo"
 
 export const query = graphql`
   query HomePageQuery {
-    site {
+    title: site {
       siteMetadata {
         title
+      }
+    }
+    video: allAirtable(filter: { table: { eq: "Videos" } }) {
+      edges {
+        node {
+          id
+          data {
+            Video_Title
+            Video_URL
+            Video_Order
+          }
+        }
       }
     }
   }
@@ -28,15 +40,17 @@ const IndexPage = ({ data }) => {
     }
     dispatch({ type: inView ? "CNN_ON" : "CNN_OFF" })
   })
-
-  const { title } = data.site.siteMetadata
+  const { title } = data.title.siteMetadata
+  const { edges } = data.video
+  const firstVid = edges.filter(vid => vid.node.data.Video_Order === 1)[0].node
+    .data.Video_URL
   return (
     <>
       <SEO title="Home" />
       <BigLogoWrapper>
         <StyledBigLogo ref={ref}>{title.toUpperCase()}</StyledBigLogo>
       </BigLogoWrapper>
-      <Video />
+      <Video video={firstVid} />
       <Shows />
     </>
   )

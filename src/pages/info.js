@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
+import { GlobalDispatchContext } from "../context/provider"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import InfoComponent from "../components/info"
@@ -47,6 +48,10 @@ export const query = graphql`
 `
 
 const Info = ({ data }) => {
+  const dispatch = useContext(GlobalDispatchContext)
+  useEffect(() => {
+    dispatch({ type: "CNN_OFF", type: "TICKER_OFF" })
+  }, [])
   return (
     <>
       <SEO title="Info" />

@@ -8,19 +8,16 @@ import NavLinksGroupOne from "./NavLinksGroupOne"
 import NavLinksGroupTwo from "./NavLinksGroupTwo"
 // import SocialLinks from "./socialLinks"
 // import { theme } from "../styles/theme"
-import { GlobalStateContext } from "../context/provider"
+import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
 import NewsTicker from "./NewsTicker"
 
 const Header = ({ siteTitle }) => {
-  const [tickerIsVisible, setTickerIsVisible] = useState(true)
   const state = useContext(GlobalStateContext)
   // const size = useWindowSize()
 
   return (
     <StyledHeader cnnIsVisible={state.cnnInView}>
-      {tickerIsVisible && (
-        <NewsTicker setTickerIsVisible={setTickerIsVisible} />
-      )}
+      {state.tickerIsVisible && <NewsTicker />}
       <div className="inner">
         <div>
           <NavLinksGroupOne />

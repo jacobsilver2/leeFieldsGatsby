@@ -9,34 +9,12 @@ const initialState = {
   secondaryMenuActive: false,
   video: "--nTlj66uRE",
   cnnInView: true,
+  videoModalOpen: false,
+  tickerIsVisible: true,
 }
 
 function reducer(state, action) {
   switch (action.type) {
-    case "TOGGLE_SOUND": {
-      return {
-        ...state,
-        isMuted: state.isMuted === true ? false : true,
-      }
-    }
-    case "SHOWS_ACTIVE": {
-      return {
-        ...state,
-        navButtonActive: state.navButtonActive === "shows" ? "" : "shows",
-      }
-    }
-    case "MERCH_ACTIVE": {
-      return {
-        ...state,
-        navButtonActive: state.navButtonActive === "merch" ? "" : "merch",
-      }
-    }
-    case "INFO_ACTIVE": {
-      return {
-        ...state,
-        navButtonActive: state.navButtonActive === "info" ? "" : "info",
-      }
-    }
     case "CLOSE_NAV_BUTTON": {
       return {
         ...state,
@@ -61,18 +39,6 @@ function reducer(state, action) {
         secondaryMenuActive: true,
       }
     }
-    case "DONT_LEAVE_ME_THIS_WAY": {
-      return {
-        ...state,
-        video: "--nTlj66uRE",
-      }
-    }
-    case "FAITHFUL_MAN": {
-      return {
-        ...state,
-        video: "94o5Lli-9gA",
-      }
-    }
     case "CNN_OFF": {
       return {
         ...state,
@@ -83,6 +49,18 @@ function reducer(state, action) {
       return {
         ...state,
         cnnInView: true,
+      }
+    }
+    case "TICKER_OFF": {
+      return {
+        ...state,
+        tickerIsVisible: false,
+      }
+    }
+    case "TICKER_ON": {
+      return {
+        ...state,
+        tickerIsVisible: true,
       }
     }
     default:
