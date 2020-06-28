@@ -1,30 +1,14 @@
 import { createGlobalStyle } from "styled-components"
 import reset from "styled-reset"
-import FormaDJRBannerBold from "../assets/fonts/FormaDJRBanner-Bold-Testing.woff2"
-import FormaDJRBannerMed from "../assets/fonts/FormaDJRBanner-Medium-Testing.woff2"
-import FormaDJRTextReg from "../assets/fonts/FormaDJRText-Regular-Testing.woff2"
-import FormaDJRTextMed from "../assets/fonts/FormaDJRText-Medium-Testing.woff2"
+// import FormaDJRBannerBold from "../assets/fonts/FormaDJRBanner-Bold-Testing.woff2"
+// import FormaDJRBannerMed from "../assets/fonts/FormaDJRBanner-Medium-Testing.woff2"
+// import FormaDJRTextReg from "../assets/fonts/FormaDJRText-Regular-Testing.woff2"
+// import FormaDJRTextMed from "../assets/fonts/FormaDJRText-Medium-Testing.woff2"
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *, *:before, *:after {
     box-sizing: border-box;
-  }
-  @font-face {
-    font-family: ${({ theme }) => theme.font.banner};
-    src: url(${FormaDJRBannerBold}) format('woff2');
-  }
-  @font-face {
-    font-family: ${({ theme }) => theme.font.bannerMedium};
-    src: url(${FormaDJRBannerMed}) format('woff2');
-  }
-  @font-face {
-    font-family: ${({ theme }) => theme.font.text};
-    src: url(${FormaDJRTextReg}) format('woff2');
-  }
-  @font-face {
-    font-family: ${({ theme }) => theme.font.bold};
-    src: url(${FormaDJRTextMed}) format('woff2');
   }
   html {
     box-sizing: border-box;
