@@ -1,10 +1,30 @@
 import { createGlobalStyle } from "styled-components"
 import reset from "styled-reset"
+import FormaDJRBannerBold from "../assets/fonts/FormaDJRBanner-Bold-Testing.woff2"
+import FormaDJRBannerMed from "../assets/fonts/FormaDJRBanner-Medium-Testing.woff2"
+import FormaDJRTextReg from "../assets/fonts/FormaDJRText-Regular-Testing.woff2"
+import FormaDJRTextMed from "../assets/fonts/FormaDJRText-Medium-Testing.woff2"
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *, *:before, *:after {
     box-sizing: border-box;
+  }
+  @font-face {
+    font-family: ${({ theme }) => theme.font.banner};
+    src: url(${FormaDJRBannerBold}) format('woff2');
+  }
+  @font-face {
+    font-family: ${({ theme }) => theme.font.bannerMedium};
+    src: url(${FormaDJRBannerMed}) format('woff2');
+  }
+  @font-face {
+    font-family: ${({ theme }) => theme.font.text};
+    src: url(${FormaDJRTextReg}) format('woff2');
+  }
+  @font-face {
+    font-family: ${({ theme }) => theme.font.bold};
+    src: url(${FormaDJRTextMed}) format('woff2');
   }
   html {
     box-sizing: border-box;
@@ -27,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: ${({ theme }) => theme.font.banner};
-    font-weight: normal;
+    font-weight: bold;
     font-size: ${({ theme }) => theme.fontSize.h1};
     line-height: 22rem;
     letter-spacing: 0;
@@ -35,7 +55,7 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     font-family: ${({ theme }) => theme.font.bannerMedium};
-    font-weight: normal;
+    font-weight: 500;
     font-size: ${({ theme }) => theme.fontSize.h2};
     line-height: 22rem;
     letter-spacing: 0;
@@ -43,7 +63,7 @@ const GlobalStyle = createGlobalStyle`
 
   h3 {
     font-family: ${({ theme }) => theme.font.bannerMedium};
-    font-weight:normal;
+    font-weight:500;
     font-size: ${({ theme }) => theme.fontSize.h3};
     line-height: 11rem;
     letter-spacing: 0;
@@ -51,7 +71,8 @@ const GlobalStyle = createGlobalStyle`
 
   h4 {
     font-family: ${({ theme }) => theme.font.bold};
-    font-weight: regular;
+    font-weight: 500;
+    font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.h4};
     line-height: 7.5rem;
     letter-spacing: 0;
@@ -59,7 +80,8 @@ const GlobalStyle = createGlobalStyle`
 
   h5 {
     font-family: ${({ theme }) => theme.font.text};
-    font-weight: regular;
+    font-weight: normal;
+    font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.h5};
     line-height: 7.5rem;
     letter-spacing: 0;
@@ -67,7 +89,8 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     font-family: ${({ theme }) => theme.font.text};
-    font-weight: regular;
+    font-weight: normal;
+    font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.p};
     line-height: 2.4rem;
     letter-spacing: 50;

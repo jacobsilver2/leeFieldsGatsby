@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { StyledBigLogo } from "../styles/StyledBigLogo"
+// import { StyledBigLogo } from "../styles/StyledBigLogo"
 
 const Wrapper = styled.div`
   display: grid;

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import moment from "moment"
-import LargeBodyText from "../styles/LargeBodyText"
+// import LargeBodyText from "../styles/LargeBodyText"
 
 const StyledShow = styled.div`
   display: grid;

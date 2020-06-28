@@ -7,7 +7,9 @@ const Shows = props => {
   const dispatch = useContext(GlobalDispatchContext)
   // const firstUpdate = useRef(true)
   useEffect(() => {
-    dispatch({ type: "CNN_OFF", type: "TICKER_OFF" })
+    dispatch({ type: "CNN_OFF" })
+    dispatch({ type: "TICKER_OFF" })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <>

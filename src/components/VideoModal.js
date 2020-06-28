@@ -45,8 +45,6 @@ const PrevNext = styled.div`
 `
 
 const VideoModal = ({ videos }) => {
-  const [playing, setPlaying] = useState(true)
-  const [muted, setMuted] = useState(true)
   const [currentVideo, setCurrentVideo] = useState(videos[0])
 
   const handleEnded = () => {
@@ -67,8 +65,6 @@ const VideoModal = ({ videos }) => {
     }
   }
 
-  console.log(currentVideo.node.data.Video_URL)
-
   return (
     <>
       <Close onClick={() => navigate(`/`, { state: { noScroll: true } })}>
@@ -78,9 +74,9 @@ const VideoModal = ({ videos }) => {
         <Content>
           <div></div>
           <VideoModalPlayer
-            playing={playing}
+            playing={true}
             currentVideo={currentVideo.node.data.Video_URL}
-            muted={muted}
+            muted={true}
             handleEnded={handleEnded}
           />
           <div></div>

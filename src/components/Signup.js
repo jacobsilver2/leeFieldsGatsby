@@ -2,7 +2,6 @@ import React from "react"
 import { Formik } from "formik"
 import * as yup from "yup"
 import {
-  StyledSignup,
   Title,
   StyledForm,
   Wrapper,
@@ -26,20 +25,22 @@ const Signup = () => {
             onSubmit={(data, { setSubmitting }) => {
               setSubmitting(true)
               // make async call
-              console.log(data)
+              // console.log(data)
               setSubmitting(false)
             }}
           >
             {({ values, isSubmitting, handleChange, handleBlur, errors }) => (
               <StyledFormik>
-                <input
-                  placeholder="Email"
-                  value={values.email}
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  type="text"
-                />
+                <label>
+                  <input
+                    placeholder="Email"
+                    value={values.email}
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    type="text"
+                  />
+                </label>
                 <button disabled={isSubmitting} type="submit">
                   Submit
                 </button>

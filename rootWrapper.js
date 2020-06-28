@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet"
 export const wrapRootElement = ({ element }) => {
   return (
     <GlobalContextProvider>
-      <Helmet>
+      {/* <Helmet>
         <link
           href="//cloud.typenetwork.com/projects/3970/fontface.css/"
           rel="stylesheet"
@@ -20,7 +20,7 @@ export const wrapRootElement = ({ element }) => {
           rel="stylesheet"
           type="text/css"
         ></link>
-      </Helmet>
+      </Helmet> */}
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Layout>{element}</Layout>

@@ -23,7 +23,8 @@ const ShopPage = props => {
   const [category, setCategory] = useState("all")
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {
-    dispatch({ type: "CNN_OFF", type: "TICKER_OFF" })
+    dispatch({ type: "CNN_OFF" })
+    dispatch({ type: "TICKER_OFF" })
     base("Shop")
       .select({ view: "Shop", maxRecords: 100 })
       .eachPage(
@@ -41,6 +42,7 @@ const ShopPage = props => {
           setIsLoading(false)
         }
       )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   let filteredItems

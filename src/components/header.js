@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 // import useWindowSize from "../hooks/useWindowSize"
 import StyledHeader from "../styles/StyledHeader"
@@ -8,7 +8,7 @@ import NavLinksGroupOne from "./NavLinksGroupOne"
 import NavLinksGroupTwo from "./NavLinksGroupTwo"
 // import SocialLinks from "./socialLinks"
 // import { theme } from "../styles/theme"
-import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
+import { GlobalStateContext } from "../context/provider"
 import NewsTicker from "./NewsTicker"
 
 const Header = ({ siteTitle }) => {

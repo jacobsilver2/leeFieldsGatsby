@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useLayoutEffect, useEffect } from "react"
+import React, { useContext, useRef, useLayoutEffect } from "react"
 import { graphql } from "gatsby"
 import { useInView } from "react-intersection-observer"
 import { GlobalDispatchContext } from "../context/provider"

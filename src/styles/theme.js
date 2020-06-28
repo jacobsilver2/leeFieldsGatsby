@@ -1,9 +1,9 @@
 export const theme = {
   font: {
-    banner: "Forma DJR Ban Bd",
-    bannerMedium: "Forma DJR Ban Med",
-    bold: "Forma DJR Text Med",
-    text: "Forma DJR Text Reg",
+    banner: "FormaDJRBanner",
+    bannerMedium: "FormaDJRBanner",
+    bold: "FormaDJRText",
+    text: "FormaDJRText",
   },
   fontWeight: {
     hairline: "100",

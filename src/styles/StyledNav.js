@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import LargeBodyText from "./LargeBodyText"
+// import LargeBodyText from "./LargeBodyText"
 
 export const StyledNav = styled.nav`
   display: flex;

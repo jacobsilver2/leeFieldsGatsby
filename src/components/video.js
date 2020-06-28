@@ -1,12 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import ReactPlayer from "react-player/lazy"
 import reactPlayerOptions from "../lib/reactPlayerOptions"
 import { Wrapper, VideoContainer } from "../styles/VideoPlayer"
 
 const Video = ({ video }) => {
-  const [muted, setMuted] = useState(true)
-  const [playing, setPlaying] = useState(true)
-
   return (
     <Wrapper>
       <VideoContainer>
@@ -28,10 +25,10 @@ const Video = ({ video }) => {
         </VideoOverlayWrapper> */}
         <ReactPlayer
           className="react-player"
-          playing={playing}
+          playing={true}
           url={video}
           config={reactPlayerOptions}
-          muted={muted}
+          muted={true}
           controls={true}
           loop={true}
           width="100%"
