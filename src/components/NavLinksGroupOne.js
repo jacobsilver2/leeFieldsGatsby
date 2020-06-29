@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { globalHistory as history } from "@reach/router"
 import { GlobalDispatchContext } from "../context/provider"
 import { StyledGatsbyLink, NavText } from "../styles/StyledNav"
 import styled from "styled-components"
@@ -11,6 +12,7 @@ const Wrapper = styled.div`
 
 const NavLinksGroupOne = () => {
   const dispatch = useContext(GlobalDispatchContext)
+  const { location } = history
   // const state = useContext(GlobalStateContext)
 
   const handleClick = () => {
@@ -25,6 +27,7 @@ const NavLinksGroupOne = () => {
       <StyledGatsbyLink
         state={{
           modal: true,
+          prevPath: location.pathname,
         }}
         isLeft
         onClick={handleClick}

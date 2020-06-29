@@ -20,7 +20,8 @@ export const query = graphql`
   }
 `
 
-const Video = ({ data }) => {
+const Video = ({ data, location }) => {
+  const { prevPath } = location.state
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {
     dispatch({ type: "CNN_OFF" })
@@ -30,7 +31,7 @@ const Video = ({ data }) => {
   const { edges } = data.allAirtable
   return (
     <>
-      <VideoModal videos={edges} />
+      <VideoModal prevPath={prevPath} videos={edges} />
     </>
   )
 }

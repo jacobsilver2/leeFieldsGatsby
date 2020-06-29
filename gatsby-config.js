@@ -14,6 +14,8 @@ module.exports = {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
         modalProps: {
+          shouldCloseOnEsc: false,
+          shouldCloseOnOverlayClick: false,
           style: {
             overlay: {
               position: `fixed`,

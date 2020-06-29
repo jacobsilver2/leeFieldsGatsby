@@ -6,7 +6,6 @@ import {
   StyledForm,
   Wrapper,
   StyledFormik,
-  Content,
   TheForm,
 } from "../styles/StyledSignup"
 

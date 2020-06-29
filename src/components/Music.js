@@ -3,7 +3,7 @@ import Img from "./image"
 // import useWindowSize from "../hooks/useWindowSize"
 // import { Title } from "../styles/StyledShowsComponent"
 import styled from "styled-components"
-import LargeBodyText from "../styles/LargeBodyText"
+// import LargeBodyText from "../styles/LargeBodyText"
 
 const Wrapper = styled.div`
   display: flex;

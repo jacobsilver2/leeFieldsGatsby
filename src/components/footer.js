@@ -22,7 +22,11 @@ const Footer = () => {
       <div className="inner">
         <Wrapper>
           <NavText>
-            <a href="https://bigcrownrecords.com/" target="_blank">
+            <a
+              href="https://bigcrownrecords.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               @2020 Big Crown Records
             </a>
           </NavText>
@@ -32,6 +36,7 @@ const Footer = () => {
             <a
               href="https://www.instagram.com/leefieldsandtheexpressions/?hl=en"
               target="_blank"
+              rel="noreferrer"
             >
               Instagram
             </a>
@@ -40,12 +45,17 @@ const Footer = () => {
             <a
               href="https://www.facebook.com/leefieldsandtheexpressions/"
               target="_blank"
+              rel="noreferrer"
             >
               Facebook
             </a>
           </NavText>
           <NavText className="item">
-            <a href="https://twitter.com/leefields12?lang=en" target="_blank">
+            <a
+              href="https://twitter.com/leefields12?lang=en"
+              target="_blank"
+              rel="noreferrer"
+            >
               Twitter
             </a>
           </NavText>
@@ -55,6 +65,7 @@ const Footer = () => {
             <a
               href="https://music.apple.com/us/artist/lee-fields-the-expressions/187277830"
               target="_blank"
+              rel="noreferrer"
             >
               Apple Music
             </a>
@@ -63,6 +74,7 @@ const Footer = () => {
             <a
               href="https://open.spotify.com/artist/2bToe6WyGvADJftreuXh2K"
               target="_blank"
+              rel="noreferrer"
             >
               Spotify
             </a>
@@ -71,6 +83,7 @@ const Footer = () => {
             <a
               href="https://soundcloud.com/bigcrownrecords/lee-fields-the-expressions-time"
               target="_blank"
+              rel="noreferrer"
             >
               Soundcloud
             </a>

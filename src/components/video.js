@@ -1,5 +1,5 @@
 import React from "react"
-import { navigate, Link } from "gatsby"
+import { Link } from "gatsby"
 import ReactPlayer from "react-player/lazy"
 import reactPlayerOptions from "../lib/reactPlayerOptions"
 import {

@@ -81,6 +81,7 @@ const ShopComponent = ({ items }) => {
               className="purchaseText"
               href={item.PurchaseLink}
               target="_blank"
+              rel="noreferrer"
             >
               <p>Purchase</p>
             </a>

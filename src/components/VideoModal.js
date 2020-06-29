@@ -51,7 +51,7 @@ const TestBox = styled.div`
   height: 50%;
 `
 
-const VideoModal = ({ videos }) => {
+const VideoModal = ({ videos, prevPath }) => {
   const [currentVideo, setCurrentVideo] = useState(videos[0])
 
   const handleEnded = () => {
@@ -74,7 +74,9 @@ const VideoModal = ({ videos }) => {
 
   return (
     <>
-      <Close onClick={() => navigate(`/`, { state: { noScroll: true } })}>
+      <Close
+        onClick={() => navigate(prevPath || "/", { state: { noScroll: true } })}
+      >
         <p>Close</p>
       </Close>
       <Wrapper>
