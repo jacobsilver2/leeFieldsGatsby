@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { GlobalDispatchContext } from "../context/provider"
-import { StyledGatsbyLink } from "../styles/StyledNav"
+import { StyledGatsbyLink, NavText } from "../styles/StyledNav"
 import styled from "styled-components"
 // import { Link } from "gatsby"
 
@@ -20,7 +20,7 @@ const NavLinksGroupOne = () => {
   return (
     <Wrapper>
       <StyledGatsbyLink isLeft onClick={handleClick} to="/music">
-        <p>Music</p>
+        <NavText>Music</NavText>
       </StyledGatsbyLink>
       <StyledGatsbyLink
         state={{
@@ -30,10 +30,10 @@ const NavLinksGroupOne = () => {
         onClick={handleClick}
         to="/video"
       >
-        <p>Video</p>
+        <NavText>Video</NavText>
       </StyledGatsbyLink>
       <StyledGatsbyLink isLeft onClick={handleClick} to="/tour">
-        <p>Tour</p>
+        <NavText>Tour</NavText>
       </StyledGatsbyLink>
     </Wrapper>
   )

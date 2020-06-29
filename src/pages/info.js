@@ -34,7 +34,7 @@ export const query = graphql`
             AboutPic {
               localFiles {
                 childImageSharp {
-                  fluid {
+                  fluid(quality: 100) {
                     ...GatsbyImageSharpFluid
                   }
                 }

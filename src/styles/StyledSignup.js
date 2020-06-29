@@ -9,9 +9,12 @@ export const StyledSignup = styled.div`
 export const Wrapper = styled.div`
   border-top: 1px solid black;
   min-height: 40rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  /* grid-gap: 4rem; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
 `
 
 export const Content = styled.div`
@@ -20,6 +23,7 @@ export const Content = styled.div`
 `
 
 export const Title = styled.h3`
+  align-self: end;
   text-align: center;
   /* margin: 5rem auto; */
 `
@@ -27,14 +31,21 @@ export const Title = styled.h3`
 export const StyledFormik = styled(Form)`
   display: flex;
   justify-content: space-between;
+`
+
+export const TheForm = styled.div`
+  margin: auto;
+  align-self: center;
+  width: 50%;
+  /* max-width: 80%; */
   border-bottom: 1px solid black;
 `
 
 export const StyledForm = styled.div`
-  margin: auto;
+  /* margin: 0 auto; */
   /* padding: 5rem 0; */
-  max-width: 80%;
-  min-width: 50%;
+  /* max-width: 80%; */
+  /* min-width: 50%; */
   input[type="text"] {
     flex-grow: 1;
     border: 0;

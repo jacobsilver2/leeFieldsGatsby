@@ -10,11 +10,12 @@ const Wrapper = styled.div`
 `
 const Content = styled.div`
   color: white;
-  /* display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: auto; */
+  height: 100%;
+  margin: auto;
 `
 
 const Close = styled.div`
@@ -42,6 +43,12 @@ const Control = styled.div`
 
 const PrevNext = styled.div`
   cursor: pointer;
+`
+
+const TestBox = styled.div`
+  border: 1px solid white;
+  width: 50%;
+  height: 50%;
 `
 
 const VideoModal = ({ videos }) => {
@@ -73,12 +80,15 @@ const VideoModal = ({ videos }) => {
       <Wrapper>
         <Content>
           <div></div>
-          <VideoModalPlayer
-            playing={true}
-            currentVideo={currentVideo.node.data.Video_URL}
-            muted={true}
-            handleEnded={handleEnded}
-          />
+          <TestBox>
+            {/* <p>This is Content</p> */}
+            <VideoModalPlayer
+              playing={true}
+              currentVideo={currentVideo.node.data.Video_URL}
+              muted={true}
+              handleEnded={handleEnded}
+            />
+          </TestBox>
           <div></div>
         </Content>
       </Wrapper>

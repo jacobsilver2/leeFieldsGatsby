@@ -16,9 +16,9 @@ const Wrapper = styled.div`
   margin-right: ${({ theme }) => theme.spacing[4]};
   /* align-items: center; */
   border-bottom: 1px solid black;
-  padding-top: 1.5rem;
+  padding-top: 1.1rem;
   /* this is likely something that will need to be adjusted manually, as react-ticker doesn't seem to be very friendly with flexbox */
-  min-height: 5rem;
+  height: 4.4rem;
 `
 
 const TickerContainer = styled.div`
@@ -27,6 +27,7 @@ const TickerContainer = styled.div`
 `
 
 const TickerItem = styled.p`
+  font-size: 1.4rem;
   opacity: ${({ isEven }) => (isEven ? "100%" : "50%")};
   white-space: nowrap;
   margin: 0 4rem;
@@ -34,8 +35,9 @@ const TickerItem = styled.p`
 
 const CloseButton = styled.button`
   margin-top: -1.2rem;
-  font-size: 3rem;
-  font-weight: normal;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: black;
   border: 0;
   background-color: ${({ theme }) => theme.color.offWhite};
   &:hover {

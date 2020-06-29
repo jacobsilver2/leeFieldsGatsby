@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { GlobalDispatchContext } from "../context/provider"
-import { StyledGatsbyLink } from "../styles/StyledNav"
+import { StyledGatsbyLink, NavText } from "../styles/StyledNav"
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -18,10 +18,10 @@ const NavLinks = () => {
   return (
     <Wrapper>
       <StyledGatsbyLink isRight onClick={handleClick} to="/info">
-        <p>Info</p>
+        <NavText>Info</NavText>
       </StyledGatsbyLink>
       <StyledGatsbyLink isRight onClick={handleClick} to="/shop">
-        <p>Shop</p>
+        <NavText>Shop</NavText>
       </StyledGatsbyLink>
     </Wrapper>
   )

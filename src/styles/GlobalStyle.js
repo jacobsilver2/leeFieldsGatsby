@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
 
   h5 {
     font-family: ${({ theme }) => theme.font.text};
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.h5};
     line-height: 7.5rem;

@@ -34,7 +34,9 @@ const Show = ({ show }) => {
       </div>
       <BuyLink>
         <h5>
-          <a href={show.URL}>Tickets</a>
+          <a href={show.URL} target="_blank">
+            Tickets
+          </a>
         </h5>
       </BuyLink>
     </StyledShow>

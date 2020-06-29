@@ -16,7 +16,10 @@ const Header = ({ siteTitle }) => {
   // const size = useWindowSize()
 
   return (
-    <StyledHeader cnnIsVisible={state.cnnInView}>
+    <StyledHeader
+      tickerIsVisible={state.tickerIsVisible}
+      cnnIsVisible={state.cnnInView}
+    >
       {state.tickerIsVisible && <NewsTicker />}
       <div className="inner">
         <div>

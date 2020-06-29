@@ -1,11 +1,12 @@
 import React from "react"
 import StyledFooter from "../styles/StyledFooter"
 import styled from "styled-components"
+import { NavText } from "../styles/StyledNav"
 
 const Wrapper = styled.div`
   display: flex;
   .item {
-    padding: 0 ${({ theme }) => theme.spacing[8]};
+    padding: 0 1rem;
     &:hover {
       text-decoration: underline;
     }
@@ -20,29 +21,60 @@ const Footer = () => {
     <StyledFooter>
       <div className="inner">
         <Wrapper>
-          <p>@2020 Big Crown Records</p>
+          <NavText>
+            <a href="https://bigcrownrecords.com/" target="_blank">
+              @2020 Big Crown Records
+            </a>
+          </NavText>
         </Wrapper>
         <Wrapper>
-          <p className="item">
-            <a href="http://www.instagram.com">Instagram</a>
-          </p>
-          <p className="item">
-            <a href="http://www.facebook.com">Facebook</a>
-          </p>
-          <p className="item">
-            <a href="http://www.twitter.com">Twitter</a>
-          </p>
+          <NavText className="item">
+            <a
+              href="https://www.instagram.com/leefieldsandtheexpressions/?hl=en"
+              target="_blank"
+            >
+              Instagram
+            </a>
+          </NavText>
+          <NavText className="item">
+            <a
+              href="https://www.facebook.com/leefieldsandtheexpressions/"
+              target="_blank"
+            >
+              Facebook
+            </a>
+          </NavText>
+          <NavText className="item">
+            <a href="https://twitter.com/leefields12?lang=en" target="_blank">
+              Twitter
+            </a>
+          </NavText>
         </Wrapper>
         <Wrapper>
-          <p className="item">
-            <a href="http://www.apple.com">Apple Music</a>
-          </p>
-          <p className="item">
-            <a href="http://www.spotify.com">Spotify</a>
-          </p>
-          <p className="item">
-            <a href="http://www.soundcloud.com">Soundcloud</a>
-          </p>
+          <NavText className="item">
+            <a
+              href="https://music.apple.com/us/artist/lee-fields-the-expressions/187277830"
+              target="_blank"
+            >
+              Apple Music
+            </a>
+          </NavText>
+          <NavText className="item">
+            <a
+              href="https://open.spotify.com/artist/2bToe6WyGvADJftreuXh2K"
+              target="_blank"
+            >
+              Spotify
+            </a>
+          </NavText>
+          <NavText className="item">
+            <a
+              href="https://soundcloud.com/bigcrownrecords/lee-fields-the-expressions-time"
+              target="_blank"
+            >
+              Soundcloud
+            </a>
+          </NavText>
         </Wrapper>
       </div>
     </StyledFooter>

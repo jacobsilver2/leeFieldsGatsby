@@ -1,28 +1,28 @@
 import React from "react"
+import { navigate, Link } from "gatsby"
 import ReactPlayer from "react-player/lazy"
 import reactPlayerOptions from "../lib/reactPlayerOptions"
-import { Wrapper, VideoContainer } from "../styles/VideoPlayer"
+import {
+  Wrapper,
+  VideoContainer,
+  VideoOverlayWrapper,
+  StyledPlayButton,
+} from "../styles/VideoPlayer"
 
 const Video = ({ video }) => {
   return (
     <Wrapper>
       <VideoContainer>
-        {/* <VideoOverlayWrapper>
-          {playing ? (
-            <div style={{ position: "absolute", bottom: "0px", left: "0px" }}>
-              <StyledPauseButton onClick={handlePause} />
-            </div>
-          ) : (
-            <StyledPlayButton onClick={handlePause} />
-          )}
-          <div style={{ position: "absolute", bottom: "0px", right: "10px" }}>
-            {muted ? (
-              <StyledSoundOffButton onClick={handleToggleMuted} />
-            ) : (
-              <StyledSoundOnButton onClick={handleToggleMuted} />
-            )}
-          </div>
-        </VideoOverlayWrapper> */}
+        <VideoOverlayWrapper>
+          <Link
+            to="/video"
+            state={{
+              modal: true,
+            }}
+          >
+            <StyledPlayButton />
+          </Link>
+        </VideoOverlayWrapper>
         <ReactPlayer
           className="react-player"
           playing={true}

@@ -1,5 +1,6 @@
 import styled from "styled-components"
-import PlayButton from "../assets/svgs/playButton.svg"
+import { Link } from "gatsby"
+import PlayButton from "../assets/svgs/play.svg"
 import PauseButton from "../assets/svgs/pauseButton.svg"
 import SoundOn from "../assets/svgs/soundOn.svg"
 import SoundOff from "../assets/svgs/soundOff.svg"
@@ -17,6 +18,11 @@ export const VideoContainer = styled.div`
     left: 0;
   }
 `
+
+export const PlayLink = styled(Link)`
+  cursor: pointer;
+  margin: auto;
+`
 export const VideoOverlayWrapper = styled.div`
   position: absolute;
   top: 0;
@@ -27,10 +33,11 @@ export const VideoOverlayWrapper = styled.div`
   /* opacity: 0.75; */
   z-index: 10;
   display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export const StyledPlayButton = styled(PlayButton)`
-  margin: auto;
   stroke: white;
   stroke-width: 0.4px;
   fill: white;

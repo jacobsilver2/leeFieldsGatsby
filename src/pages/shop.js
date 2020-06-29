@@ -10,11 +10,22 @@ const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
 
 const ULWrapper = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  width: 50%;
 `
 
 const LIElement = styled.li`
   padding-right: 1rem;
-  cursor: pointer;
+  opacity: ${({ active }) => (active ? "1" : "50%")};
+  .text {
+    cursor: pointer;
+  }
+`
+
+const ShopContainer = styled.div`
+  /* max-width: 1920px; */
+  margin-top: 4rem;
+  margin-bottom: 8rem;
 `
 
 const ShopPage = props => {
@@ -69,24 +80,45 @@ const ShopPage = props => {
   return (
     <>
       <SEO title="Store" />
-      <ULWrapper>
-        <LIElement onClick={() => setCategory("all")}>
-          <p>Shop All</p>
-        </LIElement>
-        <LIElement onClick={() => setCategory("music")}>
-          <p>Music</p>
-        </LIElement>
-        <LIElement onClick={() => setCategory("apparel")}>
-          <p>Apparel</p>
-        </LIElement>
-        <LIElement onClick={() => setCategory("posters")}>
-          <p>Posters</p>
-        </LIElement>
-        <LIElement onClick={() => setCategory("etc")}>
-          <p>Etc.</p>
-        </LIElement>
-      </ULWrapper>
-      {isLoading ? <p>Loading...</p> : <ShopComponent items={filteredItems} />}
+      <ShopContainer>
+        <ULWrapper>
+          <LIElement
+            active={category === "all"}
+            onClick={() => setCategory("all")}
+          >
+            <h5 className="text">Shop All</h5>
+          </LIElement>
+          <LIElement
+            active={category === "music"}
+            onClick={() => setCategory("music")}
+          >
+            <h5 className="text">Music</h5>
+          </LIElement>
+          <LIElement
+            active={category === "apparel"}
+            onClick={() => setCategory("apparel")}
+          >
+            <h5 className="text">Apparel</h5>
+          </LIElement>
+          <LIElement
+            active={category === "posters"}
+            onClick={() => setCategory("posters")}
+          >
+            <h5 className="text">Posters</h5>
+          </LIElement>
+          <LIElement
+            active={category === "etc"}
+            onClick={() => setCategory("etc")}
+          >
+            <h5 className="text">Etc.</h5>
+          </LIElement>
+        </ULWrapper>
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : (
+          <ShopComponent items={filteredItems} />
+        )}
+      </ShopContainer>
     </>
   )
 }

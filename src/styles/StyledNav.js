@@ -25,6 +25,9 @@ export const StyledGatsbyLink = styled(Link)`
   }
 `
 export const StyledLogo = styled.h5`
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 0;
   visibility: ${props => (props.visible ? "visible" : "hidden")};
   opacity: ${({ visible }) => (visible ? 1 : 0)};
   transition: ${({ visible }) =>
@@ -70,4 +73,8 @@ export const NavButton = styled.div`
     background: white;
     color: ${props => props.theme.color.blue};
   }
+`
+
+export const NavText = styled.p`
+  font-size: 1.4rem;
 `

@@ -42,6 +42,7 @@ const IndexPage = ({ data }) => {
   })
   const { title } = data.title.siteMetadata
   const { edges } = data.video
+  // homepage only displays one video, and it will be the first video according the the "Order" field in Airtable.
   const firstVid = edges.filter(vid => vid.node.data.Video_Order === 1)[0].node
     .data.Video_URL
   return (

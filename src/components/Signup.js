@@ -7,6 +7,7 @@ import {
   Wrapper,
   StyledFormik,
   Content,
+  TheForm,
 } from "../styles/StyledSignup"
 
 const validationSchema = yup.object({
@@ -16,8 +17,8 @@ const validationSchema = yup.object({
 const Signup = () => {
   return (
     <Wrapper>
-      <Content>
-        <Title>JOIN OUR NEWSLETTER</Title>
+      <Title>JOIN OUR NEWSLETTER</Title>
+      <TheForm>
         <StyledForm>
           <Formik
             initialValues={{ email: "" }}
@@ -48,7 +49,7 @@ const Signup = () => {
             )}
           </Formik>
         </StyledForm>
-      </Content>
+      </TheForm>
     </Wrapper>
   )
 }

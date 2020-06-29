@@ -1,8 +1,20 @@
 import React from "react"
 import styled from "styled-components"
 
+const Wrapper = styled.div`
+  margin-top: 10rem;
+`
+
 const ContactCard = styled.div`
   margin-bottom: 5rem;
+`
+
+const Title = styled.h4`
+  line-height: 1;
+`
+
+const Info = styled.p`
+  /* line-height: 1; */
 `
 
 const Contact = ({ data }) => {
@@ -12,23 +24,23 @@ const Contact = ({ data }) => {
       const { data, id } = contact.node
       return (
         <ContactCard key={id}>
-          <h4>{data.Role.toUpperCase()}</h4>
-          {data.Agency && <p>{data.Agency}</p>}
+          <Title>{data.Role.toUpperCase()}</Title>
+          {data.Agency && <Info>{data.Agency}</Info>}
           {data.Name1 && (
-            <p>
+            <Info>
               <a href={`mailto: ${data.Email1}`}>{data.Name1}</a>
-            </p>
+            </Info>
           )}
           {data.Name2 && (
-            <p>
+            <Info>
               <a href={`mailto: ${data.Email2}`}>{data.Name2}</a>
-            </p>
+            </Info>
           )}
         </ContactCard>
       )
     })
 
-  return <div>{mappedData}</div>
+  return <Wrapper>{mappedData}</Wrapper>
 }
 
 export default Contact
