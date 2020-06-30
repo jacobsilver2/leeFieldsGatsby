@@ -5,9 +5,17 @@ import moment from "moment"
 
 const StyledShow = styled.div`
   display: grid;
-  grid-template-columns: 0.75fr 3fr 3fr 0.75fr;
+  grid-template-columns: 1fr 5fr 3fr 0.75fr;
   align-items: center;
-  /* grid-gap: 20px; */
+  grid-gap: 20px;
+
+  h5 {
+    @media only screen and (max-width: 1700px) {
+      font-size: 2.5vw;
+      line-height: 4vw;
+      /* line-height: 12vw; */
+    }
+  }
   /* justify-items: center; */
 `
 

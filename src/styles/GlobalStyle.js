@@ -35,6 +35,20 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.fontSize.h1};
     line-height: 22rem;
     letter-spacing: 0;
+
+    @media only screen and (max-width: 1700px) {
+      font-size: 15vw;
+      line-height: 12vw;
+    }
+    @media only screen and (max-width: 1200px) {
+      /* line-height: 8vh; */
+    }
+    @media only screen and (max-width: 896px) {
+      /* line-height: 6vh; */
+    }
+    @media only screen and (max-width: 667px) {
+      /* line-height: 4vh; */
+    }
   }
 
   h2 {
@@ -43,6 +57,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.fontSize.h2};
     line-height: 22rem;
     letter-spacing: 0;
+    @media only screen and (max-width: 1700px) {
+      font-size: 15vw;
+      line-height: 12vw;
+    }
   }
 
   h3 {
@@ -51,6 +69,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.fontSize.h3};
     line-height: 11rem;
     letter-spacing: 0;
+    @media only screen and (max-width: 1700px) {
+      font-size: 8vw;
+      /* line-height: 12vw; */
+    }
   }
 
   h4 {
@@ -69,6 +91,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: ${({ theme }) => theme.fontSize.h5};
     line-height: 7.5rem;
     letter-spacing: 0;
+    @media only screen and (max-width: 1700px) {
+      font-size: 3vw;
+      /* line-height: 12vw; */
+    }
   }
 
   p {
