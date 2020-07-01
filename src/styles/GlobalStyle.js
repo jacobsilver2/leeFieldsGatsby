@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
       /* line-height: 8vh; */
     }
     @media only screen and (max-width: 896px) {
-      /* line-height: 6vh; */
+      font-size: 14vw;
     }
     @media only screen and (max-width: 667px) {
       /* line-height: 4vh; */
