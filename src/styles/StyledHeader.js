@@ -15,6 +15,10 @@ const StyledHeader = styled.header`
   .inner {
     height: 6rem;
     margin: 0 ${({ theme }) => theme.spacing[4]};
+    @media only screen and (max-width: 667px) {
+      height: 4rem;
+      margin: 0 ${({ theme }) => theme.spacing[2]};
+    }
     display: flex;
     align-items: center;
     justify-content: space-between;

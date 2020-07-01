@@ -26,6 +26,11 @@ export const StyledGatsbyLink = styled(Link)`
 `
 export const StyledLogo = styled.h5`
   font-size: 2.8rem;
+  margin-top: 0.8rem;
+  @media only screen and (max-width: 667px) {
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+  }
   font-weight: bold;
   letter-spacing: 0;
   visibility: ${props => (props.visible ? "visible" : "hidden")};
@@ -33,7 +38,6 @@ export const StyledLogo = styled.h5`
   transition: ${({ visible }) =>
     visible ? "opacity 1s linear" : "visibility 0s 0.5s, opacity 0.5s linear"};
   /* text doesn't totally center so this value needs to be adjusted manually according to font size */
-  margin-top: 0.8rem;
 `
 export const StyledLink = styled.a`
   color: ${({ theme }) => theme.color.black};

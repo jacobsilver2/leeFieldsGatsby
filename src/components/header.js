@@ -1,20 +1,16 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
-// import useWindowSize from "../hooks/useWindowSize"
+import useWindowSize from "../hooks/useWindowSize"
 import StyledHeader from "../styles/StyledHeader"
-import { StyledLogo } from "../styles/StyledNav"
-// import Burger from "./Burger"
-import NavLinksGroupOne from "./NavLinksGroupOne"
-import NavLinksGroupTwo from "./NavLinksGroupTwo"
-// import SocialLinks from "./socialLinks"
-// import { theme } from "../styles/theme"
+
 import { GlobalStateContext } from "../context/provider"
 import NewsTicker from "./NewsTicker"
+import Nav from "./Nav"
+import MobileNav from "./MobileNav"
 
 const Header = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
-  // const size = useWindowSize()
-
+  const size = useWindowSize()
   return (
     <StyledHeader
       tickerIsVisible={state.tickerIsVisible}
@@ -22,17 +18,8 @@ const Header = ({ siteTitle }) => {
     >
       {state.tickerIsVisible && <NewsTicker />}
       <div className="inner">
-        <div>
-          <NavLinksGroupOne />
-        </div>
-        <div>
-          <StyledLogo visible={!state.cnnInView}>
-            <Link to="/">{siteTitle.toUpperCase()}</Link>
-          </StyledLogo>
-        </div>
-        <div>
-          <NavLinksGroupTwo />
-        </div>
+        {size.width <= 828 && <MobileNav siteTitle={siteTitle} />}
+        {size.width > 828 && <Nav siteTitle={siteTitle} />}
       </div>
     </StyledHeader>
   )

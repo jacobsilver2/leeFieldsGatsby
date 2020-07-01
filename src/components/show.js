@@ -8,6 +8,7 @@ const StyledShow = styled.div`
   grid-template-columns: 1fr 5fr 3fr 0.75fr;
   align-items: center;
   grid-gap: 20px;
+  margin: 2vw 0;
 
   h5 {
     @media only screen and (max-width: 1700px) {

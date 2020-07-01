@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 const ShowsListContainer = styled.div`
   display: block;
+  margin-top: 8vw;
   /* border-bottom: 1px solid black; */
 `
 

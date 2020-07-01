@@ -1,96 +1,15 @@
 import React from "react"
+import useWindowSize from "../hooks/useWindowSize"
+import BigFooter from "../components/BigFooter"
+import MobileFooter from "../components/MobileFooter"
 import StyledFooter from "../styles/StyledFooter"
-import styled from "styled-components"
-import { NavText } from "../styles/StyledNav"
-
-const Wrapper = styled.div`
-  display: flex;
-  .item {
-    padding: 0 1rem;
-    &:hover {
-      text-decoration: underline;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-`
-
 const Footer = () => {
+  const size = useWindowSize()
   return (
-    <StyledFooter>
-      <div className="inner">
-        <Wrapper>
-          <NavText>
-            <a
-              href="https://bigcrownrecords.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              @2020 Big Crown Records
-            </a>
-          </NavText>
-        </Wrapper>
-        <Wrapper>
-          <NavText className="item">
-            <a
-              href="https://www.instagram.com/leefieldsandtheexpressions/?hl=en"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Instagram
-            </a>
-          </NavText>
-          <NavText className="item">
-            <a
-              href="https://www.facebook.com/leefieldsandtheexpressions/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Facebook
-            </a>
-          </NavText>
-          <NavText className="item">
-            <a
-              href="https://twitter.com/leefields12?lang=en"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Twitter
-            </a>
-          </NavText>
-        </Wrapper>
-        <Wrapper>
-          <NavText className="item">
-            <a
-              href="https://music.apple.com/us/artist/lee-fields-the-expressions/187277830"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Apple Music
-            </a>
-          </NavText>
-          <NavText className="item">
-            <a
-              href="https://open.spotify.com/artist/2bToe6WyGvADJftreuXh2K"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Spotify
-            </a>
-          </NavText>
-          <NavText className="item">
-            <a
-              href="https://soundcloud.com/bigcrownrecords/lee-fields-the-expressions-time"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Soundcloud
-            </a>
-          </NavText>
-        </Wrapper>
-      </div>
-    </StyledFooter>
+    <>
+      {size.width <= 828 && <MobileFooter />}
+      {size.width > 828 && <BigFooter />}
+    </>
   )
 }
 
