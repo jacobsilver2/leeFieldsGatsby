@@ -3,30 +3,52 @@ import Img from "./image"
 import LargeBodyText from "../styles/LargeBodyText"
 import styled from "styled-components"
 
+const Wrapper = styled.div`
+  @media only screen and (max-width: 828px) {
+    margin: 0;
+  }
+`
+
 const Text = styled.div`
   width: 100%;
   margin-top: 6rem;
   margin-bottom: 15rem;
+  @media only screen and (max-width: 828px) {
+    margin-top: 2rem;
+  }
 `
 
 const Headline = styled.div`
+  @media only screen and (max-width: 828px) {
+    width: 100%;
+  }
   width: 85%;
   padding-bottom: 4rem;
 `
 
 const Info = styled.div`
   width: 60%;
+  @media only screen and (max-width: 828px) {
+    width: 100%;
+  }
+`
+
+const LargeBody = styled(LargeBodyText)`
+  @media only screen and (max-width: 828px) {
+    font-size: 12vw;
+    line-height: 1;
+  }
 `
 
 const About = ({ data }) => {
   const aboutInfo = data.edges[0].node
 
   return (
-    <div>
+    <Wrapper>
       <Img image={aboutInfo.data.AboutPic.localFiles[0]} />
       <Text>
         <Headline>
-          <LargeBodyText>{aboutInfo.data.Headline}</LargeBodyText>
+          <LargeBody>{aboutInfo.data.Headline}</LargeBody>
         </Headline>
         <Info>
           <p>{aboutInfo.data.P1}</p>
@@ -34,7 +56,7 @@ const About = ({ data }) => {
           <p>{aboutInfo.data.P3}</p>
         </Info>
       </Text>
-    </div>
+    </Wrapper>
   )
 }
 

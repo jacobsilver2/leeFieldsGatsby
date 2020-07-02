@@ -27,7 +27,7 @@ const Fonts = createGlobalStyle`
     font-family: ${({ theme }) => theme.font.bannerMedium};
     src: url(${FormaDJRBannerMedWoff2}) format('woff2'),
          url(${FormaDJRBannerMedWoff}) format('woff'),
-         url(${FormaDJRBannerMedEOT});
+         /* url(${FormaDJRBannerMedEOT}); */
   }
   @font-face {
     font-family: ${({ theme }) => theme.font.text};

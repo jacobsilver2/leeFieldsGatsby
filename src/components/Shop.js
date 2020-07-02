@@ -7,17 +7,25 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
   grid-gap: 20px;
-  @media screen and (max-width: 600px) {
+  &:first-child {
+    grid-gap: 0;
+  }
+  @media screen and (max-width: 1280px) {
     grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    grid-gap: 8rem;
+    /* &:first-child {
+      grid-gap: 0;
+    } */
   }
 `
 const Card = styled.div`
   display: grid;
-  width: 600px;
+  max-width: 600px;
   margin: 2rem 0;
-  min-height: 800px;
-  @media only screen and (max-width: 600px) {
+  /* min-height: 800px; */
+  @media only screen and (max-width: 828px) {
     max-width: 400px;
+    margin: 0;
     /* width: 100%; */
   }
   /* align-items: center; */
@@ -47,6 +55,7 @@ const Image = styled.img`
 
 const Content = styled.div`
   margin: 0;
+  margin-bottom: 4rem;
   .title {
     font-size: 2.4rem;
   }

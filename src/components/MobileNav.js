@@ -1,19 +1,48 @@
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import { Link } from "gatsby"
-import { GlobalStateContext } from "../context/provider"
+import HamburgerMenu from "react-hamburger-menu"
+import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
 import { StyledLogo } from "../styles/StyledNav"
+import styled from "styled-components"
+import NavLinksFull from "./NavLinksFull"
+
+const Wrapper = styled.div`
+  display: block;
+  width: 100%;
+`
+
+const LogoAndBurgerWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+`
 
 const MobileNav = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
+  const dispatch = useContext(GlobalDispatchContext)
+  const [burgerIsOpen, setBurgerIsOpen] = useState(false)
+
+  const handleBurgerClicked = () => {
+    setBurgerIsOpen(!burgerIsOpen)
+    dispatch({ type: "TOGGLE_SECONDARY_MENU" })
+  }
+
   return (
-    <>
-      <div>
+    <Wrapper>
+      <LogoAndBurgerWrapper>
         <StyledLogo visible={!state.cnnInView}>
           <Link to="/">{siteTitle.toUpperCase()}</Link>
         </StyledLogo>
-      </div>
-      <div>BURGER</div>
-    </>
+        <HamburgerMenu
+          isOpen={burgerIsOpen}
+          menuClicked={() => handleBurgerClicked()}
+          height={15}
+          width={25}
+        />
+      </LogoAndBurgerWrapper>
+    </Wrapper>
   )
 }
 

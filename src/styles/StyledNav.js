@@ -27,9 +27,16 @@ export const StyledGatsbyLink = styled(Link)`
 export const StyledLogo = styled.h5`
   font-size: 2.8rem;
   margin-top: 0.8rem;
-  @media only screen and (max-width: 667px) {
+  @media only screen and (max-width: 828px) {
     font-size: 1.8rem;
     margin-top: 0.5rem;
+  }
+  @media only screen and (max-width: 667px) {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+  &:hover {
+    opacity: 50%;
   }
   font-weight: bold;
   letter-spacing: 0;

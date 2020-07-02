@@ -12,6 +12,9 @@ export const StyledTwitter = styled(Twitter)`
   fill: black;
   height: 2rem;
   width: 2rem;
+  &:hover {
+    opacity: 50%;
+  }
 `
 export const StyledFacebook = styled(Facebook)`
   stroke: black;
@@ -19,6 +22,9 @@ export const StyledFacebook = styled(Facebook)`
   fill: black;
   height: 2rem;
   width: 2rem;
+  &:hover {
+    opacity: 50%;
+  }
 `
 
 export const StyledInstagram = styled(Instagram)`
@@ -27,6 +33,9 @@ export const StyledInstagram = styled(Instagram)`
   fill: black;
   height: 2rem;
   width: 2rem;
+  &:hover {
+    opacity: 50%;
+  }
 `
 export const StyledAppleMusic = styled(AppleMusic)`
   stroke: black;
@@ -34,6 +43,9 @@ export const StyledAppleMusic = styled(AppleMusic)`
   fill: black;
   height: 4rem;
   width: 4rem;
+  &:hover {
+    opacity: 50%;
+  }
 `
 export const StyledSpotify = styled(Spotify)`
   stroke: black;
@@ -41,6 +53,9 @@ export const StyledSpotify = styled(Spotify)`
   fill: black;
   height: 3rem;
   width: 3rem;
+  &:hover {
+    opacity: 50%;
+  }
 `
 export const StyledSoundCloud = styled(Soundcloud)`
   stroke: black;
@@ -48,4 +63,7 @@ export const StyledSoundCloud = styled(Soundcloud)`
   fill: black;
   height: 3rem;
   width: 3rem;
+  &:hover {
+    opacity: 50%;
+  }
 `

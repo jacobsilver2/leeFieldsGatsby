@@ -6,8 +6,9 @@ import styled from "styled-components"
 // import LargeBodyText from "../styles/LargeBodyText"
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
+  display: block;
 `
 
 const Card = styled.div`
@@ -18,29 +19,54 @@ const Card = styled.div`
 `
 
 const Content = styled.div`
-  margin: 4rem 0;
-  grid-template-columns: 1fr 2fr;
   display: grid;
+  margin: 4rem 0;
+  grid-template-columns: minmax(400px, 2fr) 4fr;
+
+  @media (max-width: 868px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+  }
   grid-gap: 2rem;
 `
 
-const Image = styled.div``
+const Image = styled.div`
+  width: 100%;
+`
 
 const Text = styled.div`
-  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 `
 
-const Title = styled.div``
+const Title = styled.div`
+  h3 {
+    @media only screen and (max-width: 1600px) {
+      font-size: 5vw;
+      line-height: 1;
+    }
+  }
+`
 
 const Links = styled.div`
+  justify-self: end;
+  align-self: end;
   display: flex;
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  text-align: right;
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* right: 0; */
 `
 
-const Link = styled.p`
-  font-size: 4.5rem;
+const Link = styled.h5`
+  /* font-size: 4.5rem; */
+  /* font-size: 3vw; */
+
+  line-height: 1;
+  @media only screen and (max-width: 1600px) {
+    font-size: 4.5vw;
+    line-height: 1;
+  }
   &:hover {
     text-decoration: underline;
   }

@@ -96,6 +96,6 @@ export const theme = {
   bs: "0 12px 24px 0 rgba(0, 0, 0, 0.09)",
   headerHeight: "10rem",
   mobileWidth: 1280,
-  mobile: "576px",
+  mobile: "828px",
   fluidTypographyRatio: 0.7,
 }

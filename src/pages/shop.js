@@ -11,7 +11,12 @@ const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
 const ULWrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  /* width: 50%; */
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    /* font-size: ${({ theme }) => theme.fontSize.xl}; */
+    width: 100%;
+  }
+
 `
 
 const LIElement = styled.li`
@@ -24,8 +29,11 @@ const LIElement = styled.li`
 
 const ShopContainer = styled.div`
   /* max-width: 1920px; */
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 8rem;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    margin-top: 0;
+  }
 `
 
 const ShopPage = props => {

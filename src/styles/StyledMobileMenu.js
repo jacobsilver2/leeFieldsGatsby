@@ -1,22 +1,28 @@
 import styled from "styled-components"
 
 export const StyledMobileMenu = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  background: ${({ theme }) => theme.color.primaryLight};
+  position: absolute;
+  border: none;
+  padding: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: ${({ theme }) => theme.color.offWhite};
+  opacity: 98%;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
-  height: calc(100vh - ${({ theme }) => theme.headerHeight});
-  text-align: left;
-  padding: 2rem;
-  position: absolute;
-  top: ${({ theme }) => theme.headerHeight};
-  right: 0;
+  /* height: calc(100vh - ${({ theme }) => theme.headerHeight}); */
+  /* text-align: left; */
+  /* padding: 2rem; */
+  /* top: ${({ theme }) => theme.headerHeight}; */
+  /* right: 0; */
 
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  /* @media (max-width: ${({ theme }) => theme.mobile}) {
     width: 100%;
-  }
+  } */
+
 
   /* a {
     font-size: 2rem;
@@ -37,4 +43,11 @@ export const StyledMobileMenu = styled.nav`
       color: ${({ theme }) => theme.primaryHover};
     }
   } */
+`
+
+export const Content = styled.div`
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
 `

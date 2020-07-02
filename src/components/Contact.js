@@ -3,10 +3,16 @@ import styled from "styled-components"
 
 const Wrapper = styled.div`
   margin-top: 10rem;
+  @media only screen and (max-width: 828px) {
+    margin: 0;
+  }
 `
 
 const ContactCard = styled.div`
   margin-bottom: 5rem;
+  @media only screen and (max-width: 828px) {
+    text-align: left;
+  }
 `
 
 const Title = styled.h4`
