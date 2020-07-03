@@ -66,8 +66,6 @@ const Content = styled.div`
 `
 
 const ShopComponent = ({ items }) => {
-  // console.log(items)
-
   const mappedItems = items
     .sort((a, b) => a.Order - b.Order)
     .map(item => {

@@ -41,8 +41,9 @@ export const StyledAppleMusic = styled(AppleMusic)`
   stroke: black;
   stroke-width: 0.4px;
   fill: black;
-  height: 4rem;
-  width: 4rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  padding-bottom: 0.35rem;
   &:hover {
     opacity: 50%;
   }
@@ -53,6 +54,7 @@ export const StyledSpotify = styled(Spotify)`
   fill: black;
   height: 3rem;
   width: 3rem;
+  padding-top: 0.25rem;
   &:hover {
     opacity: 50%;
   }
@@ -61,8 +63,9 @@ export const StyledSoundCloud = styled(Soundcloud)`
   stroke: black;
   stroke-width: 0.4px;
   fill: black;
-  height: 3rem;
-  width: 3rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  padding-bottom: 0.3rem;
   &:hover {
     opacity: 50%;
   }

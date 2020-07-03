@@ -21,7 +21,13 @@ export const query = graphql`
 `
 
 const Video = ({ data, location }) => {
-  const { prevPath } = location.state
+  let prevPath = "/"
+  // console.log(location)
+  // const prevPath = location.state
+  if (typeof window !== `undefined`) {
+    console.log("window is not undefined!")
+    prevPath = location.state.prevPath
+  }
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {
     dispatch({ type: "CNN_OFF" })

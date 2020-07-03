@@ -4,12 +4,6 @@ import HamburgerMenu from "react-hamburger-menu"
 import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
 import { StyledLogo } from "../styles/StyledNav"
 import styled from "styled-components"
-import NavLinksFull from "./NavLinksFull"
-
-const Wrapper = styled.div`
-  display: block;
-  width: 100%;
-`
 
 const LogoAndBurgerWrapper = styled.div`
   display: flex;
@@ -30,19 +24,17 @@ const MobileNav = ({ siteTitle }) => {
   }
 
   return (
-    <Wrapper>
-      <LogoAndBurgerWrapper>
-        <StyledLogo visible={!state.cnnInView}>
-          <Link to="/">{siteTitle.toUpperCase()}</Link>
-        </StyledLogo>
-        <HamburgerMenu
-          isOpen={burgerIsOpen}
-          menuClicked={() => handleBurgerClicked()}
-          height={15}
-          width={25}
-        />
-      </LogoAndBurgerWrapper>
-    </Wrapper>
+    <LogoAndBurgerWrapper>
+      <StyledLogo visible={!state.cnnInView}>
+        <Link to="/">{siteTitle.toUpperCase()}</Link>
+      </StyledLogo>
+      <HamburgerMenu
+        isOpen={state.secondaryMenuActive}
+        menuClicked={() => handleBurgerClicked()}
+        height={15}
+        width={25}
+      />
+    </LogoAndBurgerWrapper>
   )
 }
 

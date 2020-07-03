@@ -15,8 +15,8 @@ const reactPlayerOptions = {
   },
   dailymotion: {
     params: {
-      autoplay: false,
-      mute: true,
+      autoplay: true,
+      "autoplay-mute": true,
       controls: false,
       "sharing-enable": false,
       "queue-enable": false,

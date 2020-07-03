@@ -100,7 +100,6 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-family: ${({ theme }) => theme.font.text};
     font-weight: normal;
-    font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.p};
     line-height: 2.4rem;
     letter-spacing: 50;

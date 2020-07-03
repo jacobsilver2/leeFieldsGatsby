@@ -2,20 +2,25 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
   border-top: 1px solid black;
-  height: 40rem;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  @media only screen and (max-width: 1700px) {
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  min-height: 40rem;
+  /* grid-template-rows: 1fr 1fr; */
+  /* @media only screen and (max-width: 1700px) {
     height: 30rem;
-  }
+  } */
   @media only screen and (max-width: 1080px) {
-    height: 25rem;
+    min-height: 25rem;
   }
-  @media only screen and (max-width: 828px) {
+  /* @media only screen and (max-width: 828px) {
     height: 20rem;
-  }
+  } */
   @media only screen and (max-width: 750px) {
-    height: 18rem;
+    min-height: 20rem;
   }
 `
 
@@ -25,7 +30,7 @@ export const Content = styled.div`
 `
 
 export const Title = styled.h3`
-  align-self: end;
+  /* align-self: end; */
   text-align: center;
 `
 
@@ -63,8 +68,8 @@ export const Button = styled.button`
 `
 
 export const TheForm = styled.div`
-  margin: auto;
-  align-self: center;
+  /* margin: auto; */
+  /* align-self: center; */
   max-width: 80%;
   /* width: 50%; */
   border-bottom: 1px solid black;

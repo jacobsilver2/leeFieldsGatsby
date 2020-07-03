@@ -16,6 +16,12 @@ const validationSchema = yup.object({
 })
 
 const Signup = () => {
+  // const [errorMessage, setErrorMessage] = useState("")
+  // const [isTouched, setIsTouched] = useState(false)
+  const handleSubmit = e => {
+    e.preventDefault()
+    // once we get mailchimp info we'll put that here
+  }
   return (
     <Wrapper>
       <Title>JOIN OUR NEWSLETTER</Title>
@@ -30,22 +36,30 @@ const Signup = () => {
             setSubmitting(false)
           }}
         >
-          {({ values, isSubmitting, handleChange, handleBlur, errors }) => (
-            <Form>
-              <Input
-                border={errors.email && "1px solid red"}
-                placeholder="Email"
-                value={values.email}
-                name="email"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                type="text"
-              />
-              <Button disabled={isSubmitting} type="submit">
-                Submit
-              </Button>
-            </Form>
-          )}
+          {({
+            values,
+            isSubmitting,
+            handleChange,
+            handleBlur,
+            errors,
+            touched,
+          }) => {
+            return (
+              <Form onSubmit={handleSubmit}>
+                <Input
+                  placeholder="Email"
+                  value={values.email}
+                  name="email"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  type="text"
+                />
+                <Button disabled={isSubmitting} type="submit">
+                  Submit
+                </Button>
+              </Form>
+            )
+          }}
         </Formik>
       </TheForm>
     </Wrapper>

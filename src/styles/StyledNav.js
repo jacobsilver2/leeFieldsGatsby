@@ -13,8 +13,8 @@ export const StyledNav = styled.nav`
 `
 
 export const StyledGatsbyLink = styled(Link)`
-  padding-right: ${({ theme, isLeft }) => (isLeft ? theme.spacing[8] : "")};
-  padding-left: ${({ theme, isRight }) => (isRight ? theme.spacing[8] : "")};
+  padding-right: ${({ theme, isleft }) => (isleft ? theme.spacing[8] : "")};
+  padding-left: ${({ theme, isright }) => (isright ? theme.spacing[8] : "")};
   text-align: center;
   &:hover {
     text-decoration: underline;
@@ -26,14 +26,13 @@ export const StyledGatsbyLink = styled(Link)`
 `
 export const StyledLogo = styled.h5`
   font-size: 2.8rem;
-  margin-top: 0.8rem;
+  margin-top: 0.5rem;
   @media only screen and (max-width: 828px) {
     font-size: 1.8rem;
     margin-top: 0.5rem;
   }
   @media only screen and (max-width: 667px) {
-    font-size: 1.8rem;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
   }
   &:hover {
     opacity: 50%;

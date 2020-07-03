@@ -2,7 +2,6 @@ import React, { useContext, useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
 import { useOnClickOutside } from "../hooks/useOnClickOutside"
-import MobileMenu from "./MobileMenu"
 import Header from "./header"
 import Footer from "./footer"
 import Signup from "./Signup"
@@ -42,7 +41,6 @@ const Layout = ({ children }) => {
           <MobileMenu />
         </div>
       )} */}
-      {state.secondaryMenuActive && <MobileMenu />}
       <Wrapper>
         <Header siteTitle={data.site.siteMetadata.title} />
         <ContentContainer>{children}</ContentContainer>

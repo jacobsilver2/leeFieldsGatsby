@@ -27,7 +27,7 @@ const Headline = styled.div`
 `
 
 const Info = styled.div`
-  width: 60%;
+  width: 65%;
   @media only screen and (max-width: 828px) {
     width: 100%;
   }
@@ -52,7 +52,11 @@ const About = ({ data }) => {
         </Headline>
         <Info>
           <p>{aboutInfo.data.P1}</p>
+          <br />
+          <br />
           <p>{aboutInfo.data.P2}</p>
+          <br />
+          <br />
           <p>{aboutInfo.data.P3}</p>
         </Info>
       </Text>

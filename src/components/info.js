@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   /* margin: 0 ${({ theme }) => theme.spacing[4]}; */
 `
 
-const Selector = styled.p`
+export const Selector = styled.p`
   opacity: ${({ active }) => (active ? "100%" : "50%")};
   cursor: pointer;
   padding-bottom: 1.5rem;

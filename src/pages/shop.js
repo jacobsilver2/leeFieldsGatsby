@@ -25,6 +25,11 @@ const LIElement = styled.li`
   .text {
     cursor: pointer;
   }
+  @media only screen and (max-width: 828px) {
+    h5 {
+      font-size: 4vw;
+    }
+  }
 `
 
 const ShopContainer = styled.div`

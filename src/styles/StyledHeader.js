@@ -9,19 +9,19 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  height: ${({ tickerIsVisible }) => (tickerIsVisible ? "" : "6rem")};
+  min-height: ${({ tickerIsVisible }) => (tickerIsVisible ? "" : "6rem")};
   z-index: 10;
   background-color: ${({ theme }) => theme.color.offWhite};
   .inner {
-    height: 6rem;
-    margin: 0 ${({ theme }) => theme.spacing[4]};
-    @media only screen and (max-width: 667px) {
-      height: 4rem;
-      margin: 0 ${({ theme }) => theme.spacing[2]};
-    }
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 6rem;
+    margin: 0 ${({ theme }) => theme.spacing[4]};
+    @media only screen and (max-width: 667px) {
+      min-height: 4rem;
+      /* margin: 0 ${({ theme }) => theme.spacing[2]}; */
+    }
   }
 `
 

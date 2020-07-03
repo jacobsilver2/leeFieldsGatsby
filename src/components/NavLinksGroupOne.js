@@ -21,7 +21,7 @@ const NavLinksGroupOne = () => {
 
   return (
     <Wrapper>
-      <StyledGatsbyLink isLeft onClick={handleClick} to="/music">
+      <StyledGatsbyLink isleft="true" onClick={handleClick} to="/music">
         <NavText>Music</NavText>
       </StyledGatsbyLink>
       <StyledGatsbyLink
@@ -29,13 +29,13 @@ const NavLinksGroupOne = () => {
           modal: true,
           prevPath: location.pathname,
         }}
-        isLeft
+        isleft="true"
         onClick={handleClick}
         to="/video"
       >
         <NavText>Video</NavText>
       </StyledGatsbyLink>
-      <StyledGatsbyLink isLeft onClick={handleClick} to="/tour">
+      <StyledGatsbyLink isleft="true" onClick={handleClick} to="/tour">
         <NavText>Tour</NavText>
       </StyledGatsbyLink>
     </Wrapper>

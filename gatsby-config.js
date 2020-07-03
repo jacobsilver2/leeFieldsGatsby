@@ -9,6 +9,7 @@ module.exports = {
     author: `Jacob Silver`,
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-modal-routing`,
@@ -105,7 +106,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

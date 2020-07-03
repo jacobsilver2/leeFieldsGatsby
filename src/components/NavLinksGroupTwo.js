@@ -17,10 +17,10 @@ const NavLinks = () => {
 
   return (
     <Wrapper>
-      <StyledGatsbyLink isRight onClick={handleClick} to="/info">
+      <StyledGatsbyLink isright="true" onClick={handleClick} to="/info">
         <NavText>Info</NavText>
       </StyledGatsbyLink>
-      <StyledGatsbyLink isRight onClick={handleClick} to="/shop">
+      <StyledGatsbyLink isright="true" onClick={handleClick} to="/shop">
         <NavText>Shop</NavText>
       </StyledGatsbyLink>
     </Wrapper>
