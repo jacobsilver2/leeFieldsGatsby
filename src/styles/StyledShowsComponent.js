@@ -32,6 +32,8 @@ export const Title = styled.h2`
   text-align: center;
 `
 export const Wrapper = styled.div`
+  /* max-width: 1500px; */
+  margin: 0 auto;
   /* margin: ${({ theme }) => theme.spacing[40]} 0; */
   padding: ${({ theme }) => theme.spacing[20]} 0;
 `

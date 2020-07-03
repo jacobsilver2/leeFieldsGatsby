@@ -86,5 +86,5 @@ export const NavButton = styled.div`
 `
 
 export const NavText = styled.p`
-  font-size: 1.4rem;
+  font-size: ${({ issecondarynav }) => (issecondarynav ? "1.8rem" : "1.4rem;")};
 `

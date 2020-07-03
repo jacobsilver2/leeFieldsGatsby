@@ -22,7 +22,7 @@ const NavLinksFull = () => {
   return (
     <>
       <StyledGatsbyLink onClick={handleClick} to="/music">
-        <NavText>Music</NavText>
+        <NavText issecondarynav="true">Music</NavText>
       </StyledGatsbyLink>
       <StyledGatsbyLink
         state={{
@@ -32,16 +32,16 @@ const NavLinksFull = () => {
         onClick={handleClick}
         to="/video"
       >
-        <NavText>Video</NavText>
+        <NavText issecondarynav="true">Video</NavText>
       </StyledGatsbyLink>
       <StyledGatsbyLink onClick={handleClick} to="/tour">
-        <NavText>Tour</NavText>
+        <NavText issecondarynav="true">Tour</NavText>
       </StyledGatsbyLink>
       <StyledGatsbyLink onClick={handleClick} to="/info">
-        <NavText>Info</NavText>
+        <NavText issecondarynav="true">Info</NavText>
       </StyledGatsbyLink>
       <StyledGatsbyLink onClick={handleClick} to="/shop">
-        <NavText>Shop</NavText>
+        <NavText issecondarynav="true">Shop</NavText>
       </StyledGatsbyLink>
     </>
   )

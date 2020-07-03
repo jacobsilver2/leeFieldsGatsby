@@ -22,6 +22,7 @@ const StyledShow = styled.div`
 
 const BuyLink = styled.div`
   text-align: right;
+  margin-left: 1rem;
   a {
     &:hover {
       text-decoration: underline;

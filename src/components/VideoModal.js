@@ -4,8 +4,6 @@ import styled from "styled-components"
 import VideoModalPlayer from "./VideoModalPlayer"
 
 const Wrapper = styled.div`
-  /* display: flex;
-  position: relative; */
   height: 100vh;
 `
 const Content = styled.div`
@@ -13,9 +11,8 @@ const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  margin: auto;
+  width: 100vw;
+  height: 100vh;
 `
 
 const Close = styled.div`
@@ -45,10 +42,17 @@ const PrevNext = styled.div`
   cursor: pointer;
 `
 
-const TestBox = styled.div`
-  border: 1px solid white;
+const VideoBox = styled.div`
+  position: relative;
   width: 50%;
   height: 50%;
+  @media only screen and (max-width: 1280px) {
+    /* top: 25vh; */
+    /* margin: auto; */
+    top: 25%;
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const VideoModal = ({ videos, prevPath }) => {
@@ -81,17 +85,14 @@ const VideoModal = ({ videos, prevPath }) => {
       </Close>
       <Wrapper>
         <Content>
-          <div></div>
-          <TestBox>
-            {/* <p>This is Content</p> */}
+          <VideoBox>
             <VideoModalPlayer
               playing={true}
               currentVideo={currentVideo.node.data.Video_URL}
               muted={true}
               handleEnded={handleEnded}
             />
-          </TestBox>
-          <div></div>
+          </VideoBox>
         </Content>
       </Wrapper>
       <ControlBar>

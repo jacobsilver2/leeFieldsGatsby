@@ -20,6 +20,8 @@ module.exports = {
           style: {
             overlay: {
               position: `fixed`,
+              width: "100%",
+              height: "100%",
               zIndex: 11,
               top: 0,
               left: 0,
@@ -128,9 +130,9 @@ module.exports = {
         name: `Lee Fields & The Expressions`,
         short_name: `Lee Fields`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        // background_color: `#663399`,
+        // theme_color: `#663399`,
+        // display: `minimal-ui`,
         icon: `src/assets/images/leeRoseLogo.png`, // This path is relative to the root of the site.
       },
     },
