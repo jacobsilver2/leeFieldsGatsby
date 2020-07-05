@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
-import { StyledSecondaryMenu, Content } from "../styles/StyledMobileMenu"
 import { GlobalStateContext } from "../context/provider"
+import { Content, StyledSecondaryMenu } from "../styles/StyledMobileMenu"
 import NavLinks from "./NavLinksFull"
 
 const SecondaryMenu = () => {
