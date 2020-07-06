@@ -34,7 +34,7 @@ const TickerItem = styled.p`
 `
 
 const CloseButton = styled.button`
-  margin-top: -1.2rem;
+  margin-top: -1rem;
   font-size: 1.4rem;
   font-weight: bold;
   color: black;

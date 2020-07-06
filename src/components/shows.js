@@ -17,7 +17,8 @@ const Shows = () => {
       .eachPage(
         (records, fetchNextPage) => {
           records.forEach(record => {
-            setShows(shows => shows.concat(record.fields))
+            record.fields.Listed === true &&
+              setShows(shows => shows.concat(record.fields))
           })
           fetchNextPage()
         },
