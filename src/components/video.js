@@ -19,6 +19,9 @@ const Video = ({ video }) => {
       <VideoContainer>
         <VideoOverlayWrapper>
           <Link
+            onClick={() => {
+              setMuted(true)
+            }}
             to="/video"
             state={{
               modal: true,

@@ -7,7 +7,6 @@ const initialState = {
   isMuted: true,
   navButtonActive: "",
   secondaryMenuActive: false,
-  video: "--nTlj66uRE",
   cnnInView: true,
   videoModalOpen: false,
   tickerIsVisible: true,
