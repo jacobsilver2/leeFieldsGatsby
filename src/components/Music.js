@@ -1,5 +1,6 @@
 import React from "react"
 import Img from "./image"
+import { Link } from "gatsby"
 // import useWindowSize from "../hooks/useWindowSize"
 // import { Title } from "../styles/StyledShowsComponent"
 import styled from "styled-components"
@@ -58,10 +59,22 @@ const Links = styled.div`
   /* right: 0; */
 `
 
-const Link = styled.h5`
+const ListenLink = styled.h5`
   /* font-size: 4.5rem; */
   /* font-size: 3vw; */
 
+  line-height: 1;
+  @media only screen and (max-width: 1600px) {
+    font-size: 4.5vw;
+    line-height: 1;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
+const BuyLink = styled(Link)`
+  margin-right: 1.5rem;
   line-height: 1;
   @media only screen and (max-width: 1600px) {
     font-size: 4.5vw;
@@ -91,12 +104,12 @@ const Music = ({ data }) => {
                 <h3>({data.Year})</h3>
               </Title>
               <Links>
-                <Link style={{ marginRight: "1.5rem" }}>
-                  <a href={data.Buy}>Buy</a>
-                </Link>
-                <Link>
+                <BuyLink to="/shop">
+                  <h5>Buy</h5>
+                </BuyLink>
+                <ListenLink>
                   <a href={data.Listen}>Listen</a>
-                </Link>
+                </ListenLink>
               </Links>
             </Text>
           </Content>

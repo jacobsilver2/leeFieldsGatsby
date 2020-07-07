@@ -41,8 +41,8 @@ export const StyledPlayButton = styled(PlayButton)`
   stroke: white;
   stroke-width: 0.4px;
   fill: white;
-  height: 10rem;
-  width: 10rem;
+  height: 8vw;
+  width: 8vw;
 `
 
 export const StyledPauseButton = styled(PauseButton)`
@@ -56,16 +56,22 @@ export const StyledSoundOnButton = styled(SoundOn)`
   stroke: white;
   stroke-width: 1px;
   fill: white;
-  height: 10rem;
-  width: 10rem;
+  height: 5vw;
+  width: 5vw;
 `
-
 export const StyledSoundOffButton = styled(SoundOff)`
   stroke: white;
   stroke-width: 1px;
   fill: white;
-  height: 10rem;
-  width: 10rem;
+  height: 5vw;
+  width: 5vw;
+`
+
+export const SoundOnSoundOff = styled.div`
+  cursor: pointer;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
 `
 
 export const ControlsAndTitleWrapper = styled.div`

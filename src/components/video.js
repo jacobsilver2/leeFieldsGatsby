@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import ReactPlayer from "react-player/lazy"
 import reactPlayerOptions from "../lib/reactPlayerOptions"
@@ -7,9 +7,13 @@ import {
   VideoContainer,
   VideoOverlayWrapper,
   StyledPlayButton,
+  StyledSoundOnButton,
+  StyledSoundOffButton,
+  SoundOnSoundOff,
 } from "../styles/VideoPlayer"
 
 const Video = ({ video }) => {
+  const [muted, setMuted] = useState(true)
   return (
     <Wrapper>
       <VideoContainer>
@@ -22,14 +26,21 @@ const Video = ({ video }) => {
           >
             <StyledPlayButton />
           </Link>
+          <SoundOnSoundOff
+            onClick={() => {
+              setMuted(!muted)
+            }}
+          >
+            {muted ? <StyledSoundOnButton /> : <StyledSoundOffButton />}
+          </SoundOnSoundOff>
         </VideoOverlayWrapper>
         <ReactPlayer
           className="react-player"
           playing={true}
           url={video}
           config={reactPlayerOptions}
-          muted={true}
-          controls={true}
+          muted={muted}
+          controls={false}
           loop={true}
           width="100%"
           height="100%"

@@ -21,15 +21,7 @@ const BigFooter = () => {
     <StyledFooter>
       <div className="inner">
         <Wrapper>
-          <NavText>
-            <a
-              href="https://bigcrownrecords.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              @2020 Big Crown Records
-            </a>
-          </NavText>
+          <NavText>@2020 Lee Fields & The Expressions</NavText>
         </Wrapper>
         <Wrapper>
           <NavText className="item">

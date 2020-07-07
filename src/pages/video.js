@@ -35,9 +35,12 @@ const Video = ({ data, location }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   const { edges } = data.allAirtable
+  const videosInOrder = edges.sort(
+    (a, b) => a.node.data.Video_Order - b.node.data.Video_Order
+  )
   return (
     <>
-      <VideoModal prevPath={prevPath} videos={edges} />
+      <VideoModal prevPath={prevPath} videos={videosInOrder} />
     </>
   )
 }

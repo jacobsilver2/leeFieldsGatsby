@@ -57,9 +57,10 @@ const VideoBox = styled.div`
 
 const VideoModal = ({ videos, prevPath }) => {
   const [currentVideo, setCurrentVideo] = useState(videos[0])
+  console.log(currentVideo)
 
   const handleEnded = () => {
-    if (currentVideo === videos[2]) {
+    if (videos.indexOf(currentVideo) === videos.length - 1) {
       setCurrentVideo(videos[0])
     } else {
       const currentIndex = videos.indexOf(currentVideo)
@@ -69,7 +70,7 @@ const VideoModal = ({ videos, prevPath }) => {
 
   const previousVideo = () => {
     if (currentVideo === videos[0]) {
-      setCurrentVideo(videos[2])
+      setCurrentVideo(videos[videos.length - 1])
     } else {
       const currentIndex = videos.indexOf(currentVideo)
       setCurrentVideo(videos[currentIndex - 1])
@@ -97,7 +98,7 @@ const VideoModal = ({ videos, prevPath }) => {
       </Wrapper>
       <ControlBar>
         <Control>
-          <p>{`${videos.indexOf(currentVideo)}/${videos.length}`}</p>
+          <p>{`${videos.indexOf(currentVideo) + 1}/${videos.length}`}</p>
         </Control>
         <Control>
           <p>{currentVideo.node.data.Video_Title}</p>

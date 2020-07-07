@@ -30,6 +30,15 @@ const BuyLink = styled.div`
   }
 `
 
+const LocationLink = styled.div`
+  text-align: right;
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`
+
 const Show = ({ show }) => {
   return (
     <StyledShow>
@@ -39,9 +48,11 @@ const Show = ({ show }) => {
       <div>
         <h5>{show.Venue}</h5>
       </div>
-      <div style={{ textAlign: "right" }}>
-        <h5>{show.Location}</h5>
-      </div>
+      <LocationLink>
+        <a href={show.URL} target="_blank" rel="noreferrer">
+          <h5>{show.Location}</h5>
+        </a>
+      </LocationLink>
       <BuyLink>
         <h5>
           <a href={show.URL} target="_blank" rel="noreferrer">

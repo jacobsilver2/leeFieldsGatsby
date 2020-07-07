@@ -83,9 +83,7 @@ const MobileFooter = () => {
         </NavText>
       </Links>
       <NavText style={{ textAlign: "center" }}>
-        <a href="https://bigcrownrecords.com/" target="_blank" rel="noreferrer">
-          @2020 Big Crown Records
-        </a>
+        @2020 Lee Fields & The Expressions
       </NavText>
     </Wrapper>
   )
