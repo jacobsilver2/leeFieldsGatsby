@@ -31,7 +31,7 @@ const reactPlayerOptions = {
     params: {
       autoplay: false,
       mute: true,
-      controls: true,
+      controls: false,
       "sharing-enable": false,
       "queue-enable": false,
       "ui-logo": false,

@@ -26,7 +26,9 @@ const Video = ({ data, location }) => {
   // const prevPath = location.state
   if (typeof window !== `undefined`) {
     console.log("window is not undefined!")
-    prevPath = location.state.prevPath
+    if (location.state) {
+      prevPath = location.state.prevPath
+    }
   }
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {

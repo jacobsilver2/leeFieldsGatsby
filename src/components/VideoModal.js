@@ -2,13 +2,27 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import styled from "styled-components"
 import VideoModalPlayer from "./VideoModalPlayer"
-
+import {
+  StyledSoundOnButton,
+  StyledSoundOffButton,
+} from "../styles/VideoPlayer"
 const Wrapper = styled.div`
   height: 100vh;
 `
+
+export const SoundOnSoundOff = styled.div`
+  cursor: pointer;
+  text-align: center;
+  margin-top: 2rem;
+  /* position: absolute; */
+  /* bottom: 1rem; */
+  /* right: 1rem; */
+`
+
 const Content = styled.div`
   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
@@ -55,9 +69,10 @@ const VideoBox = styled.div`
   }
 `
 
-const VideoModal = ({ videos, prevPath }) => {
+const VideoModal = ({ videos, prevPath = "/" }) => {
   const [currentVideo, setCurrentVideo] = useState(videos[0])
-  console.log(currentVideo)
+  const [muted, setMuted] = useState(true)
+  // console.log(currentVideo)
 
   const handleEnded = () => {
     if (videos.indexOf(currentVideo) === videos.length - 1) {
@@ -90,9 +105,12 @@ const VideoModal = ({ videos, prevPath }) => {
             <VideoModalPlayer
               playing={true}
               currentVideo={currentVideo.node.data.Video_URL}
-              muted={true}
+              muted={muted}
               handleEnded={handleEnded}
             />
+            <SoundOnSoundOff onClick={() => setMuted(!muted)}>
+              {muted ? <StyledSoundOnButton /> : <StyledSoundOffButton />}
+            </SoundOnSoundOff>
           </VideoBox>
         </Content>
       </Wrapper>
