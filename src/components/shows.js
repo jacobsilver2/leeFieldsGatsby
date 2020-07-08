@@ -3,6 +3,7 @@ import Airtable from "airtable"
 import { Title, Wrapper } from "../styles/StyledShowsComponent"
 import ShowsList from "./showsList"
 import sortShowsByDate from "../lib/sortShowsByDate"
+import Loading from "./Loading"
 const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
   "appF7yJr2igkrU9jh"
 )
@@ -35,7 +36,8 @@ const Shows = () => {
   return (
     <Wrapper>
       <Title>UPCOMING SHOWS</Title>
-      {isLoading && <p>I'm Loading</p>}
+
+      {isLoading && <Loading />}
       {!isLoading && <ShowsList shows={sortShowsByDate(shows)} />}
     </Wrapper>
   )

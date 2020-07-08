@@ -74,14 +74,16 @@ const ListenLink = styled.h5`
 `
 
 const BuyLink = styled(Link)`
-  margin-right: 1.5rem;
-  line-height: 1;
-  @media only screen and (max-width: 1600px) {
-    font-size: 4.5vw;
+  h5 {
+    margin-right: 1.5rem;
     line-height: 1;
-  }
-  &:hover {
-    text-decoration: underline;
+    @media only screen and (max-width: 1600px) {
+      font-size: 4.5vw;
+      line-height: 1;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `
 

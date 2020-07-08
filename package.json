@@ -34,6 +34,7 @@
     "react-player-controls": "^1.1.0",
     "react-scrolllock": "^5.0.1",
     "react-slick": "^0.26.1",
+    "react-spinners": "^0.9.0",
     "react-ticker": "^1.2.2",
     "react-use-dimensions": "^1.2.1",
     "react-youtube": "^7.11.2",

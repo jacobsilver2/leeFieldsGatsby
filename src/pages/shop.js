@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { GlobalDispatchContext } from "../context/provider"
 import SEO from "../components/seo"
 import ShopComponent from "../components/Shop"
+import Loading from "../components/Loading"
 const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
   "appbWJrpD7eQdDKdq"
 )
@@ -126,11 +127,7 @@ const ShopPage = props => {
             <h5 className="text">Etc.</h5>
           </LIElement>
         </ULWrapper>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : (
-          <ShopComponent items={filteredItems} />
-        )}
+        {isLoading ? <Loading /> : <ShopComponent items={filteredItems} />}
       </ShopContainer>
     </>
   )
