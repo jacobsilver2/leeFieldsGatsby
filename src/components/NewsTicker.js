@@ -3,6 +3,7 @@ import Ticker from "react-ticker"
 import styled from "styled-components"
 import PageVisibility from "react-page-visibility"
 import { GlobalDispatchContext } from "../context/provider"
+import tickerText from "../lib/tickerText"
 
 function isEven(value) {
   if (value % 2 === 0) return true
@@ -51,6 +52,7 @@ const NewsTicker = () => {
   const handleVisibilityChange = isVisible => {
     setPageIsVisible(isVisible)
   }
+
   return (
     <PageVisibility onChange={handleVisibilityChange}>
       <Wrapper>
@@ -60,7 +62,9 @@ const NewsTicker = () => {
               {({ index }) => (
                 <>
                   <TickerItem isEven={isEven(index)}>
-                    NEW ALBUM "IT RAINS LOVE" OUT NOW ON BIG CROWN RECORDS
+                    <a href={tickerText.link} target="_blank">
+                      {tickerText.text}
+                    </a>
                   </TickerItem>
                 </>
               )}

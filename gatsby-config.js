@@ -101,6 +101,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: `${process.env.GATSBY_AIRTABLE_API}`,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: `app8mx3RXq0g2M7EF`,
+            tableName: `News`,
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-react-svg`,
       options: {
         rule: {

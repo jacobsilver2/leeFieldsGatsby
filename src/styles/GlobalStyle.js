@@ -72,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: ${({ theme }) => theme.font.banner};
-    font-weight: bold;
+    font-weight: normal;
     font-size: ${({ theme }) => theme.fontSize.h1};
     line-height: 22rem;
     letter-spacing: 0;
@@ -81,20 +81,14 @@ const GlobalStyle = createGlobalStyle`
       font-size: 15vw;
       line-height: 12vw;
     }
-    @media only screen and (max-width: 1200px) {
-      /* line-height: 8vh; */
-    }
     @media only screen and (max-width: 896px) {
       font-size: 14vw;
-    }
-    @media only screen and (max-width: 667px) {
-      /* line-height: 4vh; */
     }
   }
 
   h2 {
     font-family: ${({ theme }) => theme.font.bannerMedium};
-    font-weight: 500;
+    font-weight: normal;
     font-size: ${({ theme }) => theme.fontSize.h2};
     line-height: 22rem;
     letter-spacing: 0;
@@ -106,7 +100,7 @@ const GlobalStyle = createGlobalStyle`
 
   h3 {
     font-family: ${({ theme }) => theme.font.bannerMedium};
-    font-weight:500;
+    font-weight:normal;
     font-size: ${({ theme }) => theme.fontSize.h3};
     line-height: 11rem;
     letter-spacing: 0;
@@ -118,7 +112,7 @@ const GlobalStyle = createGlobalStyle`
 
   h4 {
     font-family: ${({ theme }) => theme.font.bold};
-    font-weight: 500;
+    font-weight: normal;
     font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.h4};
     line-height: 7.5rem;
@@ -147,6 +141,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
+    font-weight: normal;
     text-decoration: none;
     color: ${props => props.theme.color.black};
   }
