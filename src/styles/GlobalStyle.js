@@ -101,6 +101,7 @@ const GlobalStyle = createGlobalStyle`
   h3 {
     font-family: ${({ theme }) => theme.font.bannerMedium};
     font-weight:normal;
+    font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.h3};
     line-height: 11rem;
     letter-spacing: 0;
@@ -135,6 +136,7 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-family: ${({ theme }) => theme.font.text};
     font-weight: normal;
+    font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.p};
     line-height: 2.4rem;
     letter-spacing: 50;

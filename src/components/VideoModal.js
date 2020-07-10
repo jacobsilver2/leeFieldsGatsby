@@ -7,14 +7,15 @@ import {
   StyledSoundOffButton,
 } from "../styles/VideoPlayer"
 const Wrapper = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
 `
 
 export const SoundOnSoundOff = styled.div`
   cursor: pointer;
   text-align: center;
   margin-top: 2rem;
-  /* position: absolute; */
+  z-index: 999;
+  /* position: relative; */
   /* bottom: 1rem; */
   /* right: 1rem; */
 `
@@ -31,11 +32,16 @@ const Content = styled.div`
 
 const Close = styled.div`
   position: absolute;
-  z-index: 999;
+  z-index: 1000;
   top: ${({ theme }) => theme.spacing[6]};
   right: ${({ theme }) => theme.spacing[6]};
   color: #fff;
   cursor: pointer;
+  p {
+    @media only screen and (max-width: 868px) {
+      font-size: ${({ theme }) => theme.fontSize.xl};
+    }
+  }
 `
 
 const ControlBar = styled.div`
@@ -50,6 +56,11 @@ const ControlBar = styled.div`
 
 const Control = styled.div`
   display: flex;
+  p {
+    @media only screen and (max-width: 868px) {
+      font-size: ${({ theme }) => theme.fontSize.xl};
+    }
+  }
 `
 
 const PrevNext = styled.div`
@@ -58,12 +69,9 @@ const PrevNext = styled.div`
 
 const VideoBox = styled.div`
   position: relative;
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 80%;
   @media only screen and (max-width: 1280px) {
-    /* top: 25vh; */
-    /* margin: auto; */
-    top: 25%;
     width: 100%;
     height: 100%;
   }
@@ -72,7 +80,6 @@ const VideoBox = styled.div`
 const VideoModal = ({ videos, prevPath = "/" }) => {
   const [currentVideo, setCurrentVideo] = useState(videos[0])
   const [muted, setMuted] = useState(true)
-  // console.log(currentVideo)
 
   const handleEnded = () => {
     if (videos.indexOf(currentVideo) === videos.length - 1) {
@@ -99,21 +106,19 @@ const VideoModal = ({ videos, prevPath = "/" }) => {
       >
         <p>Close</p>
       </Close>
-      <Wrapper>
-        <Content>
-          <VideoBox>
-            <VideoModalPlayer
-              playing={true}
-              currentVideo={currentVideo.node.data.Video_URL}
-              muted={muted}
-              handleEnded={handleEnded}
-            />
-            <SoundOnSoundOff onClick={() => setMuted(!muted)}>
-              {muted ? <StyledSoundOnButton /> : <StyledSoundOffButton />}
-            </SoundOnSoundOff>
-          </VideoBox>
-        </Content>
-      </Wrapper>
+      <Content>
+        <VideoBox>
+          <VideoModalPlayer
+            playing={true}
+            currentVideo={currentVideo.node.data.Video_URL}
+            muted={muted}
+            handleEnded={handleEnded}
+          />
+        </VideoBox>
+        <SoundOnSoundOff onClick={() => setMuted(!muted)}>
+          {muted ? <StyledSoundOnButton /> : <StyledSoundOffButton />}
+        </SoundOnSoundOff>
+      </Content>
       <ControlBar>
         <Control>
           <p>{`${videos.indexOf(currentVideo) + 1}/${videos.length}`}</p>
