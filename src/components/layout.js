@@ -41,6 +41,7 @@ const Layout = ({ children }) => {
           <MobileMenu />
         </div>
       )} */}
+      {/* {state.videoModalOpen && <ModalVid />} */}
       <Wrapper>
         <Header siteTitle={data.site.siteMetadata.title} />
         <ContentContainer>{children}</ContentContainer>

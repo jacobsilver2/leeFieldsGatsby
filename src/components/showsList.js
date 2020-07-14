@@ -14,10 +14,9 @@ const NoShows = styled.div`
 `
 
 const ShowsList = ({ shows }) => {
-  console.log(shows)
   return (
     <ShowsListContainer>
-      {shows.length != 0 ? (
+      {shows.length !== 0 ? (
         shows.map(show => <Show key={show.id} show={show} />)
       ) : (
         <NoShows>

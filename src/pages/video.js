@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { graphql } from "gatsby"
 import { GlobalDispatchContext } from "../context/provider"
-import VideoModal from "../components/VideoModal"
+import VideoModal from "../components/VideoModal2"
 
 export const query = graphql`
   query VidQuery {

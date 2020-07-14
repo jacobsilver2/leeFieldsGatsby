@@ -2,12 +2,12 @@ import React, { useContext } from "react"
 import { globalHistory as history } from "@reach/router"
 import { GlobalDispatchContext } from "../context/provider"
 import { StyledGatsbyLink, NavText } from "../styles/StyledNav"
-import styled from "styled-components"
+// import styled from "styled-components"
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-`
+// const Wrapper = styled.div`
+//   display: flex;
+//   justify-content: space-evenly;
+// `
 
 const NavLinksFull = () => {
   const dispatch = useContext(GlobalDispatchContext)

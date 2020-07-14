@@ -62,7 +62,7 @@ const NewsTicker = () => {
               {({ index }) => (
                 <>
                   <TickerItem isEven={isEven(index)}>
-                    <a href={tickerText.link} target="_blank">
+                    <a href={tickerText.link} target="_blank" rel="noreferrer">
                       {tickerText.text}
                     </a>
                   </TickerItem>

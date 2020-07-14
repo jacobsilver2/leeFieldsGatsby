@@ -62,6 +62,18 @@ function reducer(state, action) {
         tickerIsVisible: true,
       }
     }
+    case "MODAL_VID_OPEN": {
+      return {
+        ...state,
+        videoModalOpen: true,
+      }
+    }
+    case "MODAL_VID_CLOSED": {
+      return {
+        ...state,
+        videoModalOpen: false,
+      }
+    }
     default:
       throw new Error("Bad Action Type")
   }

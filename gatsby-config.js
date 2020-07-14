@@ -11,6 +11,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
@@ -20,8 +21,8 @@ module.exports = {
           style: {
             overlay: {
               position: `fixed`,
-              width: "100%",
-              height: "100%",
+              // width: "100%",
+              // height: "100%",
               zIndex: 11,
               top: 0,
               left: 0,

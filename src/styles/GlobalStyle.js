@@ -21,6 +21,7 @@ import FormaDJRTextMedEOT from "../assets/fonts/FormaDJRBanner-Medium-Testing.eo
 // import FormaDJRTextMed from "../assets/fonts/FormaDJRText-Medium-Testing.woff2"
 
 const GlobalStyle = createGlobalStyle`
+
   ${reset}
   *, *:before, *:after {
     box-sizing: border-box;

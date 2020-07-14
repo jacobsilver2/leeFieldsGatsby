@@ -2,7 +2,7 @@ import React from "react"
 import useWindowSize from "../hooks/useWindowSize"
 import BigFooter from "../components/BigFooter"
 import MobileFooter from "../components/MobileFooter"
-import StyledFooter from "../styles/StyledFooter"
+// import StyledFooter from "../styles/StyledFooter"
 const Footer = () => {
   const size = useWindowSize()
   return (

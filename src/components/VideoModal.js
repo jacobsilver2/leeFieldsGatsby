@@ -6,76 +6,16 @@ import {
   StyledSoundOnButton,
   StyledSoundOffButton,
 } from "../styles/VideoPlayer"
-const Wrapper = styled.div`
-  /* height: 100vh; */
-`
-
-export const SoundOnSoundOff = styled.div`
-  cursor: pointer;
-  text-align: center;
-  margin-top: 2rem;
-  z-index: 999;
-  /* position: relative; */
-  /* bottom: 1rem; */
-  /* right: 1rem; */
-`
-
-const Content = styled.div`
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-`
-
-const Close = styled.div`
-  position: absolute;
-  z-index: 1000;
-  top: ${({ theme }) => theme.spacing[6]};
-  right: ${({ theme }) => theme.spacing[6]};
-  color: #fff;
-  cursor: pointer;
-  p {
-    @media only screen and (max-width: 868px) {
-      font-size: ${({ theme }) => theme.fontSize.xl};
-    }
-  }
-`
-
-const ControlBar = styled.div`
-  position: absolute;
-  color: white;
-  z-index: 999;
-  bottom: ${({ theme }) => theme.spacing[6]};
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`
-
-const Control = styled.div`
-  display: flex;
-  p {
-    @media only screen and (max-width: 868px) {
-      font-size: ${({ theme }) => theme.fontSize.xl};
-    }
-  }
-`
-
-const PrevNext = styled.div`
-  cursor: pointer;
-`
-
-const VideoBox = styled.div`
-  position: relative;
-  width: 80%;
-  height: 80%;
-  @media only screen and (max-width: 1280px) {
-    width: 100%;
-    height: 100%;
-  }
-`
+import {
+  Wrapper,
+  SoundOnSoundOff,
+  Content,
+  Close,
+  ControlBar,
+  Control,
+  PrevNext,
+  VideoBox,
+} from "../styles/StyledVideoModal"
 
 const VideoModal = ({ videos, prevPath = "/" }) => {
   const [currentVideo, setCurrentVideo] = useState(videos[0])

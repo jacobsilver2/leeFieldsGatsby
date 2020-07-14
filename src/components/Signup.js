@@ -8,7 +8,7 @@ import {
   Form,
   Input,
   Button,
-  Content,
+  // Content,
 } from "../styles/StyledSignup"
 
 const validationSchema = yup.object({
