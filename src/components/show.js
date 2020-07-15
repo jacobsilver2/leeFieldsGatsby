@@ -19,7 +19,7 @@ const StyledShow = styled.div`
   }
   /* justify-items: center; */
 `
-
+// adding this change for git syncing reasons
 const BuyLink = styled.div`
   text-align: right;
   margin-left: 1rem;
