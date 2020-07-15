@@ -31,14 +31,14 @@ export const query = graphql`
 const IndexPage = ({ data }) => {
   const dispatch = useContext(GlobalDispatchContext)
   const firstUpdate = useRef(true)
-  const [ref, inView] = useInView({ threshold: 0.25 })
+  const [animateRef, animateInView] = useInView({ threshold: 0.7 })
 
   useLayoutEffect(() => {
     if (firstUpdate.current) {
       firstUpdate.current = false
       return
     }
-    dispatch({ type: inView ? "CNN_ON" : "CNN_OFF" })
+    dispatch({ type: animateInView ? "CNN_ON" : "CNN_OFF" })
   })
   const { title } = data.title.siteMetadata
   const { edges } = data.video
@@ -49,7 +49,20 @@ const IndexPage = ({ data }) => {
     <>
       <SEO title="Home" />
       <BigLogoWrapper>
-        <StyledBigLogo ref={ref}>{title.toUpperCase()}</StyledBigLogo>
+        <StyledBigLogo
+          ref={animateRef}
+          initial={{ opacity: 1, scale: 1 }}
+          animate={{
+            opacity: animateInView ? 1 : 0,
+            scale: animateInView ? 1 : 0.5,
+          }}
+          transition={{
+            opacity: { duration: 0.75 },
+            scale: { duration: 0.75 },
+          }}
+        >
+          {title.toUpperCase()}
+        </StyledBigLogo>
       </BigLogoWrapper>
       <Video video={firstVid} />
       <Shows />

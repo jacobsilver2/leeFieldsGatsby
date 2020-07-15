@@ -15,6 +15,10 @@ import FormaDJRTextRegEOT from "../assets/fonts/FormaDJRText-Regular-Testing.eot
 import FormaDJRTextMedWoff from "../assets/fonts/FormaDJRText-Medium-Testing.woff"
 import FormaDJRTextMedWoff2 from "../assets/fonts/FormaDJRText-Medium-Testing.woff2"
 import FormaDJRTextMedEOT from "../assets/fonts/FormaDJRBanner-Medium-Testing.eot"
+
+import FormaDJRTextLightWoff from "../assets/fonts/FormaDJRText-Light-Testing.woff"
+import FormaDJRTextLightWoff2 from "../assets/fonts/FormaDJRText-Light-Testing.woff2"
+import FormaDJRTextLightEOT from "../assets/fonts/FormaDJRText-Light-Testing.eot"
 // import FormaDJRBannerBold from "../assets/fonts/FormaDJRBanner-Bold-Testing.woff2"
 // import FormaDJRBannerMed from "../assets/fonts/FormaDJRBanner-Medium-Testing.woff2"
 // import FormaDJRTextReg from "../assets/fonts/FormaDJRText-Regular-Testing.woff2"
@@ -44,6 +48,13 @@ const GlobalStyle = createGlobalStyle`
     src: url(${FormaDJRTextRegWoff2}) format('woff2'),
          url(${FormaDJRTextRegWoff}) format('woff'),
          url(${FormaDJRTextRegEOT});
+  }
+  
+  @font-face {
+    font-family: ${({ theme }) => theme.font.text};
+    src: url(${FormaDJRTextLightWoff2}) format('woff2'),
+         url(${FormaDJRTextLightWoff}) format('woff'),
+         url(${FormaDJRTextLightEOT});
   }
   @font-face {
     font-family: ${({ theme }) => theme.font.bold};
@@ -123,7 +134,7 @@ const GlobalStyle = createGlobalStyle`
 
   h5 {
     font-family: ${({ theme }) => theme.font.text};
-    font-weight: 500;
+    font-weight: 300;
     font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.h5};
     line-height: 7.5rem;
@@ -136,7 +147,7 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     font-family: ${({ theme }) => theme.font.text};
-    font-weight: normal;
+    font-weight: 300;
     font-style: normal;
     font-size: ${({ theme }) => theme.fontSize.p};
     line-height: 2.4rem;

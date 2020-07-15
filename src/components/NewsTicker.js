@@ -31,7 +31,7 @@ const TickerItem = styled.p`
   font-size: 1.4rem;
   opacity: ${({ isEven }) => (isEven ? "100%" : "50%")};
   white-space: nowrap;
-  margin: 0 4rem;
+  margin: 0 1.5rem;
 `
 
 const CloseButton = styled.button`

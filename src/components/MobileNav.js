@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useRef } from "react"
 import { Link } from "gatsby"
-import HamburgerMenu from "react-hamburger-menu"
+import Burger from "./Burger"
 import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
 import { StyledLogo } from "../styles/StyledNav"
 import styled from "styled-components"
@@ -25,13 +25,30 @@ const MobileNav = ({ siteTitle }) => {
 
   return (
     <LogoAndBurgerWrapper>
-      <StyledLogo visible={!state.cnnInView}>
+      <StyledLogo
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{
+          opacity: state.cnnInView ? 0 : 1,
+          scale: state.cnnInView ? 0 : 1,
+        }}
+        transition={{
+          opacity: { duration: 0.5 },
+          scale: { duration: 0.5 },
+        }}
+        visible={!state.cnnInView}
+      >
         <Link to="/">{siteTitle.toUpperCase()}</Link>
       </StyledLogo>
-      <HamburgerMenu
+      {/* <HamburgerMenu
         isOpen={state.secondaryMenuActive}
         menuClicked={() => handleBurgerClicked()}
         height={15}
+        width={25}
+      /> */}
+      <Burger
+        isOpen={state.secondaryMenuActive}
+        menuClicked={() => handleBurgerClicked()}
+        height={10}
         width={25}
       />
     </LogoAndBurgerWrapper>

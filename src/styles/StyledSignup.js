@@ -54,6 +54,9 @@ export const Input = styled.input`
     /* line-height: 12vw; */
   }
   opacity: 1;
+  &:focus {
+    outline: none;
+  }
 `
 
 export const Button = styled.button`

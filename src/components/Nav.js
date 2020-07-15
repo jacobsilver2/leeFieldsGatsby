@@ -13,7 +13,18 @@ const Nav = ({ siteTitle }) => {
         <NavLinksGroupOne />
       </div>
       <div>
-        <StyledLogo visible={!state.cnnInView}>
+        <StyledLogo
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{
+            opacity: state.cnnInView ? 0 : 1,
+            scale: state.cnnInView ? 0 : 1,
+          }}
+          transition={{
+            opacity: { duration: 2 },
+            scale: { duration: 0.5 },
+          }}
+          // visible={!state.cnnInView}
+        >
           <Link to="/">{siteTitle.toUpperCase()}</Link>
         </StyledLogo>
       </div>

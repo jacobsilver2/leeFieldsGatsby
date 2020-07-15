@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
+import { motion } from "framer-motion"
 // import LargeBodyText from "./LargeBodyText"
 
 export const StyledNav = styled.nav`
@@ -24,7 +25,7 @@ export const StyledGatsbyLink = styled(Link)`
     text-align: center;
   }
 `
-export const StyledLogo = styled.h5`
+export const StyledLogo = styled(motion.h5)`
   font-size: 2.8rem;
   margin-top: 0.5rem;
   @media only screen and (max-width: 828px) {
@@ -39,10 +40,12 @@ export const StyledLogo = styled.h5`
   }
   font-weight: bold;
   letter-spacing: 0;
-  visibility: ${props => (props.visible ? "visible" : "hidden")};
-  opacity: ${({ visible }) => (visible ? 1 : 0)};
-  transition: ${({ visible }) =>
-    visible ? "opacity 1s linear" : "visibility 0s 0.5s, opacity 0.5s linear"};
+  /* visibility: ${props => (props.visible ? "visible" : "hidden")}; */
+  /* opacity: ${({ visible }) => (visible ? 1 : 0)}; */
+  /* transition: ${({ visible }) =>
+    visible
+      ? "opacity 1s linear"
+      : "visibility 0s 0.5s, opacity 0.5s linear"}; */
   /* text doesn't totally center so this value needs to be adjusted manually according to font size */
 `
 export const StyledLink = styled.a`
