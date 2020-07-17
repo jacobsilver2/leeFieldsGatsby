@@ -110,7 +110,9 @@ const Music = ({ data }) => {
                   <h5>Buy</h5>
                 </BuyLink>
                 <ListenLink>
-                  <a href={data.Listen}>Listen</a>
+                  <a href={data.Listen} target="_blank" rel="noreferrer">
+                    Listen
+                  </a>
                 </ListenLink>
               </Links>
             </Text>

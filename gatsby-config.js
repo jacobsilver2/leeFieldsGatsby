@@ -12,6 +12,12 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint: process.env.GATSBY_MAILCHIMP_URL,
+      },
+    },
+    {
       resolve: `gatsby-plugin-modal-routing`,
       options: {
         modalProps: {

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Form, Field, ErrorMessage } from "formik"
 
 export const Wrapper = styled.div`
   border-top: 1px solid black;
@@ -37,7 +38,28 @@ export const Title = styled.h3`
   }
 `
 
-export const Form = styled.form`
+export const StyledFormikForm = styled(Form)`
+  display: flex;
+  justify-content: space-between;
+`
+
+export const StyledFormikField = styled(Field)`
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border: 0;
+  background-color: ${({ theme }) => theme.color.offWhite};
+  font-size: ${({ theme }) => theme.fontSize.h5};
+  @media only screen and (max-width: 1700px) {
+    font-size: 3vw;
+    /* line-height: 12vw; */
+  }
+  opacity: 1;
+  &:focus {
+    outline: none;
+  }
+`
+
+export const StyledForm = styled.form`
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
@@ -79,4 +101,26 @@ export const TheForm = styled.div`
   max-width: 80%;
   /* width: 50%; */
   border-bottom: 1px solid black;
+`
+
+export const ErrMessage = styled.p`
+  color: red;
+  font-size: 1.5rem;
+`
+
+export const StyledFormikError = styled(ErrorMessage)`
+  color: red;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  position: absolute;
+`
+
+export const StyledMailChimpResult = styled.p`
+  color: red;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  position: absolute;
+  @media only screen and (max-width: 750px) {
+    font-size: 2vw;
+  }
 `

@@ -1,27 +1,27 @@
-import React from "react"
-import { Formik } from "formik"
+import React, { useState } from "react"
+import { Formik, ErrorMessage } from "formik"
 import * as yup from "yup"
+import addToMailchimp from "gatsby-plugin-mailchimp"
 import {
   Title,
   Wrapper,
   TheForm,
-  Form,
-  Input,
   Button,
-  // Content,
+  StyledFormikField,
+  StyledFormikForm,
+  StyledFormikError,
+  StyledMailChimpResult,
 } from "../styles/StyledSignup"
 
 const validationSchema = yup.object({
   email: yup.string().email().required(),
 })
 
+const extractEmailRegex = /<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g
+
 const Signup = () => {
-  // const [errorMessage, setErrorMessage] = useState("")
-  // const [isTouched, setIsTouched] = useState(false)
-  const handleSubmit = e => {
-    e.preventDefault()
-    // once we get mailchimp info we'll put that here
-  }
+  const [errmsg, setErrmsg] = useState("")
+  const [result, setResult] = useState("")
   return (
     <Wrapper>
       <Title>JOIN OUR NEWSLETTER</Title>
@@ -32,32 +32,34 @@ const Signup = () => {
           onSubmit={(data, { setSubmitting }) => {
             setSubmitting(true)
             // make async call
-            // console.log(data)
+            addToMailchimp(data.email)
+              .then(res => {
+                setResult(res)
+              })
+              .catch(error => {})
             setSubmitting(false)
           }}
         >
-          {({
-            values,
-            isSubmitting,
-            handleChange,
-            handleBlur,
-            errors,
-            touched,
-          }) => {
+          {({ isSubmitting, errors, touched }) => {
             return (
-              <Form onSubmit={handleSubmit}>
-                <Input
-                  placeholder="Email"
-                  value={values.email}
-                  name="email"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  type="text"
-                />
-                <Button disabled={isSubmitting} type="submit">
-                  Submit
-                </Button>
-              </Form>
+              <>
+                <StyledFormikForm>
+                  <StyledFormikField
+                    placeholder="Email"
+                    name="email"
+                    type="text"
+                  />
+                  <Button disabled={isSubmitting} type="submit">
+                    Submit
+                  </Button>
+                </StyledFormikForm>
+                <StyledFormikError name="email" component="div" />
+                {result.msg && (
+                  <StyledMailChimpResult>
+                    {result.msg.replace(extractEmailRegex, "")}
+                  </StyledMailChimpResult>
+                )}
+              </>
             )
           }}
         </Formik>

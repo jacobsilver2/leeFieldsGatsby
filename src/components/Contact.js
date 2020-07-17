@@ -30,7 +30,7 @@ const Contact = ({ data }) => {
       const { data, id } = contact.node
       return (
         <ContactCard key={id}>
-          <Title>{data.Role.toUpperCase()}</Title>
+          {data.Role && <Title>{data.Role.toUpperCase()}</Title>}
           {data.Agency && <Info>{data.Agency}</Info>}
           {data.Name1 && (
             <Info>

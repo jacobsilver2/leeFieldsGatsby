@@ -83,9 +83,16 @@
 
 ◻️ For tour dates, wonder if we can/need it to go slightly bigger on the point size.
 
-> I have the font as big as I can get it without everything
-> starting to wrap, but perhaps if we switch to DJR Text Light
-> it'll allow for a larger size but smaller weight.
+> Yeah, I hear ya...only thing is I need to accomodate
+> for as much space as possible for the venue column
+> as well as the city column. The way I have it now,
+> if I go any larger on the font size, the month text
+> will wrap, which doesn't look good. If it's definitely
+> a problem I can increase the size for the month column
+> and decrease the size for the venue name column, but
+> it definitely is a slipperly slope and I thought it
+> was too small at first, but actually looking at it on
+> my phone seemed fine to me...
 
 ✅ Like the altered footer, music, and shop.
 
