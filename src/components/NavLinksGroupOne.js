@@ -18,10 +18,10 @@ const NavLinksGroupOne = () => {
   const handleClick = () => {
     dispatch({ type: "CNN_OFF" })
   }
-  const handleModalVidClick = () => {
-    dispatch({ type: "CNN_OFF" })
-    dispatch({ type: "MODAL_VID_OPEN" })
-  }
+  // const handleModalVidClick = () => {
+  //   dispatch({ type: "CNN_OFF" })
+  //   dispatch({ type: "MODAL_VID_OPEN" })
+  // }
 
   return (
     <Wrapper>

@@ -1,11 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
-import {
-  Bar,
-  SoundOnSoundOffText,
-  Close,
-  Control,
-} from "../styles/StyledVideoModal"
+import { Bar, Control } from "../styles/StyledVideoModal"
 
 export const VideoModalTopBar = ({ muted, setMuted, prevPath }) => {
   return (

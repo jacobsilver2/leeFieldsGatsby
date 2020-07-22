@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
+import { GlobalDispatchContext } from "../context/provider"
 import { useOnClickOutside } from "../hooks/useOnClickOutside"
 import Header from "./header"
 import Footer from "./footer"
@@ -20,7 +20,7 @@ const StickyFooter = styled.div`
 
 const Layout = ({ children }) => {
   const dispatch = useContext(GlobalDispatchContext)
-  const state = useContext(GlobalStateContext)
+  // const state = useContext(GlobalStateContext)
   const menuNode = useRef()
   useOnClickOutside(menuNode, () => dispatch({ type: "SECONDARY_MENU_OFF" }))
 

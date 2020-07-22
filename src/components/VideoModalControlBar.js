@@ -1,5 +1,5 @@
 import React from "react"
-import { Bar, Control, PrevNext, BottomBar } from "../styles/StyledVideoModal"
+import { Control, PrevNext, BottomBar } from "../styles/StyledVideoModal"
 
 export const VideoModalControlBar = ({
   currentVideoIndex,

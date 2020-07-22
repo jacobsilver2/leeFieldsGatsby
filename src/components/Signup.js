@@ -20,7 +20,7 @@ const validationSchema = yup.object({
 const extractEmailRegex = /<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g
 
 const Signup = () => {
-  const [errmsg, setErrmsg] = useState("")
+  // const [errmsg, setErrmsg] = useState("")
   const [result, setResult] = useState("")
   return (
     <Wrapper>
@@ -32,9 +32,12 @@ const Signup = () => {
           onSubmit={(data, { setSubmitting }) => {
             setSubmitting(true)
             // make async call
+            // unfortunately this does not work on Firefox
+            // developer edition.
             addToMailchimp(data.email)
               .then(res => {
                 setResult(res)
+                console.log(res)
               })
               .catch(error => {})
             setSubmitting(false)
