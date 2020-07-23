@@ -2,18 +2,16 @@ import React, { useState } from "react"
 import About from "../components/About"
 import Contact from "../components/Contact"
 import styled from "styled-components"
+import useWindowSize from "../hooks/useWindowSize"
 
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 4fr;
   margin-top: 4rem;
-  @media only screen and (max-width: 828px) {
+  /* @media only screen and (max-width: 828px) {
     margin-top: 0;
-    /* height: 5rem; */
     grid-template-columns: 1fr;
-  }
-  /* width: 100%; */
-  /* margin: 0 ${({ theme }) => theme.spacing[4]}; */
+  } */
 `
 
 export const Selector = styled.p`
@@ -36,33 +34,46 @@ const Selection = styled.div`
     margin: 0;
   }
 `
+const MobileWrapper = styled.div`
+  margin-top: 4rem;
+`
 
 const Content = styled.div``
 
-const Shows = ({ data }) => {
+const Info = ({ data }) => {
   const [active, setActive] = useState("About")
+  const size = useWindowSize()
   return (
-    <Wrapper>
-      <Selection>
-        <Selector
-          onClick={() => setActive("About")}
-          active={active === "About"}
-        >
-          About
-        </Selector>
-        <Selector
-          onClick={() => setActive("Contact")}
-          active={active === "Contact"}
-        >
-          Contact
-        </Selector>
-      </Selection>
-      <Content>
-        {active === "About" && <About data={data.about} />}
-        {active === "Contact" && <Contact data={data.contact} />}
-      </Content>
-    </Wrapper>
+    <>
+      {size.width >= 828 ? (
+        <Wrapper>
+          <Selection>
+            <Selector
+              onClick={() => setActive("About")}
+              active={active === "About"}
+            >
+              About
+            </Selector>
+            <Selector
+              onClick={() => setActive("Contact")}
+              active={active === "Contact"}
+            >
+              Contact
+            </Selector>
+          </Selection>
+          <Content>
+            {active === "About" && <About data={data.about} />}
+            {active === "Contact" && <Contact data={data.contact} />}
+          </Content>
+        </Wrapper>
+      ) : (
+        <MobileWrapper>
+          <About data={data.about} />
+          <Contact data={data.contact} />{" "}
+        </MobileWrapper>
+      )}
+    </>
   )
 }
 
-export default Shows
+export default Info

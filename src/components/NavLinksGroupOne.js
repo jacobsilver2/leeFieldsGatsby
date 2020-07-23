@@ -23,12 +23,16 @@ const NavLinksGroupOne = () => {
   //   dispatch({ type: "MODAL_VID_OPEN" })
   // }
 
+  const handleVidClick = () => {
+    dispatch({ type: "MODAL_VID_OPEN" })
+  }
+
   return (
     <Wrapper>
       <StyledGatsbyLink isleft="true" onClick={handleClick} to="/music">
         <NavText>Music</NavText>
       </StyledGatsbyLink>
-      <StyledGatsbyLink
+      {/* <StyledGatsbyLink
         state={{
           modal: true,
           prevPath: location.pathname,
@@ -36,9 +40,9 @@ const NavLinksGroupOne = () => {
         isleft="true"
         onClick={handleClick}
         to="/video"
-      >
-        <NavText>Video</NavText>
-      </StyledGatsbyLink>
+      > */}
+      <NavText onClick={handleVidClick}>Video</NavText>
+      {/* </StyledGatsbyLink> */}
       <StyledGatsbyLink isleft="true" onClick={handleClick} to="/tour">
         <NavText>Tour</NavText>
       </StyledGatsbyLink>

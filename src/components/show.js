@@ -49,9 +49,9 @@ const Show = ({ show }) => {
         <h5>{show.Venue}</h5>
       </div>
       <LocationLink>
-        <a href={show.URL} target="_blank" rel="noreferrer">
-          <h5>{show.Location}</h5>
-        </a>
+        {/* <a href={show.URL} target="_blank" rel="noreferrer"> */}
+        <h5>{show.Location}</h5>
+        {/* </a> */}
       </LocationLink>
       <BuyLink>
         <h5>

@@ -25,12 +25,12 @@ export const StyledGatsbyLink = styled(Link)`
     text-align: center;
   }
 `
-export const StyledLogo = styled(motion.h5)`
+export const StyledLogo = styled.h3`
   font-size: 2.8rem;
-  margin-top: 0.5rem;
+  /* margin-top: 1.5rem; */
   @media only screen and (max-width: 828px) {
     font-size: 1.8rem;
-    margin-top: 0.5rem;
+    /* margin-top: 1.2rem; */
   }
   @media only screen and (max-width: 667px) {
     /* margin-top: 2rem; */
@@ -38,14 +38,12 @@ export const StyledLogo = styled(motion.h5)`
   &:hover {
     opacity: 50%;
   }
-  font-weight: bold;
-  letter-spacing: 0;
-  /* visibility: ${props => (props.visible ? "visible" : "hidden")}; */
-  /* opacity: ${({ visible }) => (visible ? 1 : 0)}; */
-  /* transition: ${({ visible }) =>
-    visible
-      ? "opacity 1s linear"
-      : "visibility 0s 0.5s, opacity 0.5s linear"}; */
+  /* font-weight: 500; */
+  letter-spacing: 1px;
+  visibility: ${props => (props.visible ? "visible" : "hidden")};
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  transition: ${({ visible }) =>
+    visible ? "opacity 1s linear" : "visibility 0s 0.5s, opacity 0.5s linear"};
   /* text doesn't totally center so this value needs to be adjusted manually according to font size */
 `
 export const StyledLink = styled.a`

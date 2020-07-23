@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import styled from "styled-components"
 import VideoModalPlayer from "./VideoModalPlayer"
+import FadeWrapper from "../components/FadeWrapper"
 import {
   StyledSoundOnButton,
   StyledSoundOffButton,
@@ -15,7 +16,10 @@ import {
   Control,
   PrevNext,
   VideoBox,
+  UpperCaseTitle
 } from "../styles/StyledVideoModal"
+
+
 
 const VideoModal = ({ videos, prevPath = "/" }) => {
   const [currentVideo, setCurrentVideo] = useState(videos[0])
@@ -39,8 +43,9 @@ const VideoModal = ({ videos, prevPath = "/" }) => {
     }
   }
 
+
   return (
-    <>
+    // <FadeWrapper>
       <Close
         onClick={() => navigate(prevPath || "/", { state: { noScroll: true } })}
       >
@@ -64,7 +69,7 @@ const VideoModal = ({ videos, prevPath = "/" }) => {
           <p>{`${videos.indexOf(currentVideo) + 1}/${videos.length}`}</p>
         </Control>
         <Control>
-          <p>{currentVideo.node.data.Video_Title}</p>
+          <UpperCaseTitle>{currentVideo.node.data.Video_Title.toUpperCase()}</UpperCaseTitle>
         </Control>
         <Control className="prevnext">
           <PrevNext onClick={() => previousVideo()}>
@@ -75,7 +80,7 @@ const VideoModal = ({ videos, prevPath = "/" }) => {
           </PrevNext>
         </Control>
       </ControlBar>
-    </>
+    // </FadeWrapper>
   )
 }
 

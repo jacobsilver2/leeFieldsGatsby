@@ -40,7 +40,7 @@ function HamburgerMenu(props) {
       height: height,
       position: "relative",
       transform: "rotate(" + (props.rotate || 0) + "deg)",
-      marginTop: "4px",
+      // marginTop: "4px",
     },
     lineBase: {
       display: "block",

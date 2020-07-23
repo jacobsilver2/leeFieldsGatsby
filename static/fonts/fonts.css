@@ -1,0 +1,55 @@
+/* FORMA DJR BANNER BOLD AND MEDIUM */
+@font-face {
+  src: url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold-Testing.woff2")
+      format("woff2"),
+    url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold-Testing.woff")
+      format("woff")
+      url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold-Testing.eot");
+  font-family: "FormaDJRBanner";
+  font-style: normal;
+  font-weight: bold;
+}
+@font-face {
+  src: url("/fonts/formaDJRBanner/Medium/FormaDJRBanner-Medium-Testing.woff2")
+      format("woff2"),
+    url("/fonts/formaDJRBanner/Medium/FormaDJRBanner-Medium-Testing.woff")
+      format("woff"),
+    url("/fonts/formaDJRBanner/Medium/FormaDJRBanner-Medium-Testing.eot");
+  font-family: "FormaDJRBanner";
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* FORMA DJR TEXT LIGHT MEDIUM AND REGULAR */
+@font-face {
+  src: url("/fonts/formaDJRText/Light/FormaDJRText-Light-Testing.woff2")
+      format("woff2"),
+    url("/fonts/formaDJRText/Light/FormaDJRText-Light-Testing.woff")
+      format("woff"),
+    url("/fonts/formaDJRText/Light/FormaDJRText-Light-Testing.eot");
+  font-family: "FormaDJRText";
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  src: url("/fonts/formaDJRText/Medium/FormaDJRText-Medium-Testing.woff2")
+      format("woff2"),
+    url("/fonts/formaDJRText/Medium/FormaDJRText-Medium-Testing.woff")
+      format("woff"),
+    url("/fonts/formaDJRText/Medium/FormaDJRText-Medium-Testing.eot");
+  font-family: "FormaDJRText";
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  src: url("/fonts/formaDJRText/Regular/FormaDJRText-Regular-Testing.woff2")
+      format("woff2"),
+    url("/fonts/formaDJRText/Regular/FormaDJRText-Regular-Testing.woff")
+      format("woff"),
+    url("/fonts/formaDJRText/Regular/FormaDJRText-Regular-Testing.eot");
+  font-family: "FormaDJRText";
+  font-style: normal;
+  font-weight: normal;
+}

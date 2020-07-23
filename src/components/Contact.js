@@ -17,9 +17,14 @@ const ContactCard = styled.div`
 
 const Title = styled.h4`
   line-height: 1;
+  padding-bottom: 1rem;
 `
 
 const Info = styled.p`
+  font-weight: 300;
+  a {
+    font-weight: 300;
+  }
   /* line-height: 1; */
 `
 

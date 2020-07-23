@@ -2,10 +2,11 @@ import React, { useContext, useEffect } from "react"
 import { graphql } from "gatsby"
 import { GlobalDispatchContext } from "../context/provider"
 import VideoModal from "../components/VideoModal2"
+import FadeWrapper from "../components/FadeWrapper"
 
 export const query = graphql`
   query VidQuery {
-    allAirtable(filter: { table: { eq: "Videos" } }) {
+    video: allAirtable(filter: { table: { eq: "Videos" } }) {
       edges {
         node {
           id
@@ -14,6 +15,20 @@ export const query = graphql`
             Video_URL
             Video_Order
           }
+        }
+      }
+    }
+    prevCursor: file(base: { eq: "prevVid.png" }) {
+      childImageSharp {
+        fixed(width: 128) {
+          src
+        }
+      }
+    }
+    nextCursor: file(base: { eq: "nextVid.png" }) {
+      childImageSharp {
+        fixed(width: 128) {
+          src
         }
       }
     }
@@ -36,14 +51,19 @@ const Video = ({ data, location }) => {
     dispatch({ type: "TICKER_OFF" })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  const { edges } = data.allAirtable
+  const { edges } = data.video
   const videosInOrder = edges.sort(
     (a, b) => a.node.data.Video_Order - b.node.data.Video_Order
   )
   return (
-    <>
-      <VideoModal prevPath={prevPath} videos={videosInOrder} />
-    </>
+    // <FadeWrapper>
+    <VideoModal
+      prevCursor={data.prevCursor.childImageSharp.fixed.src}
+      nextCursor={data.nextCursor.childImageSharp.fixed.src}
+      prevPath={prevPath}
+      videos={videosInOrder}
+    />
+    // </FadeWrapper>
   )
 }
 

@@ -12,6 +12,15 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        custom: {
+          families: ["FormaDJRBanner", "FormaDJRText"],
+          urls: ["/fonts/fonts.css"],
+        },
+      },
+    },
+    {
       resolve: "gatsby-plugin-mailchimp",
       options: {
         endpoint: process.env.GATSBY_MAILCHIMP_URL,

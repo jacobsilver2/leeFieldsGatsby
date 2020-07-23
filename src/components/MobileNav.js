@@ -25,18 +25,7 @@ const MobileNav = ({ siteTitle }) => {
 
   return (
     <LogoAndBurgerWrapper>
-      <StyledLogo
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{
-          opacity: state.cnnInView ? 0 : 1,
-          scale: state.cnnInView ? 0 : 1,
-        }}
-        transition={{
-          opacity: { duration: 0.5 },
-          scale: { duration: 0.5 },
-        }}
-        visible={!state.cnnInView}
-      >
+      <StyledLogo visible={!state.cnnInView}>
         <Link to="/">{siteTitle.toUpperCase()}</Link>
       </StyledLogo>
       {/* <HamburgerMenu
