@@ -38,8 +38,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {state.videoModalOpen && <VideoModalComponent />}
       <Wrapper>
+        {state.videoModalOpen && <VideoModalComponent />}
         <Headroom onUnpin={() => dispatch({ type: "SECONDARY_MENU_OFF" })}>
           <Header siteTitle={data.site.siteMetadata.title} />
         </Headroom>

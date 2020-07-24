@@ -19,7 +19,7 @@ const MobileNav = ({ siteTitle }) => {
   const [burgerIsOpen, setBurgerIsOpen] = useState(false)
 
   const handleBurgerClicked = () => {
-    setBurgerIsOpen(!burgerIsOpen)
+    setBurgerIsOpen(prev => !prev)
     dispatch({ type: "TOGGLE_SECONDARY_MENU" })
   }
 

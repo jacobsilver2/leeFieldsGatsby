@@ -6,7 +6,7 @@ import NavLinks from "./NavLinksFull"
 const SecondaryMenu = () => {
   const state = useContext(GlobalStateContext)
   return (
-    <StyledSecondaryMenu open={state.secondaryMenuActive}>
+    <StyledSecondaryMenu>
       <Content>
         <NavLinks />
       </Content>

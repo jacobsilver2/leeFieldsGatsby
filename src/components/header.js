@@ -7,6 +7,7 @@ import NewsTicker from "./NewsTicker"
 import Nav from "./Nav"
 import MobileNav from "./MobileNav"
 import SecondaryMenu from "./SecondaryMenu"
+import Headroom from "react-headroom"
 
 const Header = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
@@ -17,12 +18,12 @@ const Header = ({ siteTitle }) => {
   // this will close the secondary menu every time the window resizes.
   // We don't want the secondary menu to ever be open if above 828. This will prevent that.
   useEffect(() => {
-    size.width < 828 && dispatch({ type: "SECONDARY_MENU_OFF" })
+    size.width > 828 && dispatch({ type: "SECONDARY_MENU_OFF" })
   }, [size.width])
 
   return (
     <>
-      {visible && (
+      <Headroom onUnpin={() => dispatch({ type: "SECONDARY_MENU_OFF" })}>
         <StyledHeader
           tickerIsVisible={state.tickerIsVisible}
           cnnIsVisible={state.cnnInView}
@@ -34,7 +35,7 @@ const Header = ({ siteTitle }) => {
           </div>
           {state.secondaryMenuActive && <SecondaryMenu />}
         </StyledHeader>
-      )}
+      </Headroom>
     </>
   )
 }
