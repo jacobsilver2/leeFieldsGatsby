@@ -7,10 +7,6 @@ export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin-left: 10px;
-  margin-right: 10px; */
-  /* height: 100%; */
-  /* border: 5px solid black; */
 `
 
 export const StyledGatsbyLink = styled(Link)`
@@ -23,6 +19,33 @@ export const StyledGatsbyLink = styled(Link)`
   @media (max-width: ${({ theme }) => theme.mobile}) {
     /* font-size: ${({ theme }) => theme.fontSize.xl}; */
     text-align: center;
+  }
+`
+
+export const StyledNavElement = styled.div`
+  padding-right: ${({ theme, isleft }) => (isleft ? theme.spacing[8] : "")};
+  padding-left: ${({ theme, isright }) => (isright ? theme.spacing[8] : "")};
+  /* this is a hack because for some reason it wasn't receiving props */
+  padding-right: ${({ theme }) => theme.spacing[8]};
+  text-align: center;
+  &:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    /* font-size: ${({ theme }) => theme.fontSize.xl}; */
+    text-align: center;
+    padding-right: 0;
+  }
+`
+
+export const VideoText = styled.p`
+  font-size: ${({ issecondarynav }) => (issecondarynav ? "1.8rem" : "1.4rem;")};
+  padding-right: ${({ theme, isleft }) => (isleft ? theme.spacing[8] : "")};
+  padding-left: ${({ theme, isright }) => (isright ? theme.spacing[8] : "")};
+  text-align: center;
+  background-color: ${({ theme }) => theme.color.offWhite};
+  &:hover {
+    text-decoration: underline;
   }
 `
 export const StyledLogo = styled.h3`

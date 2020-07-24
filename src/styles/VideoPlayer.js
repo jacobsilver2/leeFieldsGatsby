@@ -32,7 +32,7 @@ export const VideoOverlayWrapper = styled.div`
   height: 100%;
   /* background-color: white; */
   /* opacity: 0.75; */
-  z-index: 9;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;

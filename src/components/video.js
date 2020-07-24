@@ -1,19 +1,16 @@
-import React, { useState } from "react"
-import { Link, navigate } from "gatsby"
+import React, { useState, useContext } from "react"
+import { GlobalDispatchContext } from "../context/provider"
 import ReactPlayer from "react-player/lazy"
 import reactPlayerOptions from "../lib/reactPlayerOptions"
-import {
-  Wrapper,
-  VideoContainer,
-  VideoOverlayWrapper,
-} from "../styles/VideoPlayer"
+
+import { VideoContainer, VideoOverlayWrapper } from "../styles/VideoPlayer"
 
 const Video = ({ video, hoverImg }) => {
+  const dispatch = useContext(GlobalDispatchContext)
   const [muted, setMuted] = useState(true)
-  // console.log(hoverImg)
   function handleClick() {
     setMuted(true)
-    navigate("/video", { state: { modal: true } })
+    dispatch({ type: "MODAL_VID_OPEN" })
   }
 
   return (

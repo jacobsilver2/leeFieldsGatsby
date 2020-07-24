@@ -1,7 +1,12 @@
 import React, { useContext } from "react"
 import { globalHistory as history } from "@reach/router"
 import { GlobalDispatchContext } from "../context/provider"
-import { StyledGatsbyLink, NavText } from "../styles/StyledNav"
+import {
+  StyledGatsbyLink,
+  NavText,
+  StyledNavElement,
+  VideoText,
+} from "../styles/StyledNav"
 import styled from "styled-components"
 // import { Link } from "gatsby"
 
@@ -41,7 +46,9 @@ const NavLinksGroupOne = () => {
         onClick={handleClick}
         to="/video"
       > */}
-      <NavText onClick={handleVidClick}>Video</NavText>
+      <StyledNavElement isLeft="true" onClick={handleVidClick}>
+        <VideoText>Video</VideoText>
+      </StyledNavElement>
       {/* </StyledGatsbyLink> */}
       <StyledGatsbyLink isleft="true" onClick={handleClick} to="/tour">
         <NavText>Tour</NavText>

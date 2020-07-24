@@ -53,6 +53,12 @@ const Purchase = styled.div`
 
 const Image = styled.img`
   width: 100%;
+  min-width: 600px;
+  @media only screen and (max-width: 828px) {
+    min-width: 400px;
+    /* margin: 0; */
+    /* width: 100%; */
+  }
 `
 
 const Content = styled.div`

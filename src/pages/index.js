@@ -29,7 +29,7 @@ export const query = graphql`
     }
     hoverImg: file(base: { eq: "playVid.png" }) {
       childImageSharp {
-        fixed(width: 128) {
+        fixed(width: 64) {
           src
         }
       }

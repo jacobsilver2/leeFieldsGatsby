@@ -20,14 +20,14 @@ export const query = graphql`
     }
     prevCursor: file(base: { eq: "prevVid.png" }) {
       childImageSharp {
-        fixed(width: 128) {
+        fixed(width: 32) {
           src
         }
       }
     }
     nextCursor: file(base: { eq: "nextVid.png" }) {
       childImageSharp {
-        fixed(width: 128) {
+        fixed(width: 32) {
           src
         }
       }

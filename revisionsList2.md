@@ -12,15 +12,16 @@
 > The video should autoplay. Is it not working for you?
 > I have removed the controls and added a text-based hover cursor. That is awesome! Great idea. (still tweaking it a little bit, but it works)
 
-- [] In order to keep the mouse experience throughout, can we remove the Prev and Next buttons and make them hovers that change on the right or left sides? And move “sound on” to the bottom right corner?
+- [x] In order to keep the mouse experience throughout, can we remove the Prev and Next buttons and make them hovers that change on the right or left sides? And move “sound on” to the bottom right corner?
 
-  > I'm assuming here you're talking about the modal. Sure thing.
+  > Done. One thing now, which could be a UX issue: The prev/next cursors work everywhere on the screen, with the exception of over the close button and the bottom controls. This now means there is no way to play/pause the video. It will autoplay, but that's all the user gets. No ability to pause. Also fyi, this redesign is now intended to work for the desktop view. It won't really hold up on mobile. Waiting on mobile designs to build the mobile modal. Say that 10x fast!
 
 - [x] For the mobile homepage, can we have the image moving without controls? I think not having the control will aid in a clearer, faster experience for a mobile user. In this case, Id want to encourage the user to view the entire homepage and then navigate to the video.
+
   > Done
 
-Is it possible to have a video modal specifically for mobile? Ex: becomes a list of video still and title? Once clicking the image that then pops up the individual video for viewing. In this case, I think the image is still but no controls.
-Hear your concern on a mobile user not knowing its there, but when I saw this site on mobile I felt that I wasn't missing any direction. It was clear to me to want to click on the photo/clip to expand it.
+- [] Is it possible to have a video modal specifically for mobile? Ex: becomes a list of video still and title? Once clicking the image that then pops up the individual video for viewing. In this case, I think the image is still but no controls.
+  Hear your concern on a mobile user not knowing its there, but when I saw this site on mobile I felt that I wasn't missing any direction. It was clear to me to want to click on the photo/clip to expand it.
 
 > I'm pretty sure I know what you mean, but would it be possible to send a mockup? I just don't want to spend a ton of time coding something that isn't what you were intending.
 > What I imagine you mean is that there is a modal which has a list of all the videos, displaying a still and title for each video. Clicking the still will open a new modal, which will play the video. (btw I liked in that example you sent, they were using native vimeo controls on the video modal. No funny business, everyone knows how to operate those controls, and full screen is easily accessible.)

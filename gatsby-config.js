@@ -27,41 +27,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-modal-routing`,
-      options: {
-        modalProps: {
-          shouldCloseOnEsc: false,
-          shouldCloseOnOverlayClick: false,
-          style: {
-            overlay: {
-              position: `fixed`,
-              // width: "100%",
-              // height: "100%",
-              zIndex: 11,
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: `black`,
-            },
-            content: {
-              position: `absolute`,
-              border: `none`,
-              background: `none`,
-              padding: 0,
-              top: 0,
-              bottom: 0,
-              right: 0,
-              left: 0,
-              overflow: `hidden`,
-              WebkitOverflowScrolling: `touch`,
-            },
-          },
-          contentLabel: `Modal`,
-        },
-      },
-    },
-    {
       resolve: `gatsby-source-airtable`,
       options: {
         apiKey: `${process.env.GATSBY_AIRTABLE_API}`,
