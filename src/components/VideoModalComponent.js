@@ -36,10 +36,8 @@ const VideoModalComponent = () => {
 
   function previousVideo() {
     if (currentVideo === video.edges[0]) {
-      console.log("yes")
       setcurrentVideo(video.edges[video.edges.length - 1])
     } else {
-      console.log("poop")
       const currentIndex = video.edges.indexOf(currentVideo)
       setcurrentVideo(video.edges[currentIndex - 1])
     }

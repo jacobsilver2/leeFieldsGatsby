@@ -25,6 +25,7 @@ export const Content = styled.div`
 `
 
 export const CloseContainer = styled.div`
+  z-index: 10;
   position: fixed;
   cursor: pointer;
   top: 1rem;
