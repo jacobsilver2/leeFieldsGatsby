@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import { GlobalDispatchContext } from "../context/provider"
 import SEO from "../components/seo"
 import MusicComponent from "../components/Music"
+import FadeWrapper from "../components/FadeWrapper"
 
 export const query = graphql`
   query GetMusic {
@@ -40,10 +41,10 @@ const MusicPage = ({ data }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
-    <>
-      <SEO title="Listen" />
+    <FadeWrapper>
+      <SEO title="Music" />
       <MusicComponent data={data} />
-    </>
+    </FadeWrapper>
   )
 }
 

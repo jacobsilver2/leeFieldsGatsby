@@ -4,33 +4,29 @@ import { GlobalStateContext } from "../context/provider"
 import { StyledLogo } from "../styles/StyledNav"
 import NavLinksGroupOne from "./NavLinksGroupOne"
 import NavLinksGroupTwo from "./NavLinksGroupTwo"
+import styled from "styled-components"
+
+const NavLinksWrapper = styled.div`
+  /* margin-top: 1.1rem; */
+`
 
 const Nav = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
   return (
     <>
-      <div>
+      <NavLinksWrapper>
         <NavLinksGroupOne />
-      </div>
+      </NavLinksWrapper>
       <div>
-        <StyledLogo
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{
-            opacity: state.cnnInView ? 0 : 1,
-            scale: state.cnnInView ? 0 : 1,
-          }}
-          transition={{
-            opacity: { duration: 2 },
-            scale: { duration: 0.5 },
-          }}
-          // visible={!state.cnnInView}
-        >
-          <Link to="/">{siteTitle.toUpperCase()}</Link>
+        <StyledLogo visible={!state.cnnInView}>
+          <Link fade to="/">
+            {siteTitle.toUpperCase()}
+          </Link>
         </StyledLogo>
       </div>
-      <div>
+      <NavLinksWrapper>
         <NavLinksGroupTwo />
-      </div>
+      </NavLinksWrapper>
     </>
   )
 }

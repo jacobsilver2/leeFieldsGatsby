@@ -42,6 +42,10 @@ const LargeBody = styled(LargeBodyText)`
   }
 `
 
+const AboutText = styled.p`
+  font-weight: 300;
+`
+
 const About = ({ data }) => {
   const aboutInfo = data.edges[0].node
 
@@ -53,13 +57,13 @@ const About = ({ data }) => {
           <LargeBody>{aboutInfo.data.Headline}</LargeBody>
         </Headline>
         <Info>
-          <p>{aboutInfo.data.P1}</p>
+          <AboutText>{aboutInfo.data.P1}</AboutText>
           <br />
           <br />
-          <p>{aboutInfo.data.P2}</p>
+          <AboutText>{aboutInfo.data.P2}</AboutText>
           <br />
           <br />
-          <p>{aboutInfo.data.P3}</p>
+          <AboutText>{aboutInfo.data.P3}</AboutText>
         </Info>
       </Text>
     </Wrapper>

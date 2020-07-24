@@ -1,12 +1,14 @@
-import React, { useContext, useRef } from "react"
+import React, { useContext, useRef, useEffect, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { GlobalDispatchContext } from "../context/provider"
+import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
 import { useOnClickOutside } from "../hooks/useOnClickOutside"
+import Headroom from "react-headroom"
 import Header from "./header"
 import Footer from "./footer"
 import Signup from "./Signup"
 import ContentContainer from "../styles/ContentContainer"
 import styled from "styled-components"
+import VideoModalComponent from "./VideoModalComponent"
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -20,7 +22,7 @@ const StickyFooter = styled.div`
 
 const Layout = ({ children }) => {
   const dispatch = useContext(GlobalDispatchContext)
-  // const state = useContext(GlobalStateContext)
+  const state = useContext(GlobalStateContext)
   const menuNode = useRef()
   useOnClickOutside(menuNode, () => dispatch({ type: "SECONDARY_MENU_OFF" }))
 
@@ -36,14 +38,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {/* {state.secondaryMenuActive && (
-        <div ref={menuNode}>
-          <MobileMenu />
-        </div>
-      )} */}
-      {/* {state.videoModalOpen && <ModalVid />} */}
+      {state.videoModalOpen && <VideoModalComponent />}
       <Wrapper>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Headroom onUnpin={() => dispatch({ type: "SECONDARY_MENU_OFF" })}>
+          <Header siteTitle={data.site.siteMetadata.title} />
+        </Headroom>
         <ContentContainer>{children}</ContentContainer>
         <StickyFooter>
           <Signup />

@@ -110,9 +110,13 @@ export const ErrMessage = styled.p`
 
 export const StyledFormikError = styled(ErrorMessage)`
   color: red;
+  font-family: ${({ theme }) => theme.font.text};
   font-size: 1.5rem;
   margin-top: 0.5rem;
   position: absolute;
+  @media only screen and (max-width: 750px) {
+    font-size: 2vw;
+  }
 `
 
 export const StyledMailChimpResult = styled.p`

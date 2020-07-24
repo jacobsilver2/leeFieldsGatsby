@@ -5,6 +5,7 @@ import { GlobalDispatchContext } from "../context/provider"
 import SEO from "../components/seo"
 import ShopComponent from "../components/Shop"
 import Loading from "../components/Loading"
+import FadeWrapper from "../components/FadeWrapper"
 const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
   "appbWJrpD7eQdDKdq"
 )
@@ -92,8 +93,8 @@ const ShopPage = props => {
   }
 
   return (
-    <>
-      <SEO title="Store" />
+    <FadeWrapper>
+      <SEO title="Shop" />
       <ShopContainer>
         <ULWrapper>
           <LIElement
@@ -129,7 +130,7 @@ const ShopPage = props => {
         </ULWrapper>
         {isLoading ? <Loading /> : <ShopComponent items={filteredItems} />}
       </ShopContainer>
-    </>
+    </FadeWrapper>
   )
 }
 

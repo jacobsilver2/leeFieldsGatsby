@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Wrapper = styled.div`
   display: flex;
+  background-color: black;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
@@ -12,11 +13,19 @@ export const Wrapper = styled.div`
 `
 
 export const VideoWrapper = styled.div`
-  max-width: 1500px;
+cursor: url('${props => props.cursor}'), pointer;
+  /* max-width: 1500px; */
   width: 100%;
   height: 100%;
   margin: 0 auto;
   display: table;
+`
+
+export const CursorTrap = styled.div`
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
 `
 
 export const ModalVideoInner = styled.div`
@@ -30,7 +39,7 @@ export const SoundOnSoundOff = styled.div`
   cursor: pointer;
   text-align: center;
   margin-top: 2rem;
-  z-index: 999;
+  /* z-index: 999; */
 `
 
 export const Bar = styled.div`
@@ -77,6 +86,10 @@ export const Control = styled.div`
 
 export const PrevNext = styled.div`
   cursor: pointer;
+`
+
+export const UpperCaseTitle = styled.p`
+  text-transform: uppercase;
 `
 
 export const VideoBox = styled.div`
