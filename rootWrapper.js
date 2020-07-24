@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components"
 import GlobalStyle from "./src/styles/GlobalStyle"
 // import Fonts from "./src/styles/Fonts"
 import { theme } from "./src/styles/theme"
+import "./static/fonts/fonts.css"
 
 export const wrapRootElement = ({ element }) => {
   return (
