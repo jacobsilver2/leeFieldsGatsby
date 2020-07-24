@@ -6,10 +6,11 @@ import SoundOn from "../assets/svgs/soundOn.svg"
 import SoundOff from "../assets/svgs/soundOff.svg"
 
 export const Wrapper = styled.div`
-  border-bottom: 1px solid ${({ theme }) => theme.color.black};
+  /* border-bottom: 1px solid ${({ theme }) => theme.color.black}; */
 `
 
 export const VideoContainer = styled.div`
+  cursor: url('${props => props.hoverImg}') 25 64, auto;
   position: relative;
   padding-top: 56.25%;
   .react-player {
@@ -31,10 +32,12 @@ export const VideoOverlayWrapper = styled.div`
   height: 100%;
   /* background-color: white; */
   /* opacity: 0.75; */
-  z-index: 9;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  .react-player {
+  }
 `
 
 export const StyledPlayButton = styled(PlayButton)`

@@ -12,44 +12,18 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-plugin-mailchimp",
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        endpoint: process.env.GATSBY_MAILCHIMP_URL,
+        custom: {
+          families: ["FormaDJRBanner", "FormaDJRText"],
+          urls: ["/fonts/fonts.css"],
+        },
       },
     },
     {
-      resolve: `gatsby-plugin-modal-routing`,
+      resolve: "gatsby-plugin-mailchimp",
       options: {
-        modalProps: {
-          shouldCloseOnEsc: false,
-          shouldCloseOnOverlayClick: false,
-          style: {
-            overlay: {
-              position: `fixed`,
-              // width: "100%",
-              // height: "100%",
-              zIndex: 11,
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              backgroundColor: `black`,
-            },
-            content: {
-              position: `absolute`,
-              border: `none`,
-              background: `none`,
-              padding: 0,
-              top: 0,
-              bottom: 0,
-              right: 0,
-              left: 0,
-              overflow: `hidden`,
-              WebkitOverflowScrolling: `touch`,
-            },
-          },
-          contentLabel: `Modal`,
-        },
+        endpoint: process.env.GATSBY_MAILCHIMP_URL,
       },
     },
     {

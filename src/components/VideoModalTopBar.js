@@ -6,12 +6,12 @@ export const VideoModalTopBar = ({ muted, setMuted, prevPath }) => {
   return (
     <Bar>
       <Control onClick={() => setMuted(!muted)}>
-        <p>{muted ? "Sound On" : "Sound Off"}</p>
+        <p>{muted ? "SOUND ON" : "SOUND OFF"}</p>
       </Control>
       <Control
         onClick={() => navigate(prevPath || "/", { state: { noScroll: true } })}
       >
-        <p>Close</p>
+        <p>CLOSE</p>
       </Control>
     </Bar>
   )

@@ -14,6 +14,7 @@ import styled from "styled-components"
 const Wrapper = styled.div`
   border-top: 1px solid black;
   display: block;
+  height: 2rem;
 `
 
 const Links = styled.div`
@@ -22,6 +23,10 @@ const Links = styled.div`
   justify-content: space-around;
   margin-top: 1rem;
 `
+
+// const NavText = styled.p`
+//   font-size: 1.1rem;
+// `
 
 const MobileFooter = () => {
   return (

@@ -5,6 +5,7 @@ import { GlobalDispatchContext } from "../context/provider"
 import Video from "../components/video"
 import Shows from "../components/shows"
 import SEO from "../components/seo"
+import FadeWrapper from "../components/FadeWrapper"
 import { StyledBigLogo, BigLogoWrapper } from "../styles/StyledBigLogo"
 
 export const query = graphql`
@@ -26,9 +27,18 @@ export const query = graphql`
         }
       }
     }
+    hoverImg: file(base: { eq: "playVid.png" }) {
+      childImageSharp {
+        fixed(width: 64) {
+          src
+        }
+      }
+    }
   }
 `
+
 const IndexPage = ({ data }) => {
+  // console.log(data.hoverImg.childImageSharp.fixed.src)
   const dispatch = useContext(GlobalDispatchContext)
   const firstUpdate = useRef(true)
   const [animateRef, animateInView] = useInView({ threshold: 0.7 })
@@ -46,27 +56,17 @@ const IndexPage = ({ data }) => {
   const firstVid = edges.filter(vid => vid.node.data.Video_Order === 1)[0].node
     .data.Video_URL
   return (
-    <>
+    <FadeWrapper>
       <SEO title="Home" />
       <BigLogoWrapper>
-        <StyledBigLogo
-          ref={animateRef}
-          initial={{ opacity: 1, scale: 1 }}
-          animate={{
-            opacity: animateInView ? 1 : 0,
-            scale: animateInView ? 1 : 0.5,
-          }}
-          transition={{
-            opacity: { duration: 0.75 },
-            scale: { duration: 0.75 },
-          }}
-        >
-          {title.toUpperCase()}
-        </StyledBigLogo>
+        <StyledBigLogo ref={animateRef}>{title.toUpperCase()}</StyledBigLogo>
       </BigLogoWrapper>
-      <Video video={firstVid} />
+      <Video
+        hoverImg={data.hoverImg.childImageSharp.fixed.src}
+        video={firstVid}
+      />
       <Shows />
-    </>
+    </FadeWrapper>
   )
 }
 

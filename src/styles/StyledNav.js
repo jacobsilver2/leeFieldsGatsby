@@ -7,10 +7,6 @@ export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* margin-left: 10px;
-  margin-right: 10px; */
-  /* height: 100%; */
-  /* border: 5px solid black; */
 `
 
 export const StyledGatsbyLink = styled(Link)`
@@ -25,12 +21,39 @@ export const StyledGatsbyLink = styled(Link)`
     text-align: center;
   }
 `
-export const StyledLogo = styled(motion.h5)`
+
+export const StyledNavElement = styled.div`
+  padding-right: ${({ theme, isleft }) => (isleft ? theme.spacing[8] : "")};
+  padding-left: ${({ theme, isright }) => (isright ? theme.spacing[8] : "")};
+  /* this is a hack because for some reason it wasn't receiving props */
+  padding-right: ${({ theme }) => theme.spacing[8]};
+  text-align: center;
+  &:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    /* font-size: ${({ theme }) => theme.fontSize.xl}; */
+    text-align: center;
+    padding-right: 0;
+  }
+`
+
+export const VideoText = styled.p`
+  font-size: ${({ issecondarynav }) => (issecondarynav ? "1.8rem" : "1.4rem;")};
+  padding-right: ${({ theme, isleft }) => (isleft ? theme.spacing[8] : "")};
+  padding-left: ${({ theme, isright }) => (isright ? theme.spacing[8] : "")};
+  text-align: center;
+  background-color: ${({ theme }) => theme.color.offWhite};
+  &:hover {
+    text-decoration: underline;
+  }
+`
+export const StyledLogo = styled.h3`
   font-size: 2.8rem;
-  margin-top: 0.5rem;
+  /* margin-top: 1.5rem; */
   @media only screen and (max-width: 828px) {
     font-size: 1.8rem;
-    margin-top: 0.5rem;
+    /* margin-top: 1.2rem; */
   }
   @media only screen and (max-width: 667px) {
     /* margin-top: 2rem; */
@@ -38,14 +61,12 @@ export const StyledLogo = styled(motion.h5)`
   &:hover {
     opacity: 50%;
   }
-  font-weight: bold;
-  letter-spacing: 0;
-  /* visibility: ${props => (props.visible ? "visible" : "hidden")}; */
-  /* opacity: ${({ visible }) => (visible ? 1 : 0)}; */
-  /* transition: ${({ visible }) =>
-    visible
-      ? "opacity 1s linear"
-      : "visibility 0s 0.5s, opacity 0.5s linear"}; */
+  /* font-weight: 500; */
+  letter-spacing: 1px;
+  visibility: ${props => (props.visible ? "visible" : "hidden")};
+  opacity: ${({ visible }) => (visible ? 1 : 0)};
+  transition: ${({ visible }) =>
+    visible ? "opacity 1s linear" : "visibility 0s 0.5s, opacity 0.5s linear"};
   /* text doesn't totally center so this value needs to be adjusted manually according to font size */
 `
 export const StyledLink = styled.a`

@@ -3,6 +3,7 @@ import { GlobalDispatchContext } from "../context/provider"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import InfoComponent from "../components/info"
+import FadeWrapper from "../components/FadeWrapper"
 
 export const query = graphql`
   query GetInfo {
@@ -55,10 +56,10 @@ const Info = ({ data }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
-    <>
+    <FadeWrapper>
       <SEO title="Info" />
       <InfoComponent data={data} />
-    </>
+    </FadeWrapper>
   )
 }
 

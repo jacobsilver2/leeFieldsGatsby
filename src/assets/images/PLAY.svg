@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg height="128" width="128" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1366 768" style="enable-background:new 0 0 1366 768;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{font-family:'FormaDJRText-Regular';}
+	.st2{font-size:200px;}
+</style>
+<text transform="matrix(1 0 0 1 411.049 2199.0481)" class="st0 st1 st2">NEXT</text>
+<text transform="matrix(1 0 0 1 395.049 1347.0481)" class="st0 st1 st2">PREV</text>
+<text transform="matrix(1 0 0 1 472.049 448.0481)" class="st0 st1 st2">PLAY</text>
+<circle class="st0" cx="375.6" cy="377.63" r="58.32"/>
+</svg>

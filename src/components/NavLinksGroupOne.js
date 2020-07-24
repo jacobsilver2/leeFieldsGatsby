@@ -1,7 +1,12 @@
 import React, { useContext } from "react"
 import { globalHistory as history } from "@reach/router"
 import { GlobalDispatchContext } from "../context/provider"
-import { StyledGatsbyLink, NavText } from "../styles/StyledNav"
+import {
+  StyledGatsbyLink,
+  NavText,
+  StyledNavElement,
+  VideoText,
+} from "../styles/StyledNav"
 import styled from "styled-components"
 // import { Link } from "gatsby"
 
@@ -23,12 +28,16 @@ const NavLinksGroupOne = () => {
   //   dispatch({ type: "MODAL_VID_OPEN" })
   // }
 
+  const handleVidClick = () => {
+    dispatch({ type: "MODAL_VID_OPEN" })
+  }
+
   return (
     <Wrapper>
       <StyledGatsbyLink isleft="true" onClick={handleClick} to="/music">
         <NavText>Music</NavText>
       </StyledGatsbyLink>
-      <StyledGatsbyLink
+      {/* <StyledGatsbyLink
         state={{
           modal: true,
           prevPath: location.pathname,
@@ -36,9 +45,11 @@ const NavLinksGroupOne = () => {
         isleft="true"
         onClick={handleClick}
         to="/video"
-      >
-        <NavText>Video</NavText>
-      </StyledGatsbyLink>
+      > */}
+      <StyledNavElement isLeft="true" onClick={handleVidClick}>
+        <VideoText>Video</VideoText>
+      </StyledNavElement>
+      {/* </StyledGatsbyLink> */}
       <StyledGatsbyLink isleft="true" onClick={handleClick} to="/tour">
         <NavText>Tour</NavText>
       </StyledGatsbyLink>

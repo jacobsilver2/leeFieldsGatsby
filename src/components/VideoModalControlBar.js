@@ -20,10 +20,10 @@ export const VideoModalControlBar = ({
       </Control>
       <Control>
         <PrevNext onClick={() => previousVideo()}>
-          <p>Prev &nbsp;</p>
+          <p>PREV &nbsp;</p>
         </PrevNext>
         <PrevNext onClick={() => handleEnded()}>
-          <p>Next &nbsp;</p>
+          <p>NEXT &nbsp;</p>
         </PrevNext>
       </Control>
     </BottomBar>
