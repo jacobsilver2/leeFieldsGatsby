@@ -7,7 +7,7 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   display: block;
-  z-index: 11;
+  z-index: 1001;
   /* pointer-events: none; */
   /* z-index: 1000000; */
   background-color: black;
@@ -25,7 +25,7 @@ export const Content = styled.div`
 `
 
 export const CloseContainer = styled.div`
-  z-index: 10;
+  z-index: 1001;
   position: fixed;
   cursor: pointer;
   top: 1rem;
@@ -44,7 +44,7 @@ export const BottomBar = styled.div`
 `
 
 export const MouseTrap = styled.div`
-  z-index: 1000;
+  z-index: 1002;
   position: absolute;
   top: 3.5rem;
   bottom: 3.5rem;

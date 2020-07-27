@@ -50,7 +50,7 @@ export const SoundOnSoundOff = styled.div`
 export const Bar = styled.div`
   position: absolute;
   top: 0px;
-  z-index: 1000;
+  z-index: 1001;
   justify-content: space-between;
   padding: 1.5rem;
   color: #fff;
@@ -60,7 +60,7 @@ export const Bar = styled.div`
 
 export const BottomBar = styled.div`
   position: absolute;
-  z-index: 1000;
+  z-index: 1001;
   justify-content: space-between;
   padding: 1.5rem;
   color: #fff;
