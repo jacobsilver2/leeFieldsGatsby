@@ -18,6 +18,7 @@ const Header = ({ siteTitle }) => {
   // We don't want the secondary menu to ever be open if above 828. This will prevent that.
   useEffect(() => {
     size.width > 828 && dispatch({ type: "SECONDARY_MENU_OFF" })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [size.width])
 
   return (

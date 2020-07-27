@@ -1,5 +1,4 @@
 import React, { useContext } from "react"
-import { globalHistory as history } from "@reach/router"
 import { GlobalDispatchContext } from "../context/provider"
 import {
   StyledGatsbyLink,
@@ -8,7 +7,6 @@ import {
   VideoText,
 } from "../styles/StyledNav"
 import styled from "styled-components"
-// import { Link } from "gatsby"
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,16 +15,10 @@ const Wrapper = styled.div`
 
 const NavLinksGroupOne = () => {
   const dispatch = useContext(GlobalDispatchContext)
-  const { location } = history
-  // const state = useContext(GlobalStateContext)
 
   const handleClick = () => {
     dispatch({ type: "CNN_OFF" })
   }
-  // const handleModalVidClick = () => {
-  //   dispatch({ type: "CNN_OFF" })
-  //   dispatch({ type: "MODAL_VID_OPEN" })
-  // }
 
   const handleVidClick = () => {
     dispatch({ type: "MODAL_VID_OPEN" })
@@ -37,19 +29,9 @@ const NavLinksGroupOne = () => {
       <StyledGatsbyLink isleft="true" onClick={handleClick} to="/music">
         <NavText>Music</NavText>
       </StyledGatsbyLink>
-      {/* <StyledGatsbyLink
-        state={{
-          modal: true,
-          prevPath: location.pathname,
-        }}
-        isleft="true"
-        onClick={handleClick}
-        to="/video"
-      > */}
       <StyledNavElement isLeft="true" onClick={handleVidClick}>
         <VideoText>Video</VideoText>
       </StyledNavElement>
-      {/* </StyledGatsbyLink> */}
       <StyledGatsbyLink isleft="true" onClick={handleClick} to="/tour">
         <NavText>Tour</NavText>
       </StyledGatsbyLink>

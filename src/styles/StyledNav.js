@@ -1,7 +1,5 @@
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { motion } from "framer-motion"
-// import LargeBodyText from "./LargeBodyText"
 
 export const StyledNav = styled.nav`
   display: flex;
@@ -17,7 +15,6 @@ export const StyledGatsbyLink = styled(Link)`
     text-decoration: underline;
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    /* font-size: ${({ theme }) => theme.fontSize.xl}; */
     text-align: center;
   }
 `
@@ -32,7 +29,6 @@ export const StyledNavElement = styled.div`
     text-decoration: underline;
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    /* font-size: ${({ theme }) => theme.fontSize.xl}; */
     text-align: center;
     padding-right: 0;
   }
@@ -53,15 +49,12 @@ export const StyledLogo = styled.h3`
   margin-top: 0.4rem;
   @media only screen and (max-width: 828px) {
     font-size: 1.8rem;
-    /* margin-top: 1.2rem; */
   }
   @media only screen and (max-width: 667px) {
-    /* margin-top: 2rem; */
   }
   &:hover {
     opacity: 50%;
   }
-  /* font-weight: 500; */
   letter-spacing: 1px;
   visibility: ${props => (props.visible ? "visible" : "hidden")};
   opacity: ${({ visible }) => (visible ? 1 : 0)};
@@ -74,10 +67,8 @@ export const StyledLink = styled.a`
   padding: 0 ${({ theme }) => theme.spacing[2]};
   font-size: ${({ theme }) => theme.fontSize["2xl"]};
   text-align: center;
-  /* text-transform: uppercase; */
   font-weight: ${({ theme }) => theme.fontWeight.light};
   letter-spacing: ${({ open }) => (open ? "0.5rem" : "")};
-  /* transition: color 0.3s linear; */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     font-size: ${({ theme }) => theme.fontSize.xl};
     text-align: center;
@@ -92,17 +83,12 @@ export const NavButton = styled.div`
   padding: 0 1rem;
   margin: 0 1rem;
   letter-spacing: ${({ open }) => (open ? "0.5rem" : "")};
-  border: 1px solid ${props =>
-    props.open ? props.theme.color.black : props.theme.color.offWhite};
+  border: 1px solid
+    ${props =>
+      props.open ? props.theme.color.black : props.theme.color.offWhite};
   background: none;
   cursor: pointer;
   text-align: center;
-  /* a {
-    color: ${props => props.theme.offWhite};
-    &:hover {
-      color: ${props => props.theme.blue};
-    }
-  } */
   &:hover {
     background: white;
     color: ${props => props.theme.color.blue};

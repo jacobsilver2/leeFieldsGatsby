@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import useLockBodyScroll from "../hooks/useLockBodyScroll"
-import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
+import { GlobalDispatchContext } from "../context/provider"
 import { VideoWrapper, ModalVideoInner } from "../styles/StyledVideoModal"
 import FadeWrapper from "./FadeWrapper"
 import {
@@ -25,6 +25,7 @@ const VideoModalComponent = () => {
 
   useEffect(() => {
     setcurrentVideo(video.edges[0])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   function onClose() {
@@ -89,8 +90,8 @@ const VideoModalComponent = () => {
     `
   )
 
-  const prevCursorUrl = prevCursor.childImageSharp.fixed.src
-  const nextCursorUrl = nextCursor.childImageSharp.fixed.src
+  const { src: prevCursorUrl } = prevCursor.childImageSharp.fixed
+  const { src: nextCursorUrl } = nextCursor.childImageSharp.fixed
 
   return (
     <FadeWrapper transition={0.5}>

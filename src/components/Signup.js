@@ -18,7 +18,7 @@ const validationSchema = yup.object({
   email: yup.string().email().required(),
 })
 
-const extractEmailRegex = /<a[\s]+([^>]+)>((?:.(?!\<\/a\>))*.)<\/a>/g
+const extractEmailRegex = /<a[\s]+([^>]+)>((?:.(?!<\/a>))*.)<\/a>/g
 
 const Signup = () => {
   // const [errmsg, setErrmsg] = useState("")
