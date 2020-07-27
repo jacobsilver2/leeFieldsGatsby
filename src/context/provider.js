@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useReducer, createContext } from "react"
 
-export const GlobalStateContext = React.createContext()
-export const GlobalDispatchContext = React.createContext()
+export const GlobalStateContext = createContext()
+export const GlobalDispatchContext = createContext()
 
 const initialState = {
   isMuted: true,
@@ -80,7 +80,7 @@ function reducer(state, action) {
 }
 
 const GlobalContextProvider = ({ children }) => {
-  const [state, dispatch] = React.useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <GlobalStateContext.Provider value={state}>
       <GlobalDispatchContext.Provider value={dispatch}>

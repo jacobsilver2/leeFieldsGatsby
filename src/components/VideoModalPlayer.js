@@ -16,7 +16,7 @@ const VideoContainer = styled.div`
   position: relative;
   padding-bottom: 56.25%;
   background-color: #333;
-  animation-timing-function: ease-out;
+  /* animation-timing-function: ease-out;
   animation-duration: 0.3s;
   animation-name: modal-video-inner;
   -webkit-transform: translate(0, 0);
@@ -28,7 +28,7 @@ const VideoContainer = styled.div`
   -moz-transition: -moz-transform 0.3s ease-out;
   -ms-transition: -ms-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out; */
   .react-player {
     position: absolute;
     top: 0;

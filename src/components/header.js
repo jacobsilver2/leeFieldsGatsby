@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect } from "react"
 import useWindowSize from "../hooks/useWindowSize"
 import StyledHeader from "../styles/StyledHeader"
 
@@ -13,9 +13,8 @@ const Header = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
   const dispatch = useContext(GlobalDispatchContext)
   const size = useWindowSize()
-  const [visible, setVisible] = useState(true)
+  // const [visible, setVisible] = useState(true)
 
-  // this will close the secondary menu every time the window resizes.
   // We don't want the secondary menu to ever be open if above 828. This will prevent that.
   useEffect(() => {
     size.width > 828 && dispatch({ type: "SECONDARY_MENU_OFF" })

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import useLockBodyScroll from "../hooks/useLockBodyScroll"
 import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
 import { VideoWrapper, ModalVideoInner } from "../styles/StyledVideoModal"
+import FadeWrapper from "./FadeWrapper"
 import {
   Overlay,
   Content,
@@ -92,51 +93,54 @@ const VideoModalComponent = () => {
   const nextCursorUrl = nextCursor.childImageSharp.fixed.src
 
   return (
-    <Overlay>
-      <Content>
-        <CloseContainer onClick={onClose}>
-          <p>CLOSE</p>
-        </CloseContainer>
-        <MouseTrap>
-          <MouseTrapInner>
-            <PrevCursor
-              onClick={previousVideo}
-              cursor={prevCursorUrl}
-            ></PrevCursor>
-            <NextCursor
-              onClick={handleEndedAndNext}
-              cursor={nextCursorUrl}
-            ></NextCursor>
-          </MouseTrapInner>
-        </MouseTrap>
-        <VideoWrapper>
-          <ModalVideoInner>
-            <VideoModalPlayer
-              playing={true}
-              currentVideo={currentVideo && currentVideo.node.data.Video_URL}
-              muted={muted}
-              handleEnded={handleEndedAndNext}
-            />
-          </ModalVideoInner>
-        </VideoWrapper>
-        <BottomBar>
-          <div>
-            <p>
-              {currentVideo && video.edges.indexOf(currentVideo) + 1}/
-              {video.edges.length}
-            </p>
-          </div>
-          <div>
-            <p>
-              {currentVideo && currentVideo.node.data.Video_Title.toUpperCase()}
-            </p>
-          </div>
-          <SoundBox onClick={handleSound}>
-            <p>SOUND {muted ? "ON" : "OFF"}</p>
-          </SoundBox>
-        </BottomBar>
-      </Content>
-    </Overlay>
+    <FadeWrapper transition={0.5}>
+      <Overlay>
+        <Content>
+          <CloseContainer onClick={onClose}>
+            <p>CLOSE</p>
+          </CloseContainer>
+          <MouseTrap>
+            <MouseTrapInner>
+              <PrevCursor
+                onClick={previousVideo}
+                cursor={prevCursorUrl}
+              ></PrevCursor>
+              <NextCursor
+                onClick={handleEndedAndNext}
+                cursor={nextCursorUrl}
+              ></NextCursor>
+            </MouseTrapInner>
+          </MouseTrap>
+          <VideoWrapper>
+            <ModalVideoInner>
+              <VideoModalPlayer
+                playing={true}
+                currentVideo={currentVideo && currentVideo.node.data.Video_URL}
+                muted={muted}
+                handleEnded={handleEndedAndNext}
+              />
+            </ModalVideoInner>
+          </VideoWrapper>
+          <BottomBar>
+            <div>
+              <p>
+                {currentVideo && video.edges.indexOf(currentVideo) + 1}/
+                {video.edges.length}
+              </p>
+            </div>
+            <div>
+              <p>
+                {currentVideo &&
+                  currentVideo.node.data.Video_Title.toUpperCase()}
+              </p>
+            </div>
+            <SoundBox onClick={handleSound}>
+              <p>SOUND {muted ? "ON" : "OFF"}</p>
+            </SoundBox>
+          </BottomBar>
+        </Content>
+      </Overlay>
+    </FadeWrapper>
   )
 }
 

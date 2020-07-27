@@ -50,7 +50,7 @@ export const VideoText = styled.p`
 `
 export const StyledLogo = styled.h3`
   font-size: 2.8rem;
-  /* margin-top: 1.5rem; */
+  margin-top: 0.4rem;
   @media only screen and (max-width: 828px) {
     font-size: 1.8rem;
     /* margin-top: 1.2rem; */

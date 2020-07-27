@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import FadeWrapper from "./FadeWrapper"
 
 const Wrapper = styled.div`
   margin-top: 10rem;
@@ -34,20 +35,22 @@ const Contact = ({ data }) => {
     .map(contact => {
       const { data, id } = contact.node
       return (
-        <ContactCard key={id}>
-          {data.Role && <Title>{data.Role.toUpperCase()}</Title>}
-          {data.Agency && <Info>{data.Agency}</Info>}
-          {data.Name1 && (
-            <Info>
-              <a href={`mailto: ${data.Email1}`}>{data.Name1}</a>
-            </Info>
-          )}
-          {data.Name2 && (
-            <Info>
-              <a href={`mailto: ${data.Email2}`}>{data.Name2}</a>
-            </Info>
-          )}
-        </ContactCard>
+        <FadeWrapper>
+          <ContactCard key={id}>
+            {data.Role && <Title>{data.Role.toUpperCase()}</Title>}
+            {data.Agency && <Info>{data.Agency}</Info>}
+            {data.Name1 && (
+              <Info>
+                <a href={`mailto: ${data.Email1}`}>{data.Name1}</a>
+              </Info>
+            )}
+            {data.Name2 && (
+              <Info>
+                <a href={`mailto: ${data.Email2}`}>{data.Name2}</a>
+              </Info>
+            )}
+          </ContactCard>
+        </FadeWrapper>
       )
     })
 

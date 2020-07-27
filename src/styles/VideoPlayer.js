@@ -36,8 +36,6 @@ export const VideoOverlayWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  .react-player {
-  }
 `
 
 export const StyledPlayButton = styled(PlayButton)`

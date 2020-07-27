@@ -15,7 +15,7 @@ const Video = ({ video, hoverImg }) => {
 
   return (
     <VideoContainer hoverImg={hoverImg} onClick={handleClick}>
-      <VideoOverlayWrapper></VideoOverlayWrapper>
+      <VideoOverlayWrapper hoverImg={hoverImg}></VideoOverlayWrapper>
       <ReactPlayer
         className="react-player"
         playing={true}

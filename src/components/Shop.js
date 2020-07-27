@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import FadeWrapper from "./FadeWrapper"
 // import { StyledBigLogo } from "../styles/StyledBigLogo"
 
 const Wrapper = styled.div`
@@ -85,30 +86,32 @@ const ShopComponent = ({ items }) => {
     .sort((a, b) => a.Order - b.Order)
     .map(item => {
       return (
-        <Card key={item.id}>
-          {item.Shop_Image && (
-            <Image src={item.Shop_Image[0].url} alt="shop_image" />
-          )}
-          <Content>
-            {item.Name && <ItemName className="title">{item.Name}</ItemName>}
-            {item.Colored_LP_Price && (
-              <p className="price">Colored Vinyl: ${item.Colored_LP_Price}</p>
+        <FadeWrapper>
+          <Card key={item.id}>
+            {item.Shop_Image && (
+              <Image src={item.Shop_Image[0].url} alt="shop_image" />
             )}
-            {item.LP_Price && <p className="price">LP: ${item.LP_Price}</p>}
-            {item.CD_Price && <p className="price">CD: ${item.CD_Price}</p>}
-            {item.Price && <p className="price">${item.Price}</p>}
-          </Content>
-          <Purchase>
-            <a
-              className="purchaseText"
-              href={item.PurchaseLink}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <p>Purchase</p>
-            </a>
-          </Purchase>
-        </Card>
+            <Content>
+              {item.Name && <ItemName className="title">{item.Name}</ItemName>}
+              {item.Colored_LP_Price && (
+                <p className="price">Colored Vinyl: ${item.Colored_LP_Price}</p>
+              )}
+              {item.LP_Price && <p className="price">LP: ${item.LP_Price}</p>}
+              {item.CD_Price && <p className="price">CD: ${item.CD_Price}</p>}
+              {item.Price && <p className="price">${item.Price}</p>}
+            </Content>
+            <Purchase>
+              <a
+                className="purchaseText"
+                href={item.PurchaseLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p>Purchase</p>
+              </a>
+            </Purchase>
+          </Card>
+        </FadeWrapper>
       )
     })
 

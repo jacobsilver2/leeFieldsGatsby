@@ -16,10 +16,10 @@ const LogoAndBurgerWrapper = styled.div`
 const MobileNav = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
   const dispatch = useContext(GlobalDispatchContext)
-  const [burgerIsOpen, setBurgerIsOpen] = useState(false)
+  // const [burgerIsOpen, setBurgerIsOpen] = useState(false)
 
   const handleBurgerClicked = () => {
-    setBurgerIsOpen(prev => !prev)
+    // setBurgerIsOpen(prev => !prev)
     dispatch({ type: "TOGGLE_SECONDARY_MENU" })
   }
 
@@ -28,12 +28,6 @@ const MobileNav = ({ siteTitle }) => {
       <StyledLogo visible={!state.cnnInView}>
         <Link to="/">{siteTitle.toUpperCase()}</Link>
       </StyledLogo>
-      {/* <HamburgerMenu
-        isOpen={state.secondaryMenuActive}
-        menuClicked={() => handleBurgerClicked()}
-        height={15}
-        width={25}
-      /> */}
       <Burger
         isOpen={state.secondaryMenuActive}
         menuClicked={() => handleBurgerClicked()}

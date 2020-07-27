@@ -2,6 +2,7 @@ import React from "react"
 import Img from "./image"
 import LargeBodyText from "../styles/LargeBodyText"
 import styled from "styled-components"
+import FadeWrapper from "./FadeWrapper"
 
 // adding comment, trying to figure out why it's not deploying from git add.
 
@@ -50,23 +51,25 @@ const About = ({ data }) => {
   const aboutInfo = data.edges[0].node
 
   return (
-    <Wrapper>
-      <Img image={aboutInfo.data.AboutPic.localFiles[0]} />
-      <Text>
-        <Headline>
-          <LargeBody>{aboutInfo.data.Headline}</LargeBody>
-        </Headline>
-        <Info>
-          <AboutText>{aboutInfo.data.P1}</AboutText>
-          <br />
-          <br />
-          <AboutText>{aboutInfo.data.P2}</AboutText>
-          <br />
-          <br />
-          <AboutText>{aboutInfo.data.P3}</AboutText>
-        </Info>
-      </Text>
-    </Wrapper>
+    <FadeWrapper>
+      <Wrapper>
+        <Img image={aboutInfo.data.AboutPic.localFiles[0]} />
+        <Text>
+          <Headline>
+            <LargeBody>{aboutInfo.data.Headline}</LargeBody>
+          </Headline>
+          <Info>
+            <AboutText>{aboutInfo.data.P1}</AboutText>
+            <br />
+            <br />
+            <AboutText>{aboutInfo.data.P2}</AboutText>
+            <br />
+            <br />
+            <AboutText>{aboutInfo.data.P3}</AboutText>
+          </Info>
+        </Text>
+      </Wrapper>
+    </FadeWrapper>
   )
 }
 
