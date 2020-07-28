@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { Formik } from "formik"
 import * as yup from "yup"
 import is from "is_js"
@@ -20,14 +20,38 @@ const validationSchema = yup.object({
 
 const extractEmailRegex = /<a[\s]+([^>]+)>((?:.(?!<\/a>))*.)<\/a>/g
 
-const Signup = () => {
+const Signup = props => {
+  console.log(props)
   // const [errmsg, setErrmsg] = useState("")
   const [result, setResult] = useState("")
+  // const myRef = useRef()
+
+  // useEffect(() => {
+  //   // set the location on initial load
+  //   if (!myRef.current.location) {
+  //     console.log("hi")
+  //     myRef.current.location = location
+  //     console.log(myRef.current)
+  //   }
+  //   // then make sure dialog is closed on route change
+  //   else if (myRef.current.location !== location) {
+  //     console.log("yo")
+  //     myRef.current.resetForm()
+  //     myRef.current.location = location
+  //   }
+  // })
+
+  // useEffect(() => {
+  //   console.log(myRef.current)
+
+  // }, [])
+
   return (
     <Wrapper>
       <Title>JOIN OUR NEWSLETTER</Title>
       <TheForm>
         <Formik
+          // ref={myRef}
           initialValues={{ email: "" }}
           validationSchema={validationSchema}
           onSubmit={(data, { setSubmitting, resetForm }) => {

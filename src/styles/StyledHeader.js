@@ -20,7 +20,7 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     height: 5rem;
-    margin: 0 ${({ theme }) => theme.spacing[4]};
+    margin: 0 ${({ theme }) => theme.spacing[5]};
     @media only screen and (max-width: 667px) {
       min-height: 4rem;
       /* margin: 0 ${({ theme }) => theme.spacing[2]}; */

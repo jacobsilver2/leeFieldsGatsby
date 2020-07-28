@@ -4,8 +4,6 @@ import LargeBodyText from "../styles/LargeBodyText"
 import styled from "styled-components"
 import FadeWrapper from "./FadeWrapper"
 
-// adding comment, trying to figure out why it's not deploying from git add.
-
 const Wrapper = styled.div`
   @media only screen and (max-width: 828px) {
     margin: 0;
@@ -44,7 +42,7 @@ const LargeBody = styled(LargeBodyText)`
 `
 
 const AboutText = styled.p`
-  font-weight: 300;
+  font-weight: 400;
 `
 
 const About = ({ data }) => {

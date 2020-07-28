@@ -38,7 +38,6 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }) => {
-  // console.log(data.hoverImg.childImageSharp.fixed.src)
   const dispatch = useContext(GlobalDispatchContext)
   const firstUpdate = useRef(true)
   const [animateRef, animateInView] = useInView({ threshold: 0.7 })

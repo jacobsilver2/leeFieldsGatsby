@@ -9,17 +9,9 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
-  min-height: 40rem;
-  /* grid-template-rows: 1fr 1fr; */
-  /* @media only screen and (max-width: 1700px) {
-    height: 30rem;
-  } */
   @media only screen and (max-width: 1080px) {
     min-height: 25rem;
   }
-  /* @media only screen and (max-width: 828px) {
-    height: 20rem;
-  } */
   @media only screen and (max-width: 750px) {
     min-height: 20rem;
   }
@@ -50,7 +42,6 @@ export const StyledFormikField = styled(Field)`
   font-size: ${({ theme }) => theme.fontSize.h5};
   @media only screen and (max-width: 1700px) {
     font-size: 3vw;
-    /* line-height: 12vw; */
   }
   opacity: 1;
   &:focus {
@@ -61,7 +52,6 @@ export const StyledFormikField = styled(Field)`
 export const StyledForm = styled.form`
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
 `
 
 export const Input = styled.input`
@@ -72,7 +62,6 @@ export const Input = styled.input`
   font-size: ${({ theme }) => theme.fontSize.h5};
   @media only screen and (max-width: 1700px) {
     font-size: 3vw;
-    /* line-height: 12vw; */
   }
   opacity: 1;
   &:focus {
@@ -90,15 +79,12 @@ export const Button = styled.button`
   }
   @media only screen and (max-width: 1700px) {
     font-size: 3vw;
-    /* line-height: 12vw; */
   }
 `
 
 export const TheForm = styled.div`
-  /* margin: auto; */
-  /* align-self: center; */
+  margin-top: -2rem;
   max-width: 80%;
-  /* width: 50%; */
   border-bottom: 1px solid black;
 `
 

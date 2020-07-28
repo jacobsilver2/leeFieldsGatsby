@@ -10,7 +10,7 @@
   > I'm not totally sure what you mean. Are you referring to the spacing between the text elements? If so, see my comment below.
 
 - [x] I noticed when I play with adjusting the browser size that at times the elements in the banner overlap. Not the hugest problem, but if there’s a way to avoid that, great!
-  > Unfortunately this is a bug in the css library I'm using to make this component, and as far as I can tell it's the only library which does this sort of thing. This is why I had initally set it as a bit wider than you had spec'ed. If you resize the window (or switch from portrait to landscape on a phone), it will go back to normal, but on first render it won't look right and will overlap. I'm tempted to go back to the wider space so it never overlaps.
+  > Unfortunately this is a bug in the css library I'm using to make this component, and as far as I can tell it's the only library which does this sort of thing. This is why I had initally set it as a bit wider than you had spec'ed. If you resize the window (or switch from portrait to landscape on a phone), it will go back to normal, but on first render it won't look right and will overlap. I'm tempted to go back to the wider spacing so it never overlaps.
 
 # Home/Modal:
 
@@ -28,14 +28,14 @@
 
 - [x] Also loving that the video fills the screen instead of how we had it originally mocked. I’m not missing the play/pause at all. Will we be able to keep this with dailymotion as well? Will daily motion show the title/related videos like youtube (I'm hoping not but its not the end of the world is so)
 
-  > Yes, that was a happy accident. I was having a hell of a time dealing with all these videos that have different aspect ratios. Once we deal with the copyright issues on Dailymotion, we'll switch back. The reason I chose DM over YT or Vimeo was because you can totally remove every bit of control/overlay/title/releated videos with DM, unlike YT or Vimeo. So once we can get back to DM, the controls will look way better.
+  > Yes, that was a happy accident. I was having a hell of a time dealing with all these videos that have different aspect ratios. Once we deal with the copyright issues on Dailymotion, we'll switch back. The reason I chose DM over YT or Vimeo was because you can totally remove every bit of control/overlay/title/releated-videos, unlike YT or Vimeo, which keeps some aspects of overlay no matter what. So once we can get back to DM, the controls will look way better.
 
 - [ ] We’re a bit busy right now, so I’ll need a little more time to get you a mockup. But yes, exactly what you said. Pretty much exactly like the mobile homepage of lekhoa or basically how you had the music page created, but a rectangular image. Can you just use a placeholder image for now? Let me know if that makes sense or if you’d still want a mockup. Do you think this would solve the video page on mobile problem? I think since they would see the title on the list, then we can eliminate it on the pop-up mobile modal in this case and only have “close”. And the sound would come on without having to turn it on/or IDK maybe its with daily motion in this instance?
 
 # About
 
 - [x] On mobile, can you decrease the headers for each contact (management, us publicist, etc). Maybe the same size as join our newsletter?
-  > Done. It's now the same size as the Signup title at mobile screen widths.
+  > Done. It's now the same sizing as the Signup title at mobile screen widths.
 
 # Tour
 
@@ -55,11 +55,18 @@
 
   > If you want to see what other loading indicators are available for the library I'm using, check out https://www.davidhu.io/react-spinners/. I'm using "BeatLoader"
 
-- [ ] Yes, I agree I like having 3 columns or less. I’m having trouble envisioning how it’ll work with correct image files, could you use a stock image or something else in its place so I can see how it responds?
+- [x] Yes, I agree I like having 3 columns or less. I’m having trouble envisioning how it’ll work with correct image files, could you use a stock image or something else in its place so I can see how it responds?
 
-- [ ] Break point for 1 column seems to early(see screenshot)
+  > Ok now we have a maximum of 3 column grid, that has a minimum width of 400px per column, with a 30px gap between the columns. The columns will wrap when they need to. It is center-aligned, with a bit of left and right padding, which will help keep those margins for mobile devices when all the excess space has been removed. I didn't come across any margin issues in my testing, except for around tablet width, but only on Firefox, so I think it might be just a quirk with Firefox, and actually, I had a hard time replicating it so I can't even figure out when or why it happens. If you see it, please let me know.
 
-- [ ] Not sure if its just my phone, the margin doesn’t show on the right hand side (See screenshot)
+  > I don't think stock images will be needed with the new revisions to the layout. Ideally the layout should be able to compensate for various image sizes.
+
+- [x] Break point for 1 column seems to early(see screenshot)
+
+  > Fixed.
+
+- [x] Not sure if its just my phone, the margin doesn’t show on the right hand side (See screenshot)
+  > Fixed (I think).
 
 # Nav
 
@@ -69,10 +76,14 @@
 
 - [ ] Email form is still stuck for me once I enter information :/
 
-- [ ] Yes, It looked fine on mobile, thanks! However, can you maybe shorten the height of the newsletter sign up rules? and/or bring the submit line closer to the “join our newsletter”
+- [x] Yes, It looked fine on mobile, thanks! However, can you maybe shorten the height of the newsletter sign up rules? and/or bring the submit line closer to the “join our newsletter”
+  > I'm not totally sure what you mean by "newsletter sign up rules", but I brought the submit line a little closer to the "join our newsletter" text.
 
 # Other
 
-- [ ] Body copy seems like its the wrong weight (too light) on the bio and shop description
+- [x] Body copy seems like its the wrong weight (too light) on the bio and shop description
 
-- [ ] This is extremely minor because we really love the extremely small margins, but can you make it a hair bigger, like literally only a hair or two. On my browser, the grey bar shows up on the right side as I scroll and I just want to give the text that is on the right the tiniest space from it. It bothers me less on the video, than on the copy in the nav and ticket listing.
+  > fixed
+
+- [x] This is extremely minor because we really love the extremely small margins, but can you make it a hair bigger, like literally only a hair or two. On my browser, the grey bar shows up on the right side as I scroll and I just want to give the text that is on the right the tiniest space from it. It bothers me less on the video, than on the copy in the nav and ticket listing.
+  > I ended up just slightly increasing margins for the nav, the news-ticker close button, the shows, and the footer. Everything else is as-is. I know it's more standard to have the same exact margins on every component, but the difference is so subtle, I think we can get away with it.

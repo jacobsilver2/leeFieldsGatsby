@@ -32,6 +32,6 @@ export const Title = styled.h2`
   text-align: center;
 `
 export const Wrapper = styled.div`
-  margin: 0 auto;
+  margin: 0 0.5rem;
   padding: 8vw 0;
 `

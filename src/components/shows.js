@@ -36,7 +36,6 @@ const Shows = () => {
   return (
     <Wrapper>
       <Title>UPCOMING SHOWS</Title>
-
       {isLoading && <Loading />}
       {!isLoading && <ShowsList shows={sortShowsByDate(shows)} />}
     </Wrapper>

@@ -29,7 +29,7 @@ const TickerContainer = styled.div`
 
 const TickerItem = styled.p`
   font-size: 1.4rem;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.1rem;
   opacity: ${({ isEven }) => (isEven ? "100%" : "50%")};
   white-space: nowrap;
   margin: 0 1.5rem;
@@ -37,6 +37,7 @@ const TickerItem = styled.p`
 
 const CloseButton = styled.button`
   margin-top: -1rem;
+  margin-right: ${({ theme }) => theme.spacing[2]};
   font-size: 1.4rem;
   font-weight: bold;
   color: black;
