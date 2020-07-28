@@ -31,7 +31,6 @@ export const Content = styled.div`
 `
 
 export const Title = styled.h3`
-  /* align-self: end; */
   text-align: center;
   @media only screen and (min-width: 1080px) {
     margin-bottom: 4rem;

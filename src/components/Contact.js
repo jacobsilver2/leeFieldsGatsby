@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import FadeWrapper from "./FadeWrapper"
+import useWindowSize from "../hooks/useWindowSize"
 
 const Wrapper = styled.div`
   margin-top: 10rem;
@@ -20,6 +21,10 @@ const Title = styled.h4`
   line-height: 1;
   padding-bottom: 1rem;
 `
+const TitleDesktop = styled.h3`
+  line-height: 1;
+  padding-bottom: 1rem;
+`
 
 const Info = styled.p`
   font-weight: 300;
@@ -30,6 +35,7 @@ const Info = styled.p`
 `
 
 const Contact = ({ data }) => {
+  const size = useWindowSize()
   const mappedData = data.edges
     .sort((a, b) => a.node.data.Order - b.node.data.Order)
     .map(contact => {
@@ -37,7 +43,11 @@ const Contact = ({ data }) => {
       return (
         <FadeWrapper>
           <ContactCard key={id}>
-            {data.Role && <Title>{data.Role.toUpperCase()}</Title>}
+            {size.width >= 828
+              ? data.Role && <Title>{data.Role.toUpperCase()}</Title>
+              : data.Role && (
+                  <TitleDesktop>{data.Role.toUpperCase()}</TitleDesktop>
+                )}
             {data.Agency && <Info>{data.Agency}</Info>}
             {data.Name1 && (
               <Info>

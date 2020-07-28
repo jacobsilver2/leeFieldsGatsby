@@ -46,6 +46,9 @@ const Title = styled.div`
       font-size: 5vw;
       line-height: 1;
     }
+    @media only screen and (max-width: 868px) {
+      letter-spacing: 0.15rem;
+    }
   }
 `
 

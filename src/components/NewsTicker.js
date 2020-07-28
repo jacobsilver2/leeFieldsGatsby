@@ -29,6 +29,7 @@ const TickerContainer = styled.div`
 
 const TickerItem = styled.p`
   font-size: 1.4rem;
+  letter-spacing: 0.15rem;
   opacity: ${({ isEven }) => (isEven ? "100%" : "50%")};
   white-space: nowrap;
   margin: 0 1.5rem;

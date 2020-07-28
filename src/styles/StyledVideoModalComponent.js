@@ -31,6 +31,9 @@ export const CloseContainer = styled.div`
   top: 1rem;
   right: 1rem;
   color: white;
+  p {
+    font-size: 2.5rem;
+  }
 `
 
 export const BottomBar = styled.div`
@@ -41,6 +44,9 @@ export const BottomBar = styled.div`
   color: #fff;
   width: 100%;
   bottom: 0px;
+  p {
+    font-size: 2.5rem;
+  }
 `
 
 export const MouseTrap = styled.div`
