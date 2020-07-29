@@ -14,8 +14,8 @@ const ShopComponent = ({ items }) => {
     .sort((a, b) => a.Order - b.Order)
     .map(item => {
       return (
-        <FadeWrapper>
-          <Card key={item.id}>
+        <FadeWrapper key={item.id}>
+          <Card>
             {item.Shop_Image && (
               <Image src={item.Shop_Image[0].url} alt="shop_image" />
             )}

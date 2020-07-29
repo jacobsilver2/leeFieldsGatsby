@@ -8,6 +8,8 @@ import Signup from "./Signup"
 import ContentContainer from "../styles/ContentContainer"
 import styled from "styled-components"
 import VideoModalComponent from "./VideoModalComponent"
+import VideoModalMobileComponent from "./VideoModalMobileComponent"
+import useWindowSize from "../hooks/useWindowSize"
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -19,10 +21,11 @@ const StickyFooter = styled.div`
   flex-shrink: 0;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location, ...props }) => {
+  // console.log(location)
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
-
+  const size = useWindowSize()
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -36,7 +39,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <Wrapper>
-        {state.videoModalOpen && <VideoModalComponent />}
+        {state.videoModalOpen && size.width >= 828 && <VideoModalComponent />}
+        {state.videoModalOpen && size.width <= 828 && (
+          <VideoModalMobileComponent />
+        )}
         <Headroom
           style={{ zIndex: "1000" }}
           onUnpin={() => dispatch({ type: "SECONDARY_MENU_OFF" })}
@@ -45,7 +51,7 @@ const Layout = ({ children }) => {
         </Headroom>
         <ContentContainer>{children}</ContentContainer>
         <StickyFooter>
-          <Signup />
+          <Signup location={location} />
           <Footer />
         </StickyFooter>
       </Wrapper>

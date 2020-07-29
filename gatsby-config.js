@@ -76,6 +76,7 @@ module.exports = {
           {
             baseId: `appYs2klR189DEnJM`,
             tableName: `Videos`,
+            mapping: { Video_Still: `fileNode` },
           },
         ],
       },

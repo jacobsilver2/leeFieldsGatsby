@@ -15,16 +15,9 @@ export const query = graphql`
         title
       }
     }
-    video: allAirtable(filter: { table: { eq: "Videos" } }) {
-      edges {
-        node {
-          id
-          data {
-            Video_Title
-            Video_URL
-            Video_Order
-          }
-        }
+    video: airtable(table: { eq: "Videos" }, data: { Video_Order: { eq: 1 } }) {
+      data {
+        Video_URL
       }
     }
     hoverImg: file(base: { eq: "playVid.png" }) {
@@ -50,10 +43,7 @@ const IndexPage = ({ data }) => {
     dispatch({ type: animateInView ? "CNN_ON" : "CNN_OFF" })
   })
   const { title } = data.title.siteMetadata
-  const { edges } = data.video
-  // homepage only displays one video, and it will be the first video according the the "Order" field in Airtable.
-  const firstVid = edges.filter(vid => vid.node.data.Video_Order === 1)[0].node
-    .data.Video_URL
+  const { Video_URL: vidUrl } = data.video.data
   return (
     <FadeWrapper>
       <SEO title="Home" />
@@ -62,7 +52,7 @@ const IndexPage = ({ data }) => {
       </BigLogoWrapper>
       <Video
         hoverImg={data.hoverImg.childImageSharp.fixed.src}
-        video={firstVid}
+        video={vidUrl}
       />
       <Shows />
     </FadeWrapper>

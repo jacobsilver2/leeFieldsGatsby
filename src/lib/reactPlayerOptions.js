@@ -25,12 +25,6 @@ const reactPlayerOptions = {
       "ui-start-screen-info": false,
     },
   },
-  vimeo: {
-    playerOptions: {
-      background: true,
-      controls: false,
-    },
-  },
 }
 
 export default reactPlayerOptions

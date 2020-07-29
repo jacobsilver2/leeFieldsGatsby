@@ -22,6 +22,8 @@
 
   > Done. However, support for custom cursors that are this large will be removed from Chrome at some point (they said it would be June 2019, but apparently they haven't removed it yet). That is why I made it a little smaller than how you had spec'ed.
 
+  > Still working on getting larger prev/next buttons
+
 - [x] Ideally, I would like Play and all the video controls to be the same size. So it can get bigger a few points or so overall, I’m not sure what the balance is because I imagine its going to look puny on the homepage but on the modal I’m liking that its out of the way and smaller.
 
   > Done. I was hesitant to make the close buttons, title and sound on/off buttons any larger on the modal, because they would have overlapped on mobile screens, but since we're now using a mobile-specific modal, it shouldn't be an issue.
@@ -30,7 +32,9 @@
 
   > Yes, that was a happy accident. I was having a hell of a time dealing with all these videos that have different aspect ratios. Once we deal with the copyright issues on Dailymotion, we'll switch back. The reason I chose DM over YT or Vimeo was because you can totally remove every bit of control/overlay/title/releated-videos, unlike YT or Vimeo, which keeps some aspects of overlay no matter what. So once we can get back to DM, the controls will look way better.
 
-- [ ] We’re a bit busy right now, so I’ll need a little more time to get you a mockup. But yes, exactly what you said. Pretty much exactly like the mobile homepage of lekhoa or basically how you had the music page created, but a rectangular image. Can you just use a placeholder image for now? Let me know if that makes sense or if you’d still want a mockup. Do you think this would solve the video page on mobile problem? I think since they would see the title on the list, then we can eliminate it on the pop-up mobile modal in this case and only have “close”. And the sound would come on without having to turn it on/or IDK maybe its with daily motion in this instance?
+  > UPDATE: We will not be able to use Daily Motion, as they have flagged our videos as copyright violations, and there really isn't anything anyone can do about it. Vimeo is not an option either because Vimeo does not allow autoplay on mobile devices. It looks like our only option is YouTube, unfortunately, so we will have to deal with those overlays.
+
+- [x] We’re a bit busy right now, so I’ll need a little more time to get you a mockup. But yes, exactly what you said. Pretty much exactly like the mobile homepage of lekhoa or basically how you had the music page created, but a rectangular image. Can you just use a placeholder image for now? Let me know if that makes sense or if you’d still want a mockup. Do you think this would solve the video page on mobile problem? I think since they would see the title on the list, then we can eliminate it on the pop-up mobile modal in this case and only have “close”. And the sound would come on without having to turn it on/or IDK maybe its with daily motion in this instance?
 
 # About
 
@@ -75,6 +79,8 @@
 # Footer
 
 - [ ] Email form is still stuck for me once I enter information :/
+
+  > Working on this.
 
 - [x] Yes, It looked fine on mobile, thanks! However, can you maybe shorten the height of the newsletter sign up rules? and/or bring the submit line closer to the “join our newsletter”
   > I'm not totally sure what you mean by "newsletter sign up rules", but I brought the submit line a little closer to the "join our newsletter" text.

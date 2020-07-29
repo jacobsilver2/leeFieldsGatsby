@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react"
-import { Formik } from "formik"
+import { globalHistory } from "@reach/router"
+import { onRouteUpdate } from "../../gatsby-browser"
+import { Formik, resetForm } from "formik"
 import * as yup from "yup"
 import is from "is_js"
 import addToMailchimp from "gatsby-plugin-mailchimp"
@@ -20,11 +22,13 @@ const validationSchema = yup.object({
 
 const extractEmailRegex = /<a[\s]+([^>]+)>((?:.(?!<\/a>))*.)<\/a>/g
 
-const Signup = props => {
-  console.log(props)
+const Signup = ({ location }) => {
+  console.log(resetForm)
+  // console.log(location)
+  // console.log(onRouteUpdate)
+  // console.log(props)
   // const [errmsg, setErrmsg] = useState("")
   const [result, setResult] = useState("")
-  // const myRef = useRef()
 
   // useEffect(() => {
   //   // set the location on initial load
@@ -41,17 +45,19 @@ const Signup = props => {
   //   }
   // })
 
-  // useEffect(() => {
-  //   console.log(myRef.current)
-
-  // }, [])
+  useEffect(() => {
+    globalHistory.listen(({ action }) => {
+      if (action === "PUSH") {
+        console.log("pushed")
+      }
+    })
+  }, [])
 
   return (
     <Wrapper>
       <Title>JOIN OUR NEWSLETTER</Title>
       <TheForm>
         <Formik
-          // ref={myRef}
           initialValues={{ email: "" }}
           validationSchema={validationSchema}
           onSubmit={(data, { setSubmitting, resetForm }) => {

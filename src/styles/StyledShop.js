@@ -4,8 +4,8 @@ export const Wrapper = styled.div`
   max-width: 1500px;
   display: grid;
   margin: 0 auto;
-  padding: 0 0.5rem;
-  width: 100%;
+  /* padding: 0 0.5rem; */
+  /* width: 100%; */
   /* for this case, auto-fill is necessary.  */
   /* If an item category has less than 3 items, we still want the 3-column grid to be used. */
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -36,12 +36,6 @@ export const Purchase = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  /* min-width: 600px; */
-  @media only screen and (max-width: 828px) {
-    min-width: 400px;
-    /* margin: 0; */
-    /* width: 100%; */
-  }
 `
 
 export const Content = styled.div`

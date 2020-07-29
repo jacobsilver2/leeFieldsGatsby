@@ -19,7 +19,7 @@ const Nav = ({ siteTitle }) => {
       </NavLinksWrapper>
       <div>
         <StyledLogo visible={!state.cnnInView}>
-          <Link fade to="/">
+          <Link fade="true" to="/">
             {siteTitle.toUpperCase()}
           </Link>
         </StyledLogo>
