@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef, useCallback } from "react"
 import ReactPlayer from "react-player/lazy"
 import styled from "styled-components"
 
@@ -39,6 +39,18 @@ const VideoContainer = styled.div`
 `
 
 const reactPlayerOptions = {
+  vimeo: {
+    playerOptions: {
+      autoplay: true,
+      muted: false,
+      autopause: true,
+      byline: false,
+      portrait: false,
+      title: false,
+      controls: true,
+      transparent: false,
+    },
+  },
   youtube: {
     playerVars: {
       autoplay: 1,
@@ -66,17 +78,48 @@ const reactPlayerOptions = {
   },
 }
 
+function useHookWithRefCallback() {
+  const ref = useRef(null)
+  const setRef = useCallback(node => {
+    if (ref.current) {
+      // Make sure to cleanup any events/references added to the last instance
+    }
+
+    if (node) {
+      // Check if a node is actually passed. Otherwise node would be null.
+      // You can now do what you need to, addEventListeners, measure, etc.
+    }
+
+    // Save a reference to the node
+    ref.current = node
+  }, [])
+
+  return [setRef]
+}
+
 const VideoModalPlayer = ({ playing, currentVideo, handleEnded, muted }) => {
+  const vidRef = useRef()
+
+  useEffect(() => {
+    console.log(vidRef.current)
+    // if (vidRef.current && muted) {
+    //   vidRef.current.player.mute()
+    // }
+    // if (vidRef.current && !muted) {
+    //   vidRef.current.player.unmute()
+    // }
+  }, [muted])
   return (
     <>
       <VideoContainer>
         <ReactPlayer
+          ref={vidRef}
           className="react-player"
           playing={playing}
           url={currentVideo}
           config={reactPlayerOptions}
           muted={muted}
-          controls={true}
+          // controls={true}
           width="100%"
           height="100%"
           onEnded={handleEnded}
