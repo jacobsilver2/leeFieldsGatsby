@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react"
 import { globalHistory } from "@reach/router"
-import { onRouteUpdate } from "../../gatsby-browser"
 import { Formik } from "formik"
 import * as yup from "yup"
 import is from "is_js"
