@@ -4,6 +4,7 @@ import { Formik } from "formik"
 import * as yup from "yup"
 import is from "is_js"
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import usePrevious from "../hooks/usePrevious"
 import {
   Title,
   Wrapper,
@@ -22,44 +23,28 @@ const validationSchema = yup.object({
 const extractEmailRegex = /<a[\s]+([^>]+)>((?:.(?!<\/a>))*.)<\/a>/g
 
 const Signup = ({ location }) => {
-  // console.log(location)
-  // console.log(onRouteUpdate)
-  // console.log(props)
-  // const [errmsg, setErrmsg] = useState("")
   const [result, setResult] = useState("")
-
-  // useEffect(() => {
-  //   // set the location on initial load
-  //   if (!myRef.current.location) {
-  //     console.log("hi")
-  //     myRef.current.location = location
-  //     console.log(myRef.current)
-  //   }
-  //   // then make sure dialog is closed on route change
-  //   else if (myRef.current.location !== location) {
-  //     console.log("yo")
-  //     myRef.current.resetForm()
-  //     myRef.current.location = location
-  //   }
-  // })
+  const prevRoute = usePrevious(location.pathname)
+  const [key, setKey] = useState(0)
 
   useEffect(() => {
-    globalHistory.listen(({ action }) => {
-      if (action === "PUSH") {
-        console.log("pushed")
-      }
-    })
-  }, [])
+    if (location.pathname !== prevRoute) {
+      setResult("")
+    }
+  }, [location.pathname !== prevRoute])
 
   return (
-    <Wrapper>
+    <Wrapper
+      key={
+        location.pathname === prevRoute ? key : () => setKey(prev => prev + 1)
+      }
+    >
       <Title>JOIN OUR NEWSLETTER</Title>
       <TheForm>
         <Formik
           initialValues={{ email: "" }}
           validationSchema={validationSchema}
           onSubmit={(data, { setSubmitting, resetForm }) => {
-            // console.log(actions)
             setSubmitting(true)
             // make async call
             // unfortunately this does not work on Firefox
@@ -67,7 +52,6 @@ const Signup = ({ location }) => {
             addToMailchimp(data.email)
               .then(res => {
                 setResult(res)
-                // console.log(res)
               })
               .catch(error => {})
             setSubmitting(false)

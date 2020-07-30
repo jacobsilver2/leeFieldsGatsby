@@ -11,7 +11,7 @@ const Loader = styled.div`
 const Loading = () => {
   return (
     <Loader>
-      <BeatLoader color="black" size="30" />
+      <BeatLoader color="black" size="30px" />
     </Loader>
   )
 }
