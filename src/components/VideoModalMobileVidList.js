@@ -33,9 +33,36 @@ const VerticalLine = styled.div`
   top: 0;
   margin-bottom: 2rem;
 `
+const reactPlayerOptions = {
+  youtube: {
+    playerVars: {
+      autoplay: 0,
+      controls: 1,
+      disablekb: 1,
+      fs: 0,
+      loop: 0,
+      modestBranding: 1,
+      rel: 0,
+      showinfo: 0,
+      mute: 0,
+      enablejsapi: 1,
+      iv_load_policy: 3,
+    },
+  },
+  dailymotion: {
+    params: {
+      autoplay: true,
+      "autoplay-mute": true,
+      controls: false,
+      "sharing-enable": false,
+      "queue-enable": false,
+      "ui-logo": false,
+      "ui-start-screen-info": false,
+    },
+  },
+}
 
 const VideoModalMobileVidList = ({ videos }) => {
-  //   console.log(videos)
   const [muted, setmuted] = useState(true)
 
   const vidList = videos.map(vid => (
@@ -56,10 +83,10 @@ const VideoModalMobileVidList = ({ videos }) => {
             className="react-player"
             playing={false}
             url={vid.node.data.Video_URL}
-            //   config={reactPlayerOptions}
+            config={reactPlayerOptions}
             muted={false}
-            controls={true}
-            loop={true}
+            controls={false}
+            loop={false}
             width="100%"
             height="100%"
           />

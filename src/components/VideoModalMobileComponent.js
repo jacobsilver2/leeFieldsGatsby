@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react"
+import React, { useContext } from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { GlobalDispatchContext, GlobalStateContext } from "../context/provider"
+import { GlobalDispatchContext } from "../context/provider"
 import {
   Overlay,
   Content,
@@ -8,21 +8,31 @@ import {
 } from "../styles/StyledVideoModalMobile"
 import VideoList from "./VideoModalMobileVidList"
 import useLockBodyScroll from "../hooks/useLockBodyScroll"
-import { motion, AnimatePresence, usePresence } from "framer-motion"
 
 const VideoModalMobileComponent = () => {
-  const [visible, setvisible] = useState(true)
   useLockBodyScroll()
   const dispatch = useContext(GlobalDispatchContext)
-  const state = useContext(GlobalStateContext)
-  const [isPresent, safeToRemove] = usePresence()
-
-  console.log(isPresent)
-  console.log(safeToRemove)
 
   function handleClose() {
-    setvisible(false)
     dispatch({ type: "MODAL_VID_CLOSED" })
+  }
+
+  const duration = 1
+  const variants = {
+    initial: {
+      height: 0,
+    },
+    enter: {
+      height: "100%",
+      transition: {
+        duration: duration,
+        when: "beforeChildren",
+      },
+    },
+    exit: {
+      height: 0,
+      transition: { duration: duration },
+    },
   }
 
   const {
@@ -57,24 +67,20 @@ const VideoModalMobileComponent = () => {
     `
   )
   return (
-    <AnimatePresence>
-      {visible ? (
-        <Overlay
-          key="modal"
-          initial={{ height: 0 }}
-          animate={{ height: "100%" }}
-          transition={{ duration: 0.5 }}
-          exit={{ height: 0 }}
-        >
-          <Content>
-            <CloseContainer onClick={handleClose}>
-              <p>CLOSE</p>
-            </CloseContainer>
-            <VideoList videos={videos} />
-          </Content>
-        </Overlay>
-      ) : null}
-    </AnimatePresence>
+    <Overlay
+      key="mobilemodal"
+      variants={variants}
+      initial="initial"
+      animate="enter"
+      exit="exit"
+    >
+      <Content>
+        <CloseContainer onClick={handleClose}>
+          <p>CLOSE</p>
+        </CloseContainer>
+        <VideoList videos={videos} />
+      </Content>
+    </Overlay>
   )
 }
 

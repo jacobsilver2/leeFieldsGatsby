@@ -10,6 +10,7 @@ import styled from "styled-components"
 import VideoModalComponent from "./VideoModalComponent"
 import VideoModalMobileComponent from "./VideoModalMobileComponent"
 import useWindowSize from "../hooks/useWindowSize"
+import { AnimatePresence } from "framer-motion"
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -39,10 +40,12 @@ const Layout = ({ children, location, ...props }) => {
   return (
     <>
       <Wrapper>
-        {state.videoModalOpen && size.width >= 828 && <VideoModalComponent />}
-        {state.videoModalOpen && size.width <= 828 && (
-          <VideoModalMobileComponent />
-        )}
+        <AnimatePresence>
+          {state.videoModalOpen && size.width >= 828 && <VideoModalComponent />}
+          {state.videoModalOpen && size.width <= 828 && (
+            <VideoModalMobileComponent />
+          )}
+        </AnimatePresence>
         <Headroom
           style={{ zIndex: "1000" }}
           onUnpin={() => dispatch({ type: "SECONDARY_MENU_OFF" })}

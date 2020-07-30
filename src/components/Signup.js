@@ -1,5 +1,4 @@
-import React, { useState, useRef, useEffect } from "react"
-import { globalHistory } from "@reach/router"
+import React, { useState, useEffect } from "react"
 import { Formik } from "formik"
 import * as yup from "yup"
 import is from "is_js"
@@ -20,6 +19,7 @@ const validationSchema = yup.object({
   email: yup.string().email().required(),
 })
 
+// this is to shorten the success message returned from mailchimp.
 const extractEmailRegex = /<a[\s]+([^>]+)>((?:.(?!<\/a>))*.)<\/a>/g
 
 const Signup = ({ location }) => {
@@ -59,10 +59,6 @@ const Signup = ({ location }) => {
           }}
         >
           {({ isSubmitting, errors, touched, values }) => {
-            // {
-            //   touched && setResult("")
-            // }
-            // console.log(values)
             return (
               <>
                 <StyledFormikForm>
