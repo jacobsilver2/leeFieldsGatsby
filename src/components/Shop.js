@@ -27,6 +27,13 @@ const ShopComponent = ({ items }) => {
               {item.LP_Price && <p className="price">LP: ${item.LP_Price}</p>}
               {item.CD_Price && <p className="price">CD: ${item.CD_Price}</p>}
               {item.Price && <p className="price">${item.Price}</p>}
+              {/* this next line is to compensate for the extra height from the music prices */}
+              {item.Type !== "Music" && (
+                <>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                </>
+              )}
             </Content>
             <Purchase>
               <a
