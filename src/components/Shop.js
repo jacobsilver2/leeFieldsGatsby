@@ -8,8 +8,10 @@ import {
   ItemName,
   Purchase,
 } from "../styles/StyledShop"
+import useWindowSize from "../hooks/useWindowSize"
 
-const ShopComponent = ({ items }) => {
+const ShopComponent = ({ items, category }) => {
+  const size = useWindowSize()
   const mappedItems = items
     .sort((a, b) => a.Order - b.Order)
     .map(item => {
@@ -28,7 +30,10 @@ const ShopComponent = ({ items }) => {
               {item.CD_Price && <p className="price">CD: ${item.CD_Price}</p>}
               {item.Price && <p className="price">${item.Price}</p>}
               {/* this next line is to compensate for the extra height from the music prices */}
-              {item.Type !== "Music" && (
+              {/* removing the extra spaces for when we are in single column view */}
+              {/* or when category is all (cause that's the only time Music and Apparel will be) */}
+              {/* on the same grid */}
+              {item.Type !== "Music" && size.width > 855 && category === "all" && (
                 <>
                   <p>&nbsp;</p>
                   <p>&nbsp;</p>

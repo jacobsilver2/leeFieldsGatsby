@@ -128,7 +128,11 @@ const ShopPage = props => {
             <h5 className="text">Etc.</h5>
           </LIElement>
         </ULWrapper>
-        {isLoading ? <Loading /> : <ShopComponent items={filteredItems} />}
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <ShopComponent category={category} items={filteredItems} />
+        )}
       </ShopContainer>
     </FadeWrapper>
   )
