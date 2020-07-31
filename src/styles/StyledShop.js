@@ -33,6 +33,10 @@ export const Purchase = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  .purchaseText {
+    width: 100%;
+    text-align: center;
+  }
   &:hover {
     background-color: black;
     .purchaseText {
