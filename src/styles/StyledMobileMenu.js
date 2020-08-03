@@ -6,6 +6,7 @@ export const StyledSecondaryMenu = styled.nav`
   margin-bottom: 2rem;
   position: relative;
   height: 300px;
+  /* height: 40vh; */
   /* z-index: 999; */
   background: ${({ theme }) => theme.color.offWhite};
   /* transition: transform 0.3s ease-in-out; */

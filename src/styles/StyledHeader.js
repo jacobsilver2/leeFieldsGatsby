@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
   min-height: ${({ tickerIsVisible }) => (tickerIsVisible ? "" : "5rem")};
   /* z-index: 1000000; */
   background-color: ${({ theme }) => theme.color.offWhite};
-  overflow: hidden;
+  overflow: scroll;
   .inner {
     display: flex;
     align-items: center;

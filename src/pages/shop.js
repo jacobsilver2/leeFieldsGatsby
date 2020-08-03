@@ -33,7 +33,7 @@ const LIElement = styled.li`
   }
   @media only screen and (max-width: 828px) {
     h5 {
-      margin-top: 0.4rem;
+      margin-top: 1rem;
       font-size: 4vw;
     }
   }
