@@ -9,6 +9,7 @@ module.exports = {
     author: `Jacob Silver`,
   },
   plugins: [
+    `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
@@ -19,6 +20,7 @@ module.exports = {
           urls: ["/fonts/fonts.css"],
         },
       },
+      timeout: 2000,
     },
     {
       resolve: "gatsby-plugin-mailchimp",

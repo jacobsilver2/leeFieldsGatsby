@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 const TickerContainer = styled.div`
   /* flex-grow: 2; */
-  width: 98%;
+  width: 100%;
 `
 
 const TickerItem = styled.p`
@@ -32,6 +32,7 @@ const TickerItem = styled.p`
   letter-spacing: 0.1rem;
   opacity: ${({ isEven }) => (isEven ? "100%" : "50%")};
   white-space: nowrap;
+  /* newer value */
   margin: 0 1.5rem;
 `
 
@@ -56,6 +57,8 @@ const NewsTicker = () => {
   }
 
   return (
+    // page visibility is necessary for react-ticker to not
+    // bug out when switching between tabs.
     <PageVisibility onChange={handleVisibilityChange}>
       <Wrapper>
         <TickerContainer>

@@ -16,6 +16,7 @@
     "gatsby-plugin-mailchimp": "^5.2.2",
     "gatsby-plugin-manifest": "^2.4.5",
     "gatsby-plugin-offline": "^3.2.3",
+    "gatsby-plugin-preload-fonts": "^1.2.19",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.3.12",
@@ -67,7 +68,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "preload-fonts": "gatsby-preload-fonts"
   },
   "repository": {
     "type": "git",
