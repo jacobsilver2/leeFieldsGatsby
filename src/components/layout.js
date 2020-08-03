@@ -52,7 +52,9 @@ const Layout = ({ children, location, ...props }) => {
         >
           <Header siteTitle={data.site.siteMetadata.title} />
         </Headroom>
-        <ContentContainer>{children}</ContentContainer>
+        <ContentContainer tickerOpen={state.tickerIsVisible}>
+          {children}
+        </ContentContainer>
         <StickyFooter>
           <Signup location={location} />
           <Footer />

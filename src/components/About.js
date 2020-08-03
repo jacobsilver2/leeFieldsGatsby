@@ -16,6 +16,7 @@ const Text = styled.div`
   margin-bottom: 15rem;
   @media only screen and (max-width: 828px) {
     margin-top: 2rem;
+    margin-bottom: 10rem;
   }
 `
 
@@ -35,6 +36,7 @@ const Info = styled.div`
 `
 
 const LargeBody = styled(LargeBodyText)`
+  letter-spacing: -0.2rem;
   @media only screen and (max-width: 828px) {
     font-size: 12vw;
     line-height: 1;

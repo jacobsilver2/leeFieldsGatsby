@@ -78,7 +78,7 @@ const ListenLink = styled.h5`
 
 const BuyLink = styled(Link)`
   h5 {
-    margin-right: 1.5rem;
+    margin-right: 3.5rem;
     line-height: 1;
     @media only screen and (max-width: 1600px) {
       font-size: 4.5vw;

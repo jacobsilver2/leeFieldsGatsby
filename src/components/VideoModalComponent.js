@@ -74,14 +74,14 @@ const VideoModalComponent = () => {
         }
         prevCursor: file(base: { eq: "prevVid128.png" }) {
           childImageSharp {
-            fixed(width: 72) {
+            fixed(width: 90) {
               src
             }
           }
         }
         nextCursor: file(base: { eq: "nextVid128rev2.png" }) {
           childImageSharp {
-            fixed(width: 72) {
+            fixed(width: 90) {
               src
             }
           }
@@ -113,59 +113,60 @@ const VideoModalComponent = () => {
   const { src: nextCursorUrl } = nextCursor.childImageSharp.fixed
 
   return (
-    // <FadeWrapper transition={0.5}>
-    <Overlay
-      key="desktopmodal"
-      variants={variants}
-      initial="initial"
-      animate="enter"
-      exit="exit"
-    >
-      <Content>
-        <CloseContainer onClick={onClose}>
-          <p>CLOSE</p>
-        </CloseContainer>
-        <MouseTrap>
-          <MouseTrapInner>
-            <PrevCursor
-              onClick={previousVideo}
-              cursor={prevCursorUrl}
-            ></PrevCursor>
-            <NextCursor
-              onClick={handleEndedAndNext}
-              cursor={nextCursorUrl}
-            ></NextCursor>
-          </MouseTrapInner>
-        </MouseTrap>
-        <VideoWrapper>
-          <ModalVideoInner>
-            <VideoModalPlayer
-              playing={true}
-              currentVideo={currentVideo && currentVideo.node.data.Video_URL}
-              muted={muted}
-              handleEnded={handleEndedAndNext}
-            />
-          </ModalVideoInner>
-        </VideoWrapper>
-        <BottomBar>
-          <div>
-            <p>
-              {currentVideo && video.edges.indexOf(currentVideo) + 1}/
-              {video.edges.length}
-            </p>
-          </div>
-          <div>
-            <p>
-              {currentVideo && currentVideo.node.data.Video_Title.toUpperCase()}
-            </p>
-          </div>
-          <SoundBox onClick={handleSound}>
-            <p>SOUND {muted ? "ON" : "OFF"}</p>
-          </SoundBox>
-        </BottomBar>
-      </Content>
-    </Overlay>
-    // </FadeWrapper>
+    <FadeWrapper transition={0.5}>
+      <Overlay
+      // key="desktopmodal"
+      // variants={variants}
+      // initial="initial"
+      // animate="enter"
+      // exit="exit"
+      >
+        <Content>
+          <CloseContainer onClick={onClose}>
+            <p>CLOSE</p>
+          </CloseContainer>
+          <MouseTrap>
+            <MouseTrapInner>
+              <PrevCursor
+                onClick={previousVideo}
+                cursor={prevCursorUrl}
+              ></PrevCursor>
+              <NextCursor
+                onClick={handleEndedAndNext}
+                cursor={nextCursorUrl}
+              ></NextCursor>
+            </MouseTrapInner>
+          </MouseTrap>
+          <VideoWrapper>
+            <ModalVideoInner>
+              <VideoModalPlayer
+                playing={true}
+                currentVideo={currentVideo && currentVideo.node.data.Video_URL}
+                muted={muted}
+                handleEnded={handleEndedAndNext}
+              />
+            </ModalVideoInner>
+          </VideoWrapper>
+          <BottomBar>
+            <div>
+              <p>
+                {currentVideo && video.edges.indexOf(currentVideo) + 1}/
+                {video.edges.length}
+              </p>
+            </div>
+            <div>
+              <p>
+                {currentVideo &&
+                  currentVideo.node.data.Video_Title.toUpperCase()}
+              </p>
+            </div>
+            <SoundBox onClick={handleSound}>
+              <p>SOUND {muted ? "ON" : "OFF"}</p>
+            </SoundBox>
+          </BottomBar>
+        </Content>
+      </Overlay>
+    </FadeWrapper>
   )
 }
 

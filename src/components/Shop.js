@@ -30,10 +30,10 @@ const ShopComponent = ({ items, category }) => {
               {item.CD_Price && <p className="price">CD: ${item.CD_Price}</p>}
               {item.Price && <p className="price">${item.Price}</p>}
               {/* this next line is to compensate for the extra height from the music prices */}
-              {/* removing the extra spaces for when we are in single column view */}
+              {/* removing the extra spaces for when we are in single or dual column view */}
               {/* or when category is all (cause that's the only time Music and Apparel will be) */}
               {/* on the same grid */}
-              {item.Type !== "Music" && size.width > 855 && category === "all" && (
+              {item.Type !== "Music" && size.width > 700 && category === "all" && (
                 <>
                   <p>&nbsp;</p>
                   <p>&nbsp;</p>

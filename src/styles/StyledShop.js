@@ -1,19 +1,25 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.div`
-  max-width: 1500px;
+  /* max-width: 1500px; */
+  width: 100%;
   display: grid;
   /* align-items: stretch; */
   margin: 0 auto;
   /* for this case, auto-fill is necessary.  */
   /* If an item category has less than 3 items, we still want the 3-column grid to be used. */
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  /* Designers prefer full-width with 3 column max, so now we need breakpoints  */
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
     "image"
     "content"
     "purchase";
   grid-gap: 20px;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 1280px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 700px) {
     grid-template-columns: 1fr;
   }
 `

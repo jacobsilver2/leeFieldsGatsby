@@ -13,19 +13,25 @@ export const Wrapper = styled.div`
     min-height: 25rem;
   }
   @media only screen and (max-width: 750px) {
-    min-height: 20rem;
+    min-height: 18rem;
   }
 `
 
 export const Content = styled.div`
-  max-width: 1300px;
+  position: relative;
   margin: auto;
 `
 
 export const Title = styled.h3`
   text-align: center;
-  @media only screen and (min-width: 1080px) {
-    margin-bottom: 4rem;
+  line-height: 1;
+`
+export const TheForm = styled.div`
+  max-width: 80%;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+  @media only screen and (max-width: 750px) {
+    margin: 0.5rem auto;
   }
 `
 
@@ -80,12 +86,6 @@ export const Button = styled.button`
   @media only screen and (max-width: 1700px) {
     font-size: 3vw;
   }
-`
-
-export const TheForm = styled.div`
-  margin-top: -2rem;
-  max-width: 80%;
-  border-bottom: 1px solid black;
 `
 
 export const ErrMessage = styled.p`

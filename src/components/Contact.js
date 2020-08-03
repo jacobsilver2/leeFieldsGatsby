@@ -4,7 +4,7 @@ import FadeWrapper from "./FadeWrapper"
 import useWindowSize from "../hooks/useWindowSize"
 
 const Wrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 6rem;
   @media only screen and (max-width: 828px) {
     margin: 0;
   }
@@ -21,15 +21,15 @@ const Title = styled.h4`
   line-height: 1;
   padding-bottom: 1rem;
 `
-const TitleDesktop = styled.h3`
+const TitleMobile = styled.h3`
   line-height: 1;
   padding-bottom: 1rem;
 `
 
 const Info = styled.p`
-  font-weight: 300;
+  font-weight: 400;
   a {
-    font-weight: 300;
+    font-weight: 400;
   }
   /* line-height: 1; */
 `
@@ -46,7 +46,7 @@ const Contact = ({ data }) => {
             {size.width >= 828
               ? data.Role && <Title>{data.Role.toUpperCase()}</Title>
               : data.Role && (
-                  <TitleDesktop>{data.Role.toUpperCase()}</TitleDesktop>
+                  <TitleMobile>{data.Role.toUpperCase()}</TitleMobile>
                 )}
             {data.Agency && <Info>{data.Agency}</Info>}
             {data.Name1 && (

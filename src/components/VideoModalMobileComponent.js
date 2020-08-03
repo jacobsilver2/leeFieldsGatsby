@@ -8,6 +8,7 @@ import {
 } from "../styles/StyledVideoModalMobile"
 import VideoList from "./VideoModalMobileVidList"
 import useLockBodyScroll from "../hooks/useLockBodyScroll"
+import FadeWrapper from "./FadeWrapper"
 
 const VideoModalMobileComponent = () => {
   useLockBodyScroll()
@@ -50,15 +51,6 @@ const VideoModalMobileComponent = () => {
               data {
                 Video_Title
                 Video_URL
-                Video_Still {
-                  localFiles {
-                    childImageSharp {
-                      fluid {
-                        ...GatsbyImageSharpFluid
-                      }
-                    }
-                  }
-                }
               }
             }
           }
@@ -67,20 +59,22 @@ const VideoModalMobileComponent = () => {
     `
   )
   return (
-    <Overlay
-      key="mobilemodal"
-      variants={variants}
-      initial="initial"
-      animate="enter"
-      exit="exit"
-    >
-      <Content>
-        <CloseContainer onClick={handleClose}>
-          <p>CLOSE</p>
-        </CloseContainer>
-        <VideoList videos={videos} />
-      </Content>
-    </Overlay>
+    <FadeWrapper transition={0.5}>
+      <Overlay
+      // key="mobilemodal"
+      // variants={variants}
+      // initial="initial"
+      // animate="enter"
+      // exit="exit"
+      >
+        <Content>
+          <CloseContainer onClick={handleClose}>
+            <p>CLOSE</p>
+          </CloseContainer>
+          <VideoList videos={videos} />
+        </Content>
+      </Overlay>
+    </FadeWrapper>
   )
 }
 

@@ -23,19 +23,19 @@ const Header = ({ siteTitle }) => {
 
   return (
     <>
-      <Headroom onUnpin={() => dispatch({ type: "SECONDARY_MENU_OFF" })}>
-        <StyledHeader
-          tickerIsVisible={state.tickerIsVisible}
-          cnnIsVisible={state.cnnInView}
-        >
-          {state.tickerIsVisible && <NewsTicker />}
-          <div className="inner">
-            {size.width <= 828 && <MobileNav siteTitle={siteTitle} />}
-            {size.width > 828 && <Nav siteTitle={siteTitle} />}
-          </div>
-          {state.secondaryMenuActive && <SecondaryMenu />}
-        </StyledHeader>
-      </Headroom>
+      {/* <Headroom onUnpin={() => dispatch({ type: "SECONDARY_MENU_OFF" })}> */}
+      <StyledHeader
+        tickerIsVisible={state.tickerIsVisible}
+        cnnIsVisible={state.cnnInView}
+      >
+        {state.tickerIsVisible && <NewsTicker />}
+        <div className="inner">
+          {size.width <= 828 && <MobileNav siteTitle={siteTitle} />}
+          {size.width > 828 && <Nav siteTitle={siteTitle} />}
+        </div>
+        {state.secondaryMenuActive && <SecondaryMenu />}
+      </StyledHeader>
+      {/* </Headroom> */}
     </>
   )
 }

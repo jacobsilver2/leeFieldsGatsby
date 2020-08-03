@@ -6,7 +6,7 @@ import ReactPlayer from "react-player/lazy"
 
 const VidWrapper = styled.div`
   display: block;
-  margin: 10rem 0;
+  margin: 10rem 2rem;
 `
 
 const Still = styled.div`
@@ -16,12 +16,29 @@ const Still = styled.div`
 
 const Title = styled.div`
   color: white;
-  text-align: center;
+  /* text-align: center; */
 `
 
 const Movie = styled.div`
   margin: 0 auto;
-  width: 80%;
+  /* width: 80%; */
+`
+
+const Order = styled.div`
+  color: white;
+  align-self: flex-start;
+  /* text-align: left; */
+`
+
+const TextWrapper = styled.div`
+  /* margin: 0 auto; */
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-size: 1.5rem;
+  }
 `
 
 const VerticalLine = styled.div`
@@ -65,17 +82,8 @@ const reactPlayerOptions = {
 const VideoModalMobileVidList = ({ videos }) => {
   const [muted, setmuted] = useState(true)
 
-  const vidList = videos.map(vid => (
+  const vidList = videos.map((vid, i) => (
     <VidWrapper key={vid.node.id}>
-      <Still>
-        <Img
-          fluid={vid.node.data.Video_Still.localFiles[0].childImageSharp.fluid}
-        />
-      </Still>
-      <Title>
-        <h5>{vid.node.data.Video_Title.toUpperCase()}</h5>
-      </Title>
-      <VerticalLine />
       <Movie>
         <VideoContainer>
           {/* <VideoOverlayWrapper></VideoOverlayWrapper> */}
@@ -85,13 +93,22 @@ const VideoModalMobileVidList = ({ videos }) => {
             url={vid.node.data.Video_URL}
             config={reactPlayerOptions}
             muted={false}
-            controls={false}
+            controls={true}
             loop={false}
             width="100%"
             height="100%"
           />
         </VideoContainer>
       </Movie>
+      <TextWrapper>
+        <Order>
+          <p>{`${i + 1}/${videos.length}`}</p>
+        </Order>
+        <Title>
+          <p>{vid.node.data.Video_Title.toUpperCase()}</p>
+        </Title>
+        <div></div>
+      </TextWrapper>
     </VidWrapper>
   ))
 

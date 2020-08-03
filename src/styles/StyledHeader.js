@@ -1,20 +1,17 @@
 import styled from "styled-components"
 
 const StyledHeader = styled.header`
-  /* visibility: hidden; */
   display: block;
   border-bottom: ${({ cnnIsVisible }) =>
     cnnIsVisible ? "" : "1px solid black"};
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  /* going with this for now with react-headroom */
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   min-height: ${({ tickerIsVisible }) => (tickerIsVisible ? "" : "5rem")};
   /* z-index: 1000000; */
   background-color: ${({ theme }) => theme.color.offWhite};
+  overflow: hidden;
   .inner {
     display: flex;
     align-items: center;

@@ -13,22 +13,27 @@ const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
 const ULWrapper = styled.ul`
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   /* width: 50%; */
   @media (max-width: ${({ theme }) => theme.mobile}) {
     /* font-size: ${({ theme }) => theme.fontSize.xl}; */
     width: 100%;
+    max-height: 6rem;
   }
 
 `
 
 const LIElement = styled.li`
-  padding-right: 1rem;
+  /* padding-right: 1rem; */
+  /* line-height: 1; */
+  padding-left: 2rem;
   opacity: ${({ active }) => (active ? "1" : "50%")};
   .text {
     cursor: pointer;
   }
   @media only screen and (max-width: 828px) {
     h5 {
+      margin-top: 0.4rem;
       font-size: 4vw;
     }
   }

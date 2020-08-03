@@ -44,7 +44,7 @@ export const VideoText = styled.p`
     text-decoration: underline;
   }
 `
-export const StyledLogo = styled.h3`
+export const StyledLogo = styled.h2`
   font-size: 2.8rem;
   margin-top: 0.4rem;
   @media only screen and (max-width: 828px) {
@@ -96,5 +96,6 @@ export const NavButton = styled.div`
 `
 
 export const NavText = styled.p`
-  font-size: ${({ issecondarynav }) => (issecondarynav ? "1.8rem" : "1.4rem;")};
+  font-size: ${({ issecondarynav }) => (issecondarynav ? "5rem" : "1.4rem;")};
+  padding: ${({ issecondarynav }) => (issecondarynav ? "2rem 0" : "")};
 `
