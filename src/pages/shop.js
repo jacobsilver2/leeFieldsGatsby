@@ -26,6 +26,10 @@ const ULWrapper = styled.ul`
 const LIElement = styled.li`
   /* padding-right: 1rem; */
   /* line-height: 1; */
+  /* margin-top: 2rem; */
+  h5 {
+    margin-top: 1rem;
+  }
   padding-left: 2rem;
   opacity: ${({ active }) => (active ? "1" : "50%")};
   .text {
