@@ -41,8 +41,8 @@ const Contact = ({ data }) => {
     .map(contact => {
       const { data, id } = contact.node
       return (
-        <FadeWrapper>
-          <ContactCard key={id}>
+        <FadeWrapper key={id}>
+          <ContactCard>
             {size.width >= 828
               ? data.Role && <Title>{data.Role.toUpperCase()}</Title>
               : data.Role && (
