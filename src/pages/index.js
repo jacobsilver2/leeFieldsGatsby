@@ -1,6 +1,14 @@
-import React, { useContext, useRef, useLayoutEffect } from "react"
+import React, {
+  useState,
+  useContext,
+  useRef,
+  useLayoutEffect,
+  useEffect,
+} from "react"
+import _ from "lodash"
 import { graphql } from "gatsby"
 import { useInView } from "react-intersection-observer"
+// import useIsScrollingDown from "../hooks/useIsScrollingDown"
 import { GlobalDispatchContext } from "../context/provider"
 import Video from "../components/video"
 import Shows from "../components/shows"
@@ -31,9 +39,27 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }) => {
+  // const [isScrolling, setisScrolling] = useState(false)
   const dispatch = useContext(GlobalDispatchContext)
   const firstUpdate = useRef(true)
   const [animateRef, animateInView] = useInView({ threshold: 0.7 })
+  // const isScrollingDown = useIsScrollingDown()
+
+  // useEffect(() => {
+  //   // console.log(isScrollingDown)
+  //   isScrollingDown
+  //     ? dispatch({ type: "MOBILE_LOGO_OVERRIDE_OFF" })
+  //     : dispatch({ type: "MOBILE_LOGO_OVERRIDE" })
+  // }, [])
+
+  useEffect(() => {
+    window.addEventListener("scroll", _.debounce(setMobileOverrideOff, 100))
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        _.debounce(setMobileOverrideOff, 1000)
+      )
+  }, [])
 
   useLayoutEffect(() => {
     if (firstUpdate.current) {
@@ -42,6 +68,11 @@ const IndexPage = ({ data }) => {
     }
     dispatch({ type: animateInView ? "CNN_ON" : "CNN_OFF" })
   })
+
+  function setMobileOverrideOff() {
+    dispatch({ type: "MOBILE_LOGO_OVERRIDE_OFF" })
+  }
+  // console.log(isScrollingDown)
   const { title } = data.title.siteMetadata
   const { Video_URL: vidUrl } = data.video.data
   return (

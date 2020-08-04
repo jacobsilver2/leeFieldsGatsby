@@ -8,6 +8,7 @@ const initialState = {
   navButtonActive: "",
   secondaryMenuActive: false,
   cnnInView: true,
+  mobileLogoOverride: true,
   videoModalOpen: false,
   tickerIsVisible: true,
 }
@@ -72,6 +73,18 @@ function reducer(state, action) {
       return {
         ...state,
         videoModalOpen: false,
+      }
+    }
+    case "MOBILE_LOGO_OVERRIDE": {
+      return {
+        ...state,
+        mobileLogoOverride: true,
+      }
+    }
+    case "MOBILE_LOGO_OVERRIDE_OFF": {
+      return {
+        ...state,
+        mobileLogoOverride: false,
       }
     }
     default:

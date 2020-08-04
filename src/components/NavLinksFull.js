@@ -22,19 +22,19 @@ const NavLinksFull = () => {
 
   return (
     <>
-      <StyledGatsbyLink onClick={handleClick} to="/music">
+      <StyledGatsbyLink issecondarynav="true" onClick={handleClick} to="/music">
         <NavText issecondarynav="true">Music</NavText>
       </StyledGatsbyLink>
-      <StyledNavElement onClick={handleVidClick}>
+      <StyledNavElement issecondarynav="true" onClick={handleVidClick}>
         <NavText issecondarynav="true">Video</NavText>
       </StyledNavElement>
-      <StyledGatsbyLink onClick={handleClick} to="/tour">
+      <StyledGatsbyLink issecondarynav="true" onClick={handleClick} to="/tour">
         <NavText issecondarynav="true">Tour</NavText>
       </StyledGatsbyLink>
-      <StyledGatsbyLink onClick={handleClick} to="/info">
+      <StyledGatsbyLink issecondarynav="true" onClick={handleClick} to="/info">
         <NavText issecondarynav="true">Info</NavText>
       </StyledGatsbyLink>
-      <StyledGatsbyLink onClick={handleClick} to="/shop">
+      <StyledGatsbyLink issecondarynav="true" onClick={handleClick} to="/shop">
         <NavText issecondarynav="true">Shop</NavText>
       </StyledGatsbyLink>
     </>

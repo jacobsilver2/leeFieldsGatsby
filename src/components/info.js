@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import About from "../components/About"
 import Contact from "../components/Contact"
 import styled from "styled-components"
@@ -25,7 +25,7 @@ export const Selector = styled.p`
 `
 
 const Selection = styled.div`
-  margin-top: 10rem;
+  margin-top: 6rem;
   @media only screen and (max-width: 828px) {
     display: flex;
     justify-content: flex-start;
@@ -43,6 +43,7 @@ const Content = styled.div``
 const Info = ({ data }) => {
   const [active, setActive] = useState("About")
   const size = useWindowSize()
+  // console.log(size.width)
   return (
     <>
       {size.width >= 828 ? (

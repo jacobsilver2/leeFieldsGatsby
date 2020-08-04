@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { Link } from "gatsby"
 import Burger from "./Burger"
 import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
@@ -18,6 +18,10 @@ const MobileNav = ({ siteTitle }) => {
   const dispatch = useContext(GlobalDispatchContext)
   // const [burgerIsOpen, setBurgerIsOpen] = useState(false)
 
+  // useEffect(() => {
+  //   dispatch({ type: "MOBILE_LOGO_OVERRIDE" })
+  // }, [])
+
   const handleBurgerClicked = () => {
     // setBurgerIsOpen(prev => !prev)
     dispatch({ type: "TOGGLE_SECONDARY_MENU" })
@@ -25,8 +29,10 @@ const MobileNav = ({ siteTitle }) => {
 
   return (
     <LogoAndBurgerWrapper>
-      <StyledLogo visible={!state.cnnInView}>
-        <Link to="/">{siteTitle.toUpperCase()}</Link>
+      <StyledLogo visible={!state.cnnInView || state.mobileLogoOverride}>
+        <Link onClick={() => dispatch({ type: "SECONDARY_MENU_OFF" })} to="/">
+          {siteTitle.toUpperCase()}
+        </Link>
       </StyledLogo>
       <Burger
         isOpen={state.secondaryMenuActive}

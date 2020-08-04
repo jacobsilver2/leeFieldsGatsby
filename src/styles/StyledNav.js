@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
 export const StyledNav = styled.nav`
@@ -7,12 +7,28 @@ export const StyledNav = styled.nav`
   justify-content: space-between;
 `
 
+const CustomUnderline = css`
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    right: 0;
+    margin: auto;
+    background: #000;
+    height: 2px;
+  }
+`
+
 export const StyledGatsbyLink = styled(Link)`
+  position: relative;
   padding-right: ${({ theme, isleft }) => (isleft ? theme.spacing[8] : "")};
   padding-left: ${({ theme, isright }) => (isright ? theme.spacing[8] : "")};
   text-align: center;
   &:hover {
-    text-decoration: underline;
+    text-decoration: ${({ issecondarynav }) =>
+      issecondarynav ? "" : "underline"};
+    ${({ issecondarynav }) => (issecondarynav ? CustomUnderline : "")}
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
     text-align: center;
@@ -20,13 +36,17 @@ export const StyledGatsbyLink = styled(Link)`
 `
 
 export const StyledNavElement = styled.div`
+  position: relative;
+  cursor: pointer;
   padding-right: ${({ theme, isleft }) => (isleft ? theme.spacing[8] : "")};
   padding-left: ${({ theme, isright }) => (isright ? theme.spacing[8] : "")};
   /* this is a hack because for some reason it wasn't receiving props */
   padding-right: ${({ theme }) => theme.spacing[8]};
   text-align: center;
   &:hover {
-    text-decoration: underline;
+    text-decoration: ${({ issecondarynav }) =>
+      issecondarynav ? "" : "underline"};
+    ${({ issecondarynav }) => (issecondarynav ? CustomUnderline : "")}
   }
   @media (max-width: ${({ theme }) => theme.mobile}) {
     text-align: center;
