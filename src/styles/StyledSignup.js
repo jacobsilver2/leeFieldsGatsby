@@ -31,7 +31,9 @@ export const TheForm = styled.div`
   max-width: 70%;
   margin: 0 auto;
   margin-top: 1rem;
-  border-bottom: 1px solid black;
+  /* margin-bottom: 0; */
+  /* border-bottom: 1px solid black; */
+
   /* @media only screen and (max-width: 750px) {
     margin: 0.5rem auto;
   } */
@@ -40,7 +42,18 @@ export const TheForm = styled.div`
 export const StyledFormikForm = styled(Form)`
   display: flex;
   width: 100%;
+  position: relative;
   justify-content: space-between;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    right: 0;
+    margin: auto;
+    background: #000;
+    height: 1px;
+  }
 `
 
 export const StyledFormikField = styled(Field)`
