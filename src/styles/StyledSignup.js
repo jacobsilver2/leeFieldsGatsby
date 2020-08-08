@@ -47,9 +47,9 @@ export const StyledFormikForm = styled(Form)`
   &:after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 0.2rem;
     bottom: 0px;
-    right: 0;
+    right: 0.2rem;
     margin: auto;
     background: #000;
     height: 1px;
