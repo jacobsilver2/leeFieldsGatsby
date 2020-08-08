@@ -45,6 +45,9 @@ const LargeBody = styled(LargeBodyText)`
 
 const AboutText = styled.p`
   font-weight: 400;
+  @media only screen and (min-width: 829px) {
+    letter-spacing: 0.1rem;
+  }
 `
 
 const About = ({ data }) => {

@@ -36,8 +36,26 @@ const Image = styled.div`
 `
 
 const Text = styled.div`
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  @media only screen and (min-width: 869px) {
+    display: block;
+    position: relative;
+  }
+  @media only screen and (max-width: 868px) {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+`
+
+const Links = styled.div`
+  @media only screen and (min-width: 869px) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  justify-self: end;
+  align-self: end;
+  display: flex;
+  text-align: right;
 `
 
 const Title = styled.div`
@@ -50,16 +68,6 @@ const Title = styled.div`
       letter-spacing: 0.15rem;
     }
   }
-`
-
-const Links = styled.div`
-  justify-self: end;
-  align-self: end;
-  display: flex;
-  text-align: right;
-  /* position: absolute; */
-  /* bottom: 0; */
-  /* right: 0; */
 `
 
 const ListenLink = styled.h5`

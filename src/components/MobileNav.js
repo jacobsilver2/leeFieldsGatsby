@@ -29,7 +29,13 @@ const MobileNav = ({ siteTitle }) => {
 
   return (
     <LogoAndBurgerWrapper>
-      <StyledLogo visible={!state.cnnInView || state.mobileLogoOverride}>
+      <StyledLogo
+        visible={
+          !state.cnnInView ||
+          state.mobileLogoOverride ||
+          state.secondaryMenuActive
+        }
+      >
         <Link onClick={() => dispatch({ type: "SECONDARY_MENU_OFF" })} to="/">
           {siteTitle.toUpperCase()}
         </Link>

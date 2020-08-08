@@ -23,24 +23,28 @@ export const Content = styled.div`
 `
 
 export const Title = styled.h3`
+  margin-bottom: 1rem;
   text-align: center;
   line-height: 1;
 `
 export const TheForm = styled.div`
-  max-width: 80%;
+  max-width: 70%;
   margin: 0 auto;
+  margin-top: 1rem;
   border-bottom: 1px solid black;
-  @media only screen and (max-width: 750px) {
+  /* @media only screen and (max-width: 750px) {
     margin: 0.5rem auto;
-  }
+  } */
 `
 
 export const StyledFormikForm = styled(Form)`
   display: flex;
+  width: 100%;
   justify-content: space-between;
 `
 
 export const StyledFormikField = styled(Field)`
+  flex-grow: 1;
   border: 1px solid #ccc;
   background-color: #fff;
   border: 0;
