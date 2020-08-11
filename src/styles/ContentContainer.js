@@ -6,7 +6,7 @@ const ContentContainer = styled.main`
   /* margin: 0 auto; */
   margin: 0 ${({ theme }) => theme.spacing[4]};
   margin-top: ${({ tickerOpen }) => (tickerOpen ? "8rem" : "3.6rem")};
-  display: block;
+  display: ${({ videoModalOpen }) => (videoModalOpen ? "none" : "block")};
   /* max-width: ${({ theme }) => theme.maxWidth}; */
 `
 

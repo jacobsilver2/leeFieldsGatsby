@@ -19,6 +19,7 @@ const Wrapper = styled.div`
 `
 
 const StickyFooter = styled.div`
+  display: ${({ videoModalOpen }) => (videoModalOpen ? "none" : "")};
   flex-shrink: 0;
 `
 
@@ -52,10 +53,13 @@ const Layout = ({ children, location, ...props }) => {
         > */}
         <Header siteTitle={data.site.siteMetadata.title} />
         {/* </Headroom> */}
-        <ContentContainer tickerOpen={state.tickerIsVisible}>
+        <ContentContainer
+          videoModalOpen={state.videoModalOpen}
+          tickerOpen={state.tickerIsVisible}
+        >
           {children}
         </ContentContainer>
-        <StickyFooter>
+        <StickyFooter videoModalOpen={state.videoModalOpen}>
           <Signup location={location} />
           <Footer />
         </StickyFooter>
