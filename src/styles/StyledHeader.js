@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 const StyledHeader = styled.header`
-  display: block;
+  z-index: 1000;
+  display: ${({ videoModalOpen }) => (videoModalOpen ? "none" : "block")};
   border-bottom: ${({ cnnIsVisible }) =>
     cnnIsVisible ? "" : "1px solid black"};
   position: absolute;

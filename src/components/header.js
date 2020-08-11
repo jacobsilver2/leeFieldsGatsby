@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import useWindowSize from "../hooks/useWindowSize"
 import StyledHeader from "../styles/StyledHeader"
-
+import FadeWrapper from "./FadeWrapper"
 import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
 import NewsTicker from "./NewsTicker"
 import Nav from "./Nav"
@@ -23,10 +23,10 @@ const Header = ({ siteTitle }) => {
 
   return (
     <>
-      {/* <Headroom onUnpin={() => dispatch({ type: "SECONDARY_MENU_OFF" })}> */}
       <StyledHeader
         tickerIsVisible={state.tickerIsVisible}
         cnnIsVisible={state.cnnInView}
+        videoModalOpen={state.videoModalOpen}
       >
         {state.tickerIsVisible && <NewsTicker />}
         <div className="inner">
@@ -35,7 +35,6 @@ const Header = ({ siteTitle }) => {
         </div>
         {state.secondaryMenuActive && <SecondaryMenu />}
       </StyledHeader>
-      {/* </Headroom> */}
     </>
   )
 }

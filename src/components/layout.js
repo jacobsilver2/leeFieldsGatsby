@@ -46,12 +46,12 @@ const Layout = ({ children, location, ...props }) => {
             <VideoModalMobileComponent />
           )}
         </AnimatePresence>
-        <Headroom
+        {/* <Headroom
           style={{ zIndex: "1000" }}
           onUnpin={() => dispatch({ type: "SECONDARY_MENU_OFF" })}
-        >
-          <Header siteTitle={data.site.siteMetadata.title} />
-        </Headroom>
+        > */}
+        <Header siteTitle={data.site.siteMetadata.title} />
+        {/* </Headroom> */}
         <ContentContainer tickerOpen={state.tickerIsVisible}>
           {children}
         </ContentContainer>
