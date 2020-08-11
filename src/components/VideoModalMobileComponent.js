@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GlobalDispatchContext } from "../context/provider"
 import {
@@ -17,6 +17,11 @@ const VideoModalMobileComponent = () => {
   function handleClose() {
     dispatch({ type: "MODAL_VID_CLOSED" })
   }
+
+  useEffect(() => {
+    dispatch({ type: "TICKER_OFF" })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const duration = 1
   const variants = {

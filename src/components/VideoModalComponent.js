@@ -24,6 +24,7 @@ const VideoModalComponent = () => {
   useLockBodyScroll()
 
   useEffect(() => {
+    dispatch({ type: "TICKER_OFF" })
     setcurrentVideo(video.edges[0])
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
