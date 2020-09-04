@@ -16,11 +16,15 @@ export const Wrapper = styled.div`
     "content"
     "purchase";
   grid-gap: 20px;
+
   @media screen and (max-width: 1280px) {
     grid-template-columns: 1fr 1fr;
   }
   @media screen and (max-width: 700px) {
     grid-template-columns: 1fr;
+  }
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `
 export const Card = styled.div`

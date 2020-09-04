@@ -10,7 +10,11 @@ import {
 } from "../styles/StyledShop"
 import useWindowSize from "../hooks/useWindowSize"
 
-const ShopComponent = ({ items, category }) => {
+function isInt(n) {
+  return n % 1 === 0
+}
+
+const ShopComponent = ({ items }) => {
   const size = useWindowSize()
   const mappedItems = items
     .sort((a, b) => a.Order - b.Order)
@@ -23,21 +27,24 @@ const ShopComponent = ({ items, category }) => {
             )}
             <Content>
               {item.Name && <ItemName className="title">{item.Name}</ItemName>}
-              {item.Colored_LP_Price && (
-                <p className="price">Colored Vinyl: ${item.Colored_LP_Price}</p>
+              {item.LP_Price && (
+                <p className="price">
+                  LP: $
+                  {isInt(item.LP_Price)
+                    ? item.LP_Price
+                    : item.LP_Price.toFixed(2)}
+                  {item.CD_Price &&
+                    ` - CD: $${
+                      isInt(item.CD_Price)
+                        ? item.CD_Price
+                        : item.CD_Price.toFixed(2)
+                    }`}
+                </p>
               )}
-              {item.LP_Price && <p className="price">LP: ${item.LP_Price}</p>}
-              {item.CD_Price && <p className="price">CD: ${item.CD_Price}</p>}
-              {item.Price && <p className="price">${item.Price}</p>}
-              {/* this next line is to compensate for the extra height from the music prices */}
-              {/* removing the extra spaces for when we are in single or dual column view */}
-              {/* or when category is all (cause that's the only time Music and Apparel will be) */}
-              {/* on the same grid */}
-              {item.Type !== "Music" && size.width > 700 && category === "all" && (
-                <>
-                  <p>&nbsp;</p>
-                  <p>&nbsp;</p>
-                </>
+              {item.Price && (
+                <p className="price">
+                  ${isInt(item.Price) ? item.Price : item.Price.toFixed(2)}
+                </p>
               )}
             </Content>
             <Purchase>

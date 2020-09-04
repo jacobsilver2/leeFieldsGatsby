@@ -92,7 +92,7 @@ const ShopPage = props => {
       filteredItems = items.filter(item => item.Type === "Apparel")
       break
     case "posters":
-      filteredItems = items.filter(item => item.Type === "Posters")
+      filteredItems = items.filter(item => item.Type === "Poster")
       break
     case "etc":
       filteredItems = items.filter(item => item.Type === "Etc.")
@@ -137,11 +137,7 @@ const ShopPage = props => {
             <h5 className="text">Etc.</h5>
           </LIElement>
         </ULWrapper>
-        {isLoading ? (
-          <Loading />
-        ) : (
-          <ShopComponent category={category} items={filteredItems} />
-        )}
+        {isLoading ? <Loading /> : <ShopComponent items={filteredItems} />}
       </ShopContainer>
     </FadeWrapper>
   )
