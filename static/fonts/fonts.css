@@ -1,20 +1,19 @@
 /* FORMA DJR BANNER BOLD AND MEDIUM */
 @font-face {
-  src: url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold-Testing.woff2")
+  src: url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold.woff2")
       format("woff2"),
-    url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold-Testing.woff")
-      format("woff");
+    url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold.woff") format("woff");
   /* url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold-Testing.eot"); */
   font-family: "FormaDJRBanner";
   font-style: normal;
   font-weight: bold;
 }
 @font-face {
-  src: url("/fonts/formaDJRBanner/Medium/FormaDJRBanner-Medium-Testing.woff2")
+  src: url("/fonts/formaDJRBanner/Medium/FormaDJRBanner-Medium.woff2")
       format("woff2"),
-    url("/fonts/formaDJRBanner/Medium/FormaDJRBanner-Medium-Testing.woff")
+    url("/fonts/formaDJRBanner/Medium/FormaDJRBanner-Medium.woff")
       format("woff"),
-    url("/fonts/formaDJRBanner/Medium/FormaDJRBanner-Medium-Testing.eot");
+    url("/fonts/formaDJRBanner/Medium/FormaDJRBanner-Medium.eot");
   font-family: "FormaDJRBanner";
   font-style: normal;
   font-weight: 500;
@@ -33,22 +32,20 @@
 }
 
 @font-face {
-  src: url("/fonts/formaDJRText/Medium/FormaDJRText-Medium-Testing.woff2")
+  src: url("/fonts/formaDJRText/Medium/FormaDJRText-Medium.woff2")
       format("woff2"),
-    url("/fonts/formaDJRText/Medium/FormaDJRText-Medium-Testing.woff")
-      format("woff"),
-    url("/fonts/formaDJRText/Medium/FormaDJRText-Medium-Testing.eot");
+    url("/fonts/formaDJRText/Medium/FormaDJRText-Medium.woff") format("woff"),
+    url("/fonts/formaDJRText/Medium/FormaDJRText-Medium.eot");
   font-family: "FormaDJRText";
   font-style: normal;
   font-weight: 500;
 }
 
 @font-face {
-  src: url("/fonts/formaDJRText/Regular/FormaDJRText-Regular-Testing.woff2")
+  src: url("/fonts/formaDJRText/Regular/FormaDJRText-Regular.woff2")
       format("woff2"),
-    url("/fonts/formaDJRText/Regular/FormaDJRText-Regular-Testing.woff")
-      format("woff"),
-    url("/fonts/formaDJRText/Regular/FormaDJRText-Regular-Testing.eot");
+    url("/fonts/formaDJRText/Regular/FormaDJRText-Regular.woff") format("woff"),
+    url("/fonts/formaDJRText/Regular/FormaDJRText-Regular.eot");
   font-family: "FormaDJRText";
   font-style: normal;
   font-weight: normal;
