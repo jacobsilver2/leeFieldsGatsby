@@ -7,6 +7,7 @@ module.exports = {
     title: `Lee Fields and The Expressions`,
     description: `Lee Fields & The Expressions homepage`,
     author: `Jacob Silver`,
+    siteUrl: `https://www.leefieldsandtheexpressions.com`,
   },
   plugins: [
     `gatsby-plugin-preload-fonts`,
@@ -126,6 +127,7 @@ module.exports = {
         name: `Lee Fields & The Expressions`,
         short_name: `Lee Fields`,
         start_url: `/`,
+
         // background_color: `#663399`,
         // theme_color: `#663399`,
         // display: `minimal-ui`,

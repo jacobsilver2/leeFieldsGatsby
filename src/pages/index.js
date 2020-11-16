@@ -23,6 +23,15 @@ export const query = graphql`
         title
       }
     }
+    seoRose: file(relativePath: { eq: "leeRoseLogo.png" }) {
+      childImageSharp {
+        resize(width: 1200) {
+          src
+          height
+          width
+        }
+      }
+    }
     video: airtable(table: { eq: "Videos" }, data: { Video_Order: { eq: 1 } }) {
       data {
         Video_URL
@@ -77,7 +86,7 @@ const IndexPage = ({ data }) => {
   const { Video_URL: vidUrl } = data.video.data
   return (
     <FadeWrapper>
-      <SEO title="Home" />
+      <SEO title="Lee Fields" image={data.seoRose.childImageSharp.resize} />
       <BigLogoWrapper>
         <StyledBigLogo ref={animateRef}>{title.toUpperCase()}</StyledBigLogo>
       </BigLogoWrapper>
