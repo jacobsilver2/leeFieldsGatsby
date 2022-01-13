@@ -51,6 +51,7 @@
     "react-ticker": "^1.2.2",
     "react-use-dimensions": "^1.2.1",
     "react-youtube": "^7.11.2",
+    "sharp": "^0.29.3",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1",
     "styled-reset": "^4.1.5",

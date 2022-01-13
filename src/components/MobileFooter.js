@@ -87,9 +87,7 @@ const MobileFooter = () => {
           </a>
         </NavText>
       </Links>
-      <NavText style={{ textAlign: "center" }}>
-        @2020 Lee Fields & The Expressions
-      </NavText>
+      <NavText style={{ textAlign: "center" }}>@2022 Lee Fields</NavText>
     </Wrapper>
   )
 }

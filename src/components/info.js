@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import About from "../components/About"
 import Contact from "../components/Contact"
 import styled from "styled-components"

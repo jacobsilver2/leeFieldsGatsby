@@ -1,14 +1,7 @@
-import React, {
-  useState,
-  useContext,
-  useRef,
-  useLayoutEffect,
-  useEffect,
-} from "react"
+import React, { useContext, useRef, useLayoutEffect, useEffect } from "react"
 import _ from "lodash"
 import { graphql } from "gatsby"
 import { useInView } from "react-intersection-observer"
-// import useIsScrollingDown from "../hooks/useIsScrollingDown"
 import { GlobalDispatchContext } from "../context/provider"
 import Video from "../components/video"
 import Shows from "../components/shows"

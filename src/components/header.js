@@ -1,19 +1,16 @@
 import React, { useContext, useEffect } from "react"
 import useWindowSize from "../hooks/useWindowSize"
 import StyledHeader from "../styles/StyledHeader"
-import FadeWrapper from "./FadeWrapper"
 import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
 import NewsTicker from "./NewsTicker"
 import Nav from "./Nav"
 import MobileNav from "./MobileNav"
 import SecondaryMenu from "./SecondaryMenu"
-import Headroom from "react-headroom"
 
 const Header = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
   const dispatch = useContext(GlobalDispatchContext)
   const size = useWindowSize()
-  // const [visible, setVisible] = useState(true)
 
   // We don't want the secondary menu to ever be open if above 828. This will prevent that.
   useEffect(() => {

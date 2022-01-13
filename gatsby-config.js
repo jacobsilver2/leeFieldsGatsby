@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Lee Fields and The Expressions`,
+    title: `Lee Fields`,
     description: `Lee Fields & The Expressions homepage`,
     author: `Jacob Silver`,
     siteUrl: `https://www.leefieldsandtheexpressions.com`,

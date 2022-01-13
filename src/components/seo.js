@@ -32,7 +32,6 @@ function SEO({ description, lang, meta, title, image: metaImage }) {
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
       : null
 
-  console.log(image)
   return (
     <Helmet
       htmlAttributes={{

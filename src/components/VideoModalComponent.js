@@ -91,37 +91,12 @@ const VideoModalComponent = () => {
     `
   )
 
-  const duration = 1
-  const variants = {
-    initial: {
-      height: 0,
-    },
-    enter: {
-      height: "100%",
-      transition: {
-        duration: duration,
-        // delay: duration,
-        when: "beforeChildren",
-      },
-    },
-    exit: {
-      height: 0,
-      transition: { duration: duration },
-    },
-  }
-
   const { src: prevCursorUrl } = prevCursor.childImageSharp.fixed
   const { src: nextCursorUrl } = nextCursor.childImageSharp.fixed
 
   return (
     <FadeWrapper transition={0.5}>
-      <Overlay
-      // key="desktopmodal"
-      // variants={variants}
-      // initial="initial"
-      // animate="enter"
-      // exit="exit"
-      >
+      <Overlay>
         <Content>
           <CloseContainer onClick={onClose}>
             <p>CLOSE</p>

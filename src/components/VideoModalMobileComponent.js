@@ -23,24 +23,6 @@ const VideoModalMobileComponent = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const duration = 1
-  const variants = {
-    initial: {
-      height: 0,
-    },
-    enter: {
-      height: "100%",
-      transition: {
-        duration: duration,
-        when: "beforeChildren",
-      },
-    },
-    exit: {
-      height: 0,
-      transition: { duration: duration },
-    },
-  }
-
   const {
     allAirtable: { edges: videos },
   } = useStaticQuery(

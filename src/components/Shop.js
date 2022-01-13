@@ -8,14 +8,12 @@ import {
   ItemName,
   Purchase,
 } from "../styles/StyledShop"
-import useWindowSize from "../hooks/useWindowSize"
 
 function isInt(n) {
   return n % 1 === 0
 }
 
 const ShopComponent = ({ items }) => {
-  const size = useWindowSize()
   const mappedItems = items
     .sort((a, b) => a.Order - b.Order)
     .map(item => {

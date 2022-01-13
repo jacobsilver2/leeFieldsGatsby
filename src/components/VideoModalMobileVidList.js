@@ -1,17 +1,11 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
-import { VideoContainer, VideoOverlayWrapper } from "../styles/VideoPlayer"
+import { VideoContainer } from "../styles/VideoPlayer"
 import ReactPlayer from "react-player/lazy"
 
 const VidWrapper = styled.div`
   display: block;
   margin: 10rem 2rem;
-`
-
-const Still = styled.div`
-  width: 40%;
-  margin: 0.5vh auto;
 `
 
 const Title = styled.div`
@@ -41,15 +35,6 @@ const TextWrapper = styled.div`
   }
 `
 
-const VerticalLine = styled.div`
-  position: relative;
-  border-left: 2px solid white;
-  height: 15vh;
-  left: 50%;
-  margin-left: -3px;
-  top: 0;
-  margin-bottom: 2rem;
-`
 const reactPlayerOptions = {
   youtube: {
     playerVars: {
@@ -80,8 +65,6 @@ const reactPlayerOptions = {
 }
 
 const VideoModalMobileVidList = ({ videos }) => {
-  const [muted, setmuted] = useState(true)
-
   const vidList = videos.map((vid, i) => (
     <VidWrapper key={vid.node.id}>
       <Movie>

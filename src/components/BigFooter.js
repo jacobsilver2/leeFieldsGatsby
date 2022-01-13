@@ -21,7 +21,7 @@ const BigFooter = () => {
     <StyledFooter>
       <div className="inner">
         <Wrapper>
-          <NavText>@2020 Lee Fields & The Expressions</NavText>
+          <NavText>@2022 Lee Fields</NavText>
         </Wrapper>
         <Wrapper>
           <NavText className="item">
