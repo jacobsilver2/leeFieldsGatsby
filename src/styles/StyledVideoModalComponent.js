@@ -43,6 +43,7 @@ export const BottomBar = styled.div`
   justify-content: space-between;
   padding: 1rem;
   color: #fff;
+  background: black;
   width: 100%;
   bottom: 0px;
   p {
@@ -63,16 +64,15 @@ export const MouseTrapInner = styled.div`
   width: 100%;
   height: 100%;
   grid-template-columns: 1fr 1fr;
-  /* background-color: blue; */
   opacity: 80%;
 `
 
 export const PrevCursor = styled.div`
-    cursor: url('${props => props.cursor}'), pointer;
+  cursor: url("${props => props.cursor}"), pointer;
 `
 
 export const NextCursor = styled.div`
-  cursor: url('${props => props.cursor}'), pointer;
+  cursor: url("${props => props.cursor}"), pointer;
 `
 export const SoundBox = styled.div`
   cursor: pointer;

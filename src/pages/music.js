@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react"
 import { graphql } from "gatsby"
 import { GlobalDispatchContext } from "../context/provider"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import MusicComponent from "../components/Music"
 import FadeWrapper from "../components/FadeWrapper"
 
@@ -42,7 +42,7 @@ const MusicPage = ({ data }) => {
   }, [])
   return (
     <FadeWrapper>
-      <SEO title="Music" />
+      <Seo title="Music" />
       <MusicComponent data={data} />
     </FadeWrapper>
   )

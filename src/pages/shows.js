@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react"
 import { GlobalDispatchContext } from "../context/provider"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import ShowsComponent from "../components/shows"
 import FadeWrapper from "../components/FadeWrapper"
 
@@ -14,7 +14,7 @@ const Shows = props => {
   }, [])
   return (
     <FadeWrapper>
-      <SEO title="Shows" />
+      <Seo title="Shows" />
       <ShowsComponent />
     </FadeWrapper>
   )

@@ -1,20 +1,20 @@
 import { createGlobalStyle } from "styled-components"
 
-import FormaDJRBannerBoldWoff from "../assets/fonts/FormaDJRBanner-Bold-Testing.woff"
-import FormaDJRBannerBoldWoff2 from "../assets/fonts/FormaDJRBanner-Bold-Testing.woff2"
-import FormaDJRBannerBoldEOT from "../assets/fonts/FormaDJRBanner-Bold-Testing.eot"
+import FormaDJRBannerBoldWoff from "../assets/fonts/FormaDJRBanner-Bold.woff"
+import FormaDJRBannerBoldWoff2 from "../assets/fonts/FormaDJRBanner-Bold.woff2"
+import FormaDJRBannerBoldEOT from "../assets/fonts/FormaDJRBanner-Bold.eot"
 
-import FormaDJRBannerMedWoff from "../assets/fonts/FormaDJRBanner-Medium-Testing.woff"
-import FormaDJRBannerMedWoff2 from "../assets/fonts/FormaDJRBanner-Medium-Testing.woff2"
-import FormaDJRBannerMedEOT from "../assets/fonts/FormaDJRBanner-Medium-Testing.eot"
+import FormaDJRBannerMedWoff from "../assets/fonts/FormaDJRBanner-Medium.woff"
+import FormaDJRBannerMedWoff2 from "../assets/fonts/FormaDJRBanner-Medium.woff2"
+import FormaDJRBannerMedEOT from "../assets/fonts/FormaDJRBanner-Medium.eot"
 
-import FormaDJRTextRegWoff from "../assets/fonts/FormaDJRText-Regular-Testing.woff"
-import FormaDJRTextRegWoff2 from "../assets/fonts/FormaDJRText-Regular-Testing.woff2"
-import FormaDJRTextRegEOT from "../assets/fonts/FormaDJRText-Regular-Testing.eot"
+import FormaDJRTextRegWoff from "../assets/fonts/FormaDJRText-Regular.woff"
+import FormaDJRTextRegWoff2 from "../assets/fonts/FormaDJRText-Regular.woff2"
+import FormaDJRTextRegEOT from "../assets/fonts/FormaDJRText-Regular.eot"
 
-import FormaDJRTextMedWoff from "../assets/fonts/FormaDJRText-Medium-Testing.woff"
-import FormaDJRTextMedWoff2 from "../assets/fonts/FormaDJRText-Medium-Testing.woff2"
-import FormaDJRTextMedEOT from "../assets/fonts/FormaDJRBanner-Medium-Testing.eot"
+import FormaDJRTextMedWoff from "../assets/fonts/FormaDJRText-Medium.woff"
+import FormaDJRTextMedWoff2 from "../assets/fonts/FormaDJRText-Medium.woff2"
+import FormaDJRTextMedEOT from "../assets/fonts/FormaDJRBanner-Medium.eot"
 
 const Fonts = createGlobalStyle`
   @font-face {

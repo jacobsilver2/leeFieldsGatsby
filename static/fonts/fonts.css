@@ -3,7 +3,6 @@
   src: url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold.woff2")
       format("woff2"),
     url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold.woff") format("woff");
-  /* url("/fonts/formaDJRBanner/Bold/FormaDJRBanner-Bold-Testing.eot"); */
   font-family: "FormaDJRBanner";
   font-style: normal;
   font-weight: bold;

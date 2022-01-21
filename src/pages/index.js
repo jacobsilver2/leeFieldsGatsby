@@ -1,11 +1,11 @@
-import React, { useContext, useRef, useLayoutEffect, useEffect } from "react"
+import React, { useContext, useRef, useEffect } from "react"
 import _ from "lodash"
 import { graphql } from "gatsby"
 import { useInView } from "react-intersection-observer"
 import { GlobalDispatchContext } from "../context/provider"
 import Video from "../components/video"
 import Shows from "../components/shows"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import FadeWrapper from "../components/FadeWrapper"
 import { StyledBigLogo, BigLogoWrapper } from "../styles/StyledBigLogo"
 
@@ -41,18 +41,9 @@ export const query = graphql`
 `
 
 const IndexPage = ({ data }) => {
-  // const [isScrolling, setisScrolling] = useState(false)
   const dispatch = useContext(GlobalDispatchContext)
   const firstUpdate = useRef(true)
   const [animateRef, animateInView] = useInView({ threshold: 0.7 })
-  // const isScrollingDown = useIsScrollingDown()
-
-  // useEffect(() => {
-  //   // console.log(isScrollingDown)
-  //   isScrollingDown
-  //     ? dispatch({ type: "MOBILE_LOGO_OVERRIDE_OFF" })
-  //     : dispatch({ type: "MOBILE_LOGO_OVERRIDE" })
-  // }, [])
 
   useEffect(() => {
     window.addEventListener("scroll", _.debounce(setMobileOverrideOff, 100))
@@ -63,7 +54,7 @@ const IndexPage = ({ data }) => {
       )
   }, [])
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (firstUpdate.current) {
       firstUpdate.current = false
       return
@@ -74,12 +65,11 @@ const IndexPage = ({ data }) => {
   function setMobileOverrideOff() {
     dispatch({ type: "MOBILE_LOGO_OVERRIDE_OFF" })
   }
-  // console.log(isScrollingDown)
   const { title } = data.title.siteMetadata
   const { Video_URL: vidUrl } = data.video.data
   return (
     <FadeWrapper>
-      <SEO title="Lee Fields" image={data.seoRose.childImageSharp.resize} />
+      <Seo title="Lee Fields" image={data.seoRose.childImageSharp.resize} />
       <BigLogoWrapper>
         <StyledBigLogo ref={animateRef}>{title.toUpperCase()}</StyledBigLogo>
       </BigLogoWrapper>

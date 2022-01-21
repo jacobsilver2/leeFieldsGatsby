@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from "react"
 import { GlobalDispatchContext } from "../context/provider"
 import Shows from "../components/shows"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import FadeWrapper from "../components/FadeWrapper"
 import useWindowSize from "../hooks/useWindowSize"
 import styled from "styled-components"
@@ -29,7 +29,7 @@ const TourPage = props => {
   }, [size])
   return (
     <FadeWrapper>
-      <SEO title="Tour" />
+      <Seo title="Tour" />
       <Wrapper isMobile={isMobile ? "true" : "false"}>
         <Shows />
       </Wrapper>

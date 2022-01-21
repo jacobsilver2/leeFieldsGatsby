@@ -13,6 +13,7 @@ module.exports = {
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-fontawesome-css`,
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {

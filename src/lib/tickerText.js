@@ -1,6 +1,6 @@
 const tickerText = {
-  text: `Lee Fields & The Expressions - Big Crown Vaults Vol. 1 out now`,
-  link: "https://bigcrownrecords.com/store/vaults-vol-1-lee-fields/",
+  text: `Stream Ordinary Lives Now!`,
+  link: "https://daptone.ffm.to/ordinarylives.owe",
 }
 
 export default tickerText

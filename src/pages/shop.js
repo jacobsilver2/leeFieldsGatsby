@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState } from "react"
 import Airtable from "airtable"
 import styled from "styled-components"
 import { GlobalDispatchContext } from "../context/provider"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import ShopComponent from "../components/Shop"
 import Loading from "../components/Loading"
 import FadeWrapper from "../components/FadeWrapper"
@@ -20,7 +20,6 @@ const ULWrapper = styled.ul`
     width: 100%;
     max-height: 6rem;
   }
-
 `
 
 const LIElement = styled.li`
@@ -103,7 +102,7 @@ const ShopPage = props => {
 
   return (
     <FadeWrapper>
-      <SEO title="Shop" />
+      <Seo title="Shop" />
       <ShopContainer>
         <ULWrapper>
           <LIElement

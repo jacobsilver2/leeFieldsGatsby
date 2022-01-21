@@ -24,7 +24,6 @@ const StickyFooter = styled.div`
 `
 
 const Layout = ({ children, location, ...props }) => {
-  // console.log(location)
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
   const size = useWindowSize()
