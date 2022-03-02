@@ -129,6 +129,12 @@ module.exports = {
         path: `${__dirname}/src/assets/albums`,
       },
     },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: `${process.env.GATSBY_FACEBOOK_PIXEL_ID}`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
