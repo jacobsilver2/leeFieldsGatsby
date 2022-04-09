@@ -35,7 +35,7 @@
     "gsap": "^3.9.1",
     "is_js": "^0.9.0",
     "lodash": "^4.17.21",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "mouse-position": "^2.1.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
