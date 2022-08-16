@@ -50,6 +50,13 @@ const AboutText = styled.p`
   }
 `
 
+const BoldAboutText = styled.p`
+  font-weight: 600;
+  @media only screen and (min-width: 829px) {
+    letter-spacing: 0.1rem;
+  }
+`
+
 const About = ({ data }) => {
   const aboutInfo = data.edges[0].node
 
@@ -69,6 +76,15 @@ const About = ({ data }) => {
             <br />
             <br />
             <AboutText>{aboutInfo.data.P3}</AboutText>
+            <br />
+            <br />
+            <AboutText>{aboutInfo.data.P4}</AboutText>
+            <br />
+            <br />
+            <BoldAboutText>{aboutInfo.data.P5}</BoldAboutText>
+            <br />
+            <br />
+            <BoldAboutText>{aboutInfo.data.P6}</BoldAboutText>
           </Info>
         </Text>
       </Wrapper>
