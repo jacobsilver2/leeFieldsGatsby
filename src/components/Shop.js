@@ -32,10 +32,9 @@ const ShopComponent = ({ items }) => {
                     ? item.LP_Price
                     : item.LP_Price.toFixed(2)}
                   {item.CD_Price &&
-                    ` - CD: $${
-                      isInt(item.CD_Price)
-                        ? item.CD_Price
-                        : item.CD_Price.toFixed(2)
+                    ` - CD: $${isInt(item.CD_Price)
+                      ? item.CD_Price
+                      : item.CD_Price.toFixed(2)
                     }`}
                 </p>
               )}
