@@ -25,6 +25,7 @@ const ShopComponent = ({ items }) => {
             )}
             <Content>
               {item.Name && <ItemName className="title">{item.Name}</ItemName>}
+              {item.Preorder && <p>Pre-Order</p>}
               {item.LP_Price && (
                 <p className="price">
                   LP: $
@@ -32,9 +33,10 @@ const ShopComponent = ({ items }) => {
                     ? item.LP_Price
                     : item.LP_Price.toFixed(2)}
                   {item.CD_Price &&
-                    ` - CD: $${isInt(item.CD_Price)
-                      ? item.CD_Price
-                      : item.CD_Price.toFixed(2)
+                    ` - CD: $${
+                      isInt(item.CD_Price)
+                        ? item.CD_Price
+                        : item.CD_Price.toFixed(2)
                     }`}
                 </p>
               )}
@@ -51,7 +53,7 @@ const ShopComponent = ({ items }) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <p>Purchase</p>
+                <p>{item.Preorder ? "Pre-Order" : "Purchase"}</p>
               </a>
             </Purchase>
           </Card>

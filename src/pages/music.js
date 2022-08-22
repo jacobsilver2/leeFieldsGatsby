@@ -17,6 +17,7 @@ export const query = graphql`
             Order
             Year
             Buy
+            Preorder
             Image {
               localFiles {
                 childImageSharp {
