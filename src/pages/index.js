@@ -68,17 +68,19 @@ const IndexPage = ({ data }) => {
   const { title } = data.title.siteMetadata
   const { Video_URL: vidUrl } = data.video.data
   return (
-    <FadeWrapper>
-      <Seo title="Lee Fields" image={data.seoRose.childImageSharp.resize} />
-      <BigLogoWrapper>
-        <StyledBigLogo ref={animateRef}>{title.toUpperCase()}</StyledBigLogo>
-      </BigLogoWrapper>
-      <Video
-        hoverImg={data.hoverImg.childImageSharp.fixed.src}
-        video={vidUrl}
-      />
-      <Shows />
-    </FadeWrapper>
+    <>
+      <FadeWrapper>
+        <Seo title="Lee Fields" image={data.seoRose.childImageSharp.resize} />
+        <BigLogoWrapper>
+          <StyledBigLogo ref={animateRef}>{title.toUpperCase()}</StyledBigLogo>
+        </BigLogoWrapper>
+        <Video
+          hoverImg={data.hoverImg.childImageSharp.fixed.src}
+          video={vidUrl}
+        />
+        <Shows />
+      </FadeWrapper>
+    </>
   )
 }
 

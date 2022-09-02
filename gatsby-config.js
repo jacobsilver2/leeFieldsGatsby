@@ -12,6 +12,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-preload-fonts`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-portal`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-fontawesome-css`,
     {
@@ -136,6 +137,7 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
