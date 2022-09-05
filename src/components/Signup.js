@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
-import { Formik } from "formik"
-import * as yup from "yup"
-import is from "is_js"
-import addToMailchimp from "gatsby-plugin-mailchimp"
-import usePrevious from "../hooks/usePrevious"
+import React, { useState, useEffect } from 'react'
+import { Formik } from 'formik'
+import * as yup from 'yup'
+import is from 'is_js'
+import addToMailchimp from 'gatsby-plugin-mailchimp'
+import { usePrevious } from '../hooks'
 import {
   Title,
   Wrapper,
@@ -14,7 +14,7 @@ import {
   StyledFormikError,
   StyledMailChimpResult,
   Content,
-} from "../styles/StyledSignup"
+} from '../styles/StyledSignup'
 
 const validationSchema = yup.object({
   email: yup.string().email().required(),
@@ -24,38 +24,35 @@ const validationSchema = yup.object({
 const extractEmailRegex = /<a[\s]+([^>]+)>((?:.(?!<\/a>))*.)<\/a>/g
 
 const Signup = ({ location }) => {
-  const [result, setResult] = useState("")
+  const [result, setResult] = useState('')
   const prevRoute = usePrevious(location.pathname)
   const [key, setKey] = useState(0)
 
   useEffect(() => {
     if (location.pathname !== prevRoute) {
-      setResult("")
+      setResult('')
     }
   }, [location.pathname !== prevRoute])
 
   return (
     <Wrapper
       key={
-        location.pathname === prevRoute ? key : () => setKey(prev => prev + 1)
+        location.pathname === prevRoute ? key : () => setKey((prev) => prev + 1)
       }
     >
       <Content>
         <Title>JOIN OUR NEWSLETTER</Title>
         <TheForm>
           <Formik
-            initialValues={{ email: "" }}
+            initialValues={{ email: '' }}
             validationSchema={validationSchema}
             onSubmit={(data, { setSubmitting, resetForm }) => {
               setSubmitting(true)
-              // make async call
-              // unfortunately this does not work on Firefox
-              // developer edition.
               addToMailchimp(data.email)
-                .then(res => {
+                .then((res) => {
                   setResult(res)
                 })
-                .catch(error => {})
+                .catch((error) => {})
               setSubmitting(false)
               resetForm()
             }}
@@ -84,7 +81,7 @@ const Signup = ({ location }) => {
                   )}
                   {result.msg && is.empty(errors) && (
                     <StyledMailChimpResult>
-                      {result.msg.replace(extractEmailRegex, "")}
+                      {result.msg.replace(extractEmailRegex, '')}
                     </StyledMailChimpResult>
                   )}
                 </>

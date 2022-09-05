@@ -1,9 +1,9 @@
-import React, { useContext, useEffect } from "react"
-import { GlobalDispatchContext } from "../context/provider"
-import { graphql } from "gatsby"
-import Seo from "../components/seo"
-import InfoComponent from "../components/info"
-import FadeWrapper from "../components/FadeWrapper"
+import { graphql } from 'gatsby'
+import React, { useContext, useEffect } from 'react'
+import FadeWrapper from '../components/FadeWrapper'
+import InfoComponent from '../components/info'
+import Seo from '../components/seo'
+import { GlobalDispatchContext } from '../context'
 
 export const query = graphql`
   query GetInfo {
@@ -32,9 +32,9 @@ export const query = graphql`
             P1
             P2
             P3
-P4
-P5
-P6
+            P4
+            P5
+            P6
             AboutPic {
               localFiles {
                 childImageSharp {
@@ -54,10 +54,11 @@ P6
 const Info = ({ data }) => {
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {
-    dispatch({ type: "CNN_OFF" })
-    dispatch({ type: "TICKER_OFF" })
+    dispatch({ type: 'CNN_OFF' })
+    dispatch({ type: 'TICKER_OFF' })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
   return (
     <FadeWrapper>
       <Seo title="Info" />

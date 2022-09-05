@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import { VideoContainer } from "../styles/VideoPlayer"
-import ReactPlayer from "react-player/lazy"
+import React from 'react'
+import styled from 'styled-components'
+import { VideoContainer } from '../styles/VideoPlayer'
+import ReactPlayer from 'react-player/lazy'
 
 const VidWrapper = styled.div`
   display: block;
@@ -25,7 +25,6 @@ const Order = styled.div`
 `
 
 const TextWrapper = styled.div`
-  /* margin: 0 auto; */
   margin-top: 1rem;
   width: 100%;
   display: flex;
@@ -54,12 +53,12 @@ const reactPlayerOptions = {
   dailymotion: {
     params: {
       autoplay: true,
-      "autoplay-mute": true,
+      'autoplay-mute': true,
       controls: false,
-      "sharing-enable": false,
-      "queue-enable": false,
-      "ui-logo": false,
-      "ui-start-screen-info": false,
+      'sharing-enable': false,
+      'queue-enable': false,
+      'ui-logo': false,
+      'ui-start-screen-info': false,
     },
   },
 }

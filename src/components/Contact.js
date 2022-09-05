@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import FadeWrapper from "./FadeWrapper"
-import useWindowSize from "../hooks/useWindowSize"
+import React from 'react'
+import styled from 'styled-components'
+import { useWindowSize } from '../hooks'
+import FadeWrapper from './FadeWrapper'
 
 const Wrapper = styled.div`
   margin-top: 6rem;
@@ -31,14 +31,14 @@ const Info = styled.p`
   a {
     font-weight: 400;
   }
-  /* line-height: 1; */
 `
 
 const Contact = ({ data }) => {
   const size = useWindowSize()
+
   const mappedData = data.edges
     .sort((a, b) => a.node.data.Order - b.node.data.Order)
-    .map(contact => {
+    .map((contact) => {
       const { data, id } = contact.node
       return (
         <FadeWrapper key={id}>

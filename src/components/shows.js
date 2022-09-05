@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react"
-import Airtable from "airtable"
-import { Title, Wrapper } from "../styles/StyledShowsComponent"
-import ShowsList from "./showsList"
-import sortShowsByDate from "../lib/sortShowsByDate"
-import Loading from "./Loading"
+import Airtable from 'airtable'
+import React, { useEffect, useState } from 'react'
+import { sortShowsByDate } from '../lib'
+import { Title, Wrapper } from '../styles/StyledShowsComponent'
+import Loading from './Loading'
+import ShowsList from './showsList'
+
 const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
-  "appF7yJr2igkrU9jh"
+  'appF7yJr2igkrU9jh',
 )
 
 const Shows = () => {
@@ -13,13 +14,13 @@ const Shows = () => {
   const [shows, setShows] = useState([])
 
   useEffect(() => {
-    base("Shows")
-      .select({ view: "Future", maxRecords: 100 })
+    base('Shows')
+      .select({ view: 'Future', maxRecords: 100 })
       .eachPage(
         (records, fetchNextPage) => {
-          records.forEach(record => {
+          records.forEach((record) => {
             record.fields.Listed === true &&
-              setShows(shows => shows.concat(record.fields))
+              setShows((shows) => shows.concat(record.fields))
           })
           fetchNextPage()
         },
@@ -29,7 +30,7 @@ const Shows = () => {
             return
           }
           setIsLoading(false)
-        }
+        },
       )
   }, [])
 

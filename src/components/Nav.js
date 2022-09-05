@@ -1,22 +1,18 @@
-import React, { useContext } from "react"
-import { Link } from "gatsby"
-import { GlobalStateContext } from "../context/provider"
-import { StyledLogo } from "../styles/StyledNav"
-import NavLinksGroupOne from "./NavLinksGroupOne"
-import NavLinksGroupTwo from "./NavLinksGroupTwo"
-import styled from "styled-components"
-
-const NavLinksWrapper = styled.div`
-  /* margin-top: 1.1rem; */
-`
+import { Link } from 'gatsby'
+import React, { useContext } from 'react'
+import { GlobalStateContext } from '../context'
+import { StyledLogo } from '../styles/StyledNav'
+import NavLinksGroupOne from './NavLinksGroupOne'
+import NavLinksGroupTwo from './NavLinksGroupTwo'
 
 const Nav = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
+
   return (
     <>
-      <NavLinksWrapper>
+      <div>
         <NavLinksGroupOne />
-      </NavLinksWrapper>
+      </div>
       <div>
         <StyledLogo visible={!state.cnnInView}>
           <Link fade="true" to="/">
@@ -24,9 +20,9 @@ const Nav = ({ siteTitle }) => {
           </Link>
         </StyledLogo>
       </div>
-      <NavLinksWrapper>
+      <div>
         <NavLinksGroupTwo />
-      </NavLinksWrapper>
+      </div>
     </>
   )
 }

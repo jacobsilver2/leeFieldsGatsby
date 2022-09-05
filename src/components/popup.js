@@ -3,6 +3,7 @@ import React, {
   forwardRef,
   useImperativeHandle,
   useEffect,
+  useLayoutEffect,
 } from "react"
 import Portal from "./portal"
 import styled from "styled-components"
@@ -28,6 +29,7 @@ const Container = styled.div`
   gap: 16px;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
 `
 
 const CloseButton = styled.button`
@@ -42,6 +44,13 @@ const CloseButton = styled.button`
 
 const Modal = forwardRef((props, ref) => {
   const [display, setDisplay] = useState(false)
+  useLayoutEffect(() => {
+    const originalStyle = window.getComputedStyle(document.body).overflow
+    if (display) {
+      document.body.style.overflow = "hidden"
+    }
+    return () => (document.body.style.overflow = originalStyle)
+  }, [display])
 
   useImperativeHandle(ref, () => {
     return {

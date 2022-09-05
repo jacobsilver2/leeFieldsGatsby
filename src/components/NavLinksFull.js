@@ -1,23 +1,23 @@
-import React, { useContext } from "react"
-import { GlobalDispatchContext } from "../context/provider"
+import React, { useContext, useRef } from 'react'
+import { GlobalDispatchContext } from '../context'
 import {
-  StyledGatsbyLink,
   NavText,
+  StyledGatsbyLink,
   StyledNavElement,
-} from "../styles/StyledNav"
+} from '../styles/StyledNav'
+import VideoModal from './VideoModal'
 
 const NavLinksFull = () => {
+  const videoModalRef = useRef()
   const dispatch = useContext(GlobalDispatchContext)
 
   const handleClick = () => {
-    dispatch({ type: "CNN_OFF" })
-    dispatch({ type: "SECONDARY_MENU_OFF" })
+    dispatch({ type: 'CNN_OFF' })
+    dispatch({ type: 'SECONDARY_MENU_OFF' })
   }
 
   const handleVidClick = () => {
-    dispatch({ type: "CNN_OFF" })
-    dispatch({ type: "SECONDARY_MENU_OFF" })
-    dispatch({ type: "MODAL_VID_OPEN" })
+    videoModalRef.current?.openModal()
   }
 
   return (
@@ -37,6 +37,7 @@ const NavLinksFull = () => {
       <StyledGatsbyLink issecondarynav="true" onClick={handleClick} to="/shop">
         <NavText issecondarynav="true">Shop</NavText>
       </StyledGatsbyLink>
+      <VideoModal ref={videoModalRef} />
     </>
   )
 }

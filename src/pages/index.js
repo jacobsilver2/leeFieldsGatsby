@@ -1,13 +1,13 @@
-import React, { useContext, useRef, useEffect } from "react"
-import _ from "lodash"
-import { graphql } from "gatsby"
-import { useInView } from "react-intersection-observer"
-import { GlobalDispatchContext } from "../context/provider"
-import Video from "../components/video"
-import Shows from "../components/shows"
-import Seo from "../components/seo"
-import FadeWrapper from "../components/FadeWrapper"
-import { StyledBigLogo, BigLogoWrapper } from "../styles/StyledBigLogo"
+import { graphql } from 'gatsby'
+import _ from 'lodash'
+import React, { useContext, useEffect, useRef } from 'react'
+import { useInView } from 'react-intersection-observer'
+import FadeWrapper from '../components/FadeWrapper'
+import Seo from '../components/seo'
+import Shows from '../components/shows'
+import Video from '../components/video'
+import { GlobalDispatchContext } from '../context'
+import { BigLogoWrapper, StyledBigLogo } from '../styles/StyledBigLogo'
 
 export const query = graphql`
   query HomePageQuery {
@@ -46,11 +46,11 @@ const IndexPage = ({ data }) => {
   const [animateRef, animateInView] = useInView({ threshold: 0.7 })
 
   useEffect(() => {
-    window.addEventListener("scroll", _.debounce(setMobileOverrideOff, 100))
+    window.addEventListener('scroll', _.debounce(setMobileOverrideOff, 100))
     return () =>
       window.removeEventListener(
-        "scroll",
-        _.debounce(setMobileOverrideOff, 1000)
+        'scroll',
+        _.debounce(setMobileOverrideOff, 1000),
       )
   }, [])
 
@@ -59,11 +59,11 @@ const IndexPage = ({ data }) => {
       firstUpdate.current = false
       return
     }
-    dispatch({ type: animateInView ? "CNN_ON" : "CNN_OFF" })
+    dispatch({ type: animateInView ? 'CNN_ON' : 'CNN_OFF' })
   })
 
   function setMobileOverrideOff() {
-    dispatch({ type: "MOBILE_LOGO_OVERRIDE_OFF" })
+    dispatch({ type: 'MOBILE_LOGO_OVERRIDE_OFF' })
   }
   const { title } = data.title.siteMetadata
   const { Video_URL: vidUrl } = data.video.data

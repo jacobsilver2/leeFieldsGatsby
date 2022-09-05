@@ -1,9 +1,9 @@
-import React, { useEffect, useContext } from "react"
-import { graphql } from "gatsby"
-import { GlobalDispatchContext } from "../context/provider"
-import Seo from "../components/seo"
-import MusicComponent from "../components/Music"
-import FadeWrapper from "../components/FadeWrapper"
+import { graphql } from 'gatsby'
+import React, { useContext, useEffect } from 'react'
+import FadeWrapper from '../components/FadeWrapper'
+import MusicComponent from '../components/Music'
+import Seo from '../components/seo'
+import { GlobalDispatchContext } from '../context'
 
 export const query = graphql`
   query GetMusic {
@@ -37,10 +37,11 @@ export const query = graphql`
 const MusicPage = ({ data }) => {
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {
-    dispatch({ type: "CNN_OFF" })
-    dispatch({ type: "TICKER_OFF" })
+    dispatch({ type: 'CNN_OFF' })
+    dispatch({ type: 'TICKER_OFF' })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
   return (
     <FadeWrapper>
       <Seo title="Music" />

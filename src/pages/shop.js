@@ -1,13 +1,14 @@
-import React, { useEffect, useContext, useState } from "react"
-import Airtable from "airtable"
-import styled from "styled-components"
-import { GlobalDispatchContext } from "../context/provider"
-import Seo from "../components/seo"
-import ShopComponent from "../components/Shop"
-import Loading from "../components/Loading"
-import FadeWrapper from "../components/FadeWrapper"
+import Airtable from 'airtable'
+import React, { useContext, useEffect, useState } from 'react'
+import styled from 'styled-components'
+import FadeWrapper from '../components/FadeWrapper'
+import Loading from '../components/Loading'
+import Seo from '../components/seo'
+import ShopComponent from '../components/Shop'
+import { GlobalDispatchContext } from '../context'
+
 const base = new Airtable({ apiKey: process.env.GATSBY_AIRTABLE_API }).base(
-  "appbWJrpD7eQdDKdq"
+  'appbWJrpD7eQdDKdq',
 )
 
 const ULWrapper = styled.ul`
@@ -24,7 +25,7 @@ const LIElement = styled.li`
   h5 {
     margin-top: 1rem;
   }
-  opacity: ${({ active }) => (active ? "1" : "50%")};
+  opacity: ${({ active }) => (active ? '1' : '50%')};
   .text {
     cursor: pointer;
   }
@@ -47,17 +48,17 @@ const ShopContainer = styled.div`
 const ShopPage = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [items, setItems] = useState([])
-  const [category, setCategory] = useState("all")
+  const [category, setCategory] = useState('all')
   const dispatch = useContext(GlobalDispatchContext)
   useEffect(() => {
-    dispatch({ type: "CNN_OFF" })
-    dispatch({ type: "TICKER_OFF" })
-    base("Shop")
-      .select({ view: "Shop", maxRecords: 100 })
+    dispatch({ type: 'CNN_OFF' })
+    dispatch({ type: 'TICKER_OFF' })
+    base('Shop')
+      .select({ view: 'Shop', maxRecords: 100 })
       .eachPage(
         (records, fetchNextPage) => {
-          records.forEach(record => {
-            setItems(items => items.concat(record.fields))
+          records.forEach((record) => {
+            setItems((items) => items.concat(record.fields))
           })
           fetchNextPage()
         },
@@ -67,26 +68,26 @@ const ShopPage = () => {
             return
           }
           setIsLoading(false)
-        }
+        },
       )
   }, [])
 
   let filteredItems
   switch (category) {
-    case "all":
+    case 'all':
       filteredItems = items
       break
-    case "music":
-      filteredItems = items.filter(item => item.Type === "Music")
+    case 'music':
+      filteredItems = items.filter((item) => item.Type === 'Music')
       break
-    case "apparel":
-      filteredItems = items.filter(item => item.Type === "Apparel")
+    case 'apparel':
+      filteredItems = items.filter((item) => item.Type === 'Apparel')
       break
-    case "posters":
-      filteredItems = items.filter(item => item.Type === "Poster")
+    case 'posters':
+      filteredItems = items.filter((item) => item.Type === 'Poster')
       break
-    case "etc":
-      filteredItems = items.filter(item => item.Type === "Etc.")
+    case 'etc':
+      filteredItems = items.filter((item) => item.Type === 'Etc.')
       break
     default:
       break
@@ -98,32 +99,32 @@ const ShopPage = () => {
       <ShopContainer>
         <ULWrapper>
           <LIElement
-            active={category === "all"}
-            onClick={() => setCategory("all")}
+            active={category === 'all'}
+            onClick={() => setCategory('all')}
           >
             <h5 className="text">Shop All</h5>
           </LIElement>
           <LIElement
-            active={category === "music"}
-            onClick={() => setCategory("music")}
+            active={category === 'music'}
+            onClick={() => setCategory('music')}
           >
             <h5 className="text">Music</h5>
           </LIElement>
           <LIElement
-            active={category === "apparel"}
-            onClick={() => setCategory("apparel")}
+            active={category === 'apparel'}
+            onClick={() => setCategory('apparel')}
           >
             <h5 className="text">Apparel</h5>
           </LIElement>
           <LIElement
-            active={category === "posters"}
-            onClick={() => setCategory("posters")}
+            active={category === 'posters'}
+            onClick={() => setCategory('posters')}
           >
             <h5 className="text">Posters</h5>
           </LIElement>
           <LIElement
-            active={category === "etc"}
-            onClick={() => setCategory("etc")}
+            active={category === 'etc'}
+            onClick={() => setCategory('etc')}
           >
             <h5 className="text">Etc.</h5>
           </LIElement>

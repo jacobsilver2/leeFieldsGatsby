@@ -1,7 +1,7 @@
-import React, { useContext } from "react"
-import { GlobalDispatchContext } from "../context/provider"
-import { StyledGatsbyLink, NavText } from "../styles/StyledNav"
-import styled from "styled-components"
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import { GlobalDispatchContext } from '../context'
+import { NavText, StyledGatsbyLink } from '../styles/StyledNav'
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,10 +9,9 @@ const Wrapper = styled.div`
 
 const NavLinks = () => {
   const dispatch = useContext(GlobalDispatchContext)
-  // const state = useContext(GlobalStateContext)
 
   const handleClick = () => {
-    dispatch({ type: "CNN_OFF" })
+    dispatch({ type: 'CNN_OFF' })
   }
 
   return (

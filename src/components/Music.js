@@ -1,14 +1,9 @@
-import React from "react"
-import Img from "./image"
-import { Link } from "gatsby"
-// import useWindowSize from "../hooks/useWindowSize"
-// import { Title } from "../styles/StyledShowsComponent"
-import styled from "styled-components"
-// import LargeBodyText from "../styles/LargeBodyText"
+import React from 'react'
+import Img from './image'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  /* display: flex;
-  flex-direction: column; */
   display: block;
 `
 
@@ -71,9 +66,6 @@ const Title = styled.div`
 `
 
 const ListenLink = styled.h5`
-  /* font-size: 4.5rem; */
-  /* font-size: 3vw; */
-
   line-height: 1;
   @media only screen and (max-width: 1600px) {
     font-size: 4.5vw;
@@ -99,11 +91,9 @@ const BuyLink = styled(Link)`
 `
 
 const Music = ({ data }) => {
-  // const size = useWindowSize()
-  // console.log(data)
   const albums = data.allAirtable.edges
     .sort((a, b) => a.node.data.Order - b.node.data.Order)
-    .map(album => {
+    .map((album) => {
       const { data, id } = album.node
       return (
         <Card key={id}>

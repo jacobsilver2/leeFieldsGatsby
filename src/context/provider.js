@@ -1,98 +1,85 @@
-import React, { useReducer, createContext } from "react"
+import React, { useReducer, createContext } from 'react'
 
 export const GlobalStateContext = createContext()
 export const GlobalDispatchContext = createContext()
 
 const initialState = {
   isMuted: true,
-  navButtonActive: "",
+  navButtonActive: '',
   secondaryMenuActive: false,
   cnnInView: true,
   mobileLogoOverride: true,
-  videoModalOpen: false,
   tickerIsVisible: true,
 }
 
 function reducer(state, action) {
   switch (action.type) {
-    case "CLOSE_NAV_BUTTON": {
+    case 'CLOSE_NAV_BUTTON': {
       return {
         ...state,
-        navButtonActive: "",
+        navButtonActive: '',
       }
     }
-    case "TOGGLE_SECONDARY_MENU": {
+    case 'TOGGLE_SECONDARY_MENU': {
       return {
         ...state,
         secondaryMenuActive: !state.secondaryMenuActive,
       }
     }
-    case "SECONDARY_MENU_OFF": {
+    case 'SECONDARY_MENU_OFF': {
       return {
         ...state,
         secondaryMenuActive: false,
       }
     }
-    case "SECONDARY_MENU_ON": {
+    case 'SECONDARY_MENU_ON': {
       return {
         ...state,
         secondaryMenuActive: true,
       }
     }
-    case "CNN_OFF": {
+    case 'CNN_OFF': {
       return {
         ...state,
         cnnInView: false,
       }
     }
-    case "CNN_ON": {
+    case 'CNN_ON': {
       return {
         ...state,
         cnnInView: true,
       }
     }
-    case "TICKER_OFF": {
+    case 'TICKER_OFF': {
       return {
         ...state,
         tickerIsVisible: false,
       }
     }
-    case "TICKER_ON": {
+    case 'TICKER_ON': {
       return {
         ...state,
         tickerIsVisible: true,
       }
     }
-    case "MODAL_VID_OPEN": {
-      return {
-        ...state,
-        videoModalOpen: true,
-      }
-    }
-    case "MODAL_VID_CLOSED": {
-      return {
-        ...state,
-        videoModalOpen: false,
-      }
-    }
-    case "MOBILE_LOGO_OVERRIDE": {
+    case 'MOBILE_LOGO_OVERRIDE': {
       return {
         ...state,
         mobileLogoOverride: true,
       }
     }
-    case "MOBILE_LOGO_OVERRIDE_OFF": {
+    case 'MOBILE_LOGO_OVERRIDE_OFF': {
       return {
         ...state,
         mobileLogoOverride: false,
       }
     }
     default:
-      throw new Error("Bad Action Type")
+      throw new Error('Bad Action Type')
   }
 }
 
-const GlobalContextProvider = ({ children }) => {
+export const GlobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <GlobalStateContext.Provider value={state}>
@@ -102,5 +89,3 @@ const GlobalContextProvider = ({ children }) => {
     </GlobalStateContext.Provider>
   )
 }
-
-export default GlobalContextProvider

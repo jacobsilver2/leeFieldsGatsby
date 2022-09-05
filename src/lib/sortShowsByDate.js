@@ -1,7 +1,5 @@
-import moment from "moment"
+import moment from 'moment'
 
-const sortShowsByDate = shows => {
+export const sortShowsByDate = (shows) => {
   return shows.sort((a, b) => moment(a.Date).diff(moment(b.Date)))
 }
-
-export default sortShowsByDate

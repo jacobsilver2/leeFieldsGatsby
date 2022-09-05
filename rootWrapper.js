@@ -1,10 +1,10 @@
-import React from "react"
-import GlobalContextProvider from "./src/context/provider"
-import Layout from "./src/components/layout"
-import { ThemeProvider } from "styled-components"
-import GlobalStyle from "./src/styles/GlobalStyle"
-import { theme } from "./src/styles/theme"
-import "./static/fonts/fonts.css"
+import React from 'react'
+import { GlobalContextProvider } from './src/context'
+import Layout from './src/components/layout'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyle from './src/styles/GlobalStyle'
+import { theme } from './src/styles/theme'
+import './static/fonts/fonts.css'
 
 export const wrapRootElement = ({ element, props }) => {
   return (

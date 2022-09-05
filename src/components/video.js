@@ -1,33 +1,37 @@
-import React, { useState, useContext } from "react"
-import { GlobalDispatchContext } from "../context/provider"
-import ReactPlayer from "react-player/lazy"
-import reactPlayerOptions from "../lib/reactPlayerOptions"
+import React, { useState, useRef } from 'react'
+import ReactPlayer from 'react-player/lazy'
+import { reactPlayerOptions } from '../lib'
+import VideoModal from './VideoModal'
 
-import { VideoContainer, VideoOverlayWrapper } from "../styles/VideoPlayer"
+import { VideoContainer, VideoOverlayWrapper } from '../styles/VideoPlayer'
 
 const Video = ({ video, hoverImg }) => {
-  const dispatch = useContext(GlobalDispatchContext)
+  const videoModalRef = useRef()
   const [muted, setMuted] = useState(true)
-  function handleClick() {
+
+  const handleClick = () => {
     setMuted(true)
-    dispatch({ type: "MODAL_VID_OPEN" })
+    videoModalRef.current?.openModal()
   }
 
   return (
-    <VideoContainer hoverImg={hoverImg} onClick={handleClick}>
-      <VideoOverlayWrapper hoverImg={hoverImg} />
-      <ReactPlayer
-        className="react-player"
-        playing={true}
-        url={video}
-        config={reactPlayerOptions}
-        muted={muted}
-        controls={false}
-        loop={true}
-        width="100%"
-        height="100%"
-      />
-    </VideoContainer>
+    <>
+      <VideoContainer hoverImg={hoverImg} onClick={handleClick}>
+        <VideoOverlayWrapper hoverImg={hoverImg} />
+        <ReactPlayer
+          className="react-player"
+          playing={true}
+          url={video}
+          config={reactPlayerOptions}
+          muted={muted}
+          controls={false}
+          loop={true}
+          width="100%"
+          height="100%"
+        />
+      </VideoContainer>
+      <VideoModal ref={videoModalRef} />
+    </>
   )
 }
 

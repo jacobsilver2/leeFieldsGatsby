@@ -1,4 +1,4 @@
-const reactPlayerOptions = {
+export const reactPlayerOptions = {
   youtube: {
     playerVars: {
       autoplay: 1,
@@ -17,14 +17,12 @@ const reactPlayerOptions = {
   dailymotion: {
     params: {
       autoplay: true,
-      "autoplay-mute": true,
+      'autoplay-mute': true,
       controls: false,
-      "sharing-enable": false,
-      "queue-enable": false,
-      "ui-logo": false,
-      "ui-start-screen-info": false,
+      'sharing-enable': false,
+      'queue-enable': false,
+      'ui-logo': false,
+      'ui-start-screen-info': false,
     },
   },
 }
-
-export default reactPlayerOptions

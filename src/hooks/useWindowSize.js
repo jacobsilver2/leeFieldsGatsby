@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react"
-function useWindowSize() {
-  const isClient = typeof window === "object"
+import { useState, useEffect } from 'react'
 
-  function getSize() {
+export const useWindowSize = () => {
+  const isClient = typeof window === 'object'
+
+  const getSize = () => {
     return {
       width: isClient ? window.innerWidth : undefined,
 
@@ -17,17 +18,15 @@ function useWindowSize() {
       return false
     }
 
-    function handleResize() {
+    const handleResize = () => {
       setWindowSize(getSize())
     }
 
-    window.addEventListener("resize", handleResize)
+    window.addEventListener('resize', handleResize)
 
-    return () => window.removeEventListener("resize", handleResize)
+    return () => window.removeEventListener('resize', handleResize)
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []) // Empty array ensures that effect is only run on mount and unmount
+  }, [])
 
   return windowSize
 }
-
-export default useWindowSize

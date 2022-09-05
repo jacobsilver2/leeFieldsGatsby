@@ -1,12 +1,13 @@
-import React, { useContext } from "react"
-import { GlobalDispatchContext } from "../context/provider"
+import React, { useContext, useRef } from 'react'
+import styled from 'styled-components'
+import { GlobalDispatchContext } from '../context'
 import {
-  StyledGatsbyLink,
   NavText,
+  StyledGatsbyLink,
   StyledNavElement,
   VideoText,
-} from "../styles/StyledNav"
-import styled from "styled-components"
+} from '../styles/StyledNav'
+import VideoModal from './VideoModal'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,14 +15,15 @@ const Wrapper = styled.div`
 `
 
 const NavLinksGroupOne = () => {
+  const videoModalRef = useRef()
   const dispatch = useContext(GlobalDispatchContext)
 
   const handleClick = () => {
-    dispatch({ type: "CNN_OFF" })
+    dispatch({ type: 'CNN_OFF' })
   }
 
   const handleVidClick = () => {
-    dispatch({ type: "MODAL_VID_OPEN" })
+    videoModalRef.current?.openModal()
   }
 
   return (
@@ -35,6 +37,7 @@ const NavLinksGroupOne = () => {
       <StyledGatsbyLink isleft="true" onClick={handleClick} to="/tour">
         <NavText>Tour</NavText>
       </StyledGatsbyLink>
+      <VideoModal ref={videoModalRef} />
     </Wrapper>
   )
 }

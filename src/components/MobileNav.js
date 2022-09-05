@@ -1,9 +1,9 @@
-import React, { useContext } from "react"
-import { Link } from "gatsby"
-import Burger from "./Burger"
-import { GlobalStateContext, GlobalDispatchContext } from "../context/provider"
-import { StyledLogo } from "../styles/StyledNav"
-import styled from "styled-components"
+import { Link } from 'gatsby'
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import { GlobalDispatchContext, GlobalStateContext } from '../context'
+import { StyledLogo } from '../styles/StyledNav'
+import Burger from './Burger'
 
 const LogoAndBurgerWrapper = styled.div`
   display: flex;
@@ -16,15 +16,9 @@ const LogoAndBurgerWrapper = styled.div`
 const MobileNav = ({ siteTitle }) => {
   const state = useContext(GlobalStateContext)
   const dispatch = useContext(GlobalDispatchContext)
-  // const [burgerIsOpen, setBurgerIsOpen] = useState(false)
-
-  // useEffect(() => {
-  //   dispatch({ type: "MOBILE_LOGO_OVERRIDE" })
-  // }, [])
 
   const handleBurgerClicked = () => {
-    // setBurgerIsOpen(prev => !prev)
-    dispatch({ type: "TOGGLE_SECONDARY_MENU" })
+    dispatch({ type: 'TOGGLE_SECONDARY_MENU' })
   }
 
   return (
@@ -36,7 +30,7 @@ const MobileNav = ({ siteTitle }) => {
           state.secondaryMenuActive
         }
       >
-        <Link onClick={() => dispatch({ type: "SECONDARY_MENU_OFF" })} to="/">
+        <Link onClick={() => dispatch({ type: 'SECONDARY_MENU_OFF' })} to="/">
           {siteTitle.toUpperCase()}
         </Link>
       </StyledLogo>
