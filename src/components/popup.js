@@ -22,6 +22,8 @@ const Backdrop = styled.div`
 `
 
 const Container = styled.div`
+  max-width: 600px;
+  max-height: 100%;
   position: relative;
   padding: 2rem;
   background-color: ${props => props.theme.color.offWhite};
@@ -30,6 +32,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 20px;
+
 `
 
 const CloseButton = styled.button`

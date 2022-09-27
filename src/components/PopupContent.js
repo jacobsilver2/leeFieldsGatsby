@@ -4,9 +4,9 @@ import styled from "styled-components"
 import { getImage, GatsbyImage } from "gatsby-plugin-image"
 
 const ImageContainer = styled.div`
-  width: 100%;
   object-fit: cover;
 `
+
 
 const PopupContent = () => {
   const data = useStaticQuery(graphql`
@@ -55,6 +55,8 @@ const PopupContent = () => {
       >
         <ImageContainer>
           <GatsbyImage
+            style={{height: '100%', width: '100%'}}
+            objectFit="contain"
             alt="sentimentalFoolAlbumCover"
             image={sentimentalFoolImage}
           />
