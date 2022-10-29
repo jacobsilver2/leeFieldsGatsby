@@ -24,9 +24,6 @@ const Links = styled.div`
   margin-top: 1rem;
 `
 
-// const NavText = styled.p`
-//   font-size: 1.1rem;
-// `
 
 const MobileFooter = () => {
   return (

@@ -45,7 +45,7 @@ const PopupContent = () => {
         href="https://daptone.ffm.to/sentimentalfool.OWE"
       >
         <p>Sentimental Fool</p>
-        <p>Oct 28 • Pre-Order Now</p>
+        <p>Oct 28 • Out Now</p>
       </a>
       <a
         style={{ textAlign: "center" }}

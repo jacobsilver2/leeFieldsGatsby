@@ -1,4 +1,4 @@
 export const tickerText = {
-  text: `New Album • Sentimental Fool• Out Oct 28`,
+  text: `New Album • Sentimental Fool• Out Now`,
   link: 'https://daptone.ffm.to/sentimentalfool.OWE',
 }

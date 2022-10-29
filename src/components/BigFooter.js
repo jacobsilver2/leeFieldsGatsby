@@ -26,7 +26,7 @@ const BigFooter = () => {
         <Wrapper>
           <NavText className="item">
             <a
-              href="https://www.instagram.com/leefieldsandtheexpressions/?hl=en"
+              href="https://www.instagram.com/mrleefields/?hl=en"
               target="_blank"
               rel="noreferrer"
             >
@@ -35,7 +35,7 @@ const BigFooter = () => {
           </NavText>
           <NavText className="item">
             <a
-              href="https://www.facebook.com/leefieldsandtheexpressions/"
+              href="https://www.facebook.com/mrleefields/"
               target="_blank"
               rel="noreferrer"
             >
