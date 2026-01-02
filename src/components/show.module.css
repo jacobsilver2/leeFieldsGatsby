@@ -1,0 +1,40 @@
+.styledShow {
+  display: grid;
+  grid-template-columns: 1fr 5fr 3fr 0.75fr;
+  align-items: center;
+  grid-gap: 20px;
+  margin: 2vw 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  .styledShow {
+    margin: 1vw 0;
+  }
+}
+
+.styledShow h5 {
+}
+
+@media only screen and (max-width: 1700px) {
+  .styledShow h5 {
+    font-size: 2.5vw;
+    line-height: 4vw;
+  }
+}
+
+.buyLink {
+  text-align: right;
+  margin-left: 1rem;
+}
+
+.buyLink a:hover {
+  text-decoration: underline;
+}
+
+.locationLink {
+  text-align: right;
+}
+
+.locationLink a:hover {
+  text-decoration: underline;
+}

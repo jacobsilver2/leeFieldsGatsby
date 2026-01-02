@@ -1,0 +1,10 @@
+.bigLogo {
+  padding-top: var(--spacing-20);
+  padding-bottom: var(--spacing-20);
+  text-align: center;
+}
+
+.bigLogoWrapper {
+  max-width: 1800px;
+  margin: auto;
+}

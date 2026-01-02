@@ -1,0 +1,13 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.stickyFooter {
+  flex-shrink: 0;
+}
+
+.videoModalOpen {
+  display: none;
+}

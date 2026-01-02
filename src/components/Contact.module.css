@@ -1,0 +1,37 @@
+.wrapper {
+  margin-top: 6rem;
+}
+
+@media only screen and (max-width: 828px) {
+  .wrapper {
+    margin: 0;
+  }
+}
+
+.contactCard {
+  margin-bottom: 5rem;
+}
+
+@media only screen and (max-width: 828px) {
+  .contactCard {
+    text-align: left;
+  }
+}
+
+.title {
+  line-height: 1;
+  padding-bottom: 1rem;
+}
+
+.titleMobile {
+  line-height: 1;
+  padding-bottom: 1rem;
+}
+
+.info {
+  font-weight: 400;
+}
+
+.info a {
+  font-weight: 400;
+}

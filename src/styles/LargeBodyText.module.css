@@ -1,0 +1,5 @@
+.largeBodyText {
+  font-size: var(--font-size-p-large);
+  line-height: 9rem;
+  letter-spacing: 0;
+}

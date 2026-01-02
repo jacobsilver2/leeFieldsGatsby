@@ -1,0 +1,149 @@
+.wrapper {
+  border-top: 1px solid black;
+  min-height: 40rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1080px) {
+  .wrapper {
+    min-height: 25rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .wrapper {
+    min-height: 18rem;
+  }
+}
+
+.content {
+  position: relative;
+  margin: auto;
+}
+
+.title {
+  margin-bottom: 1rem;
+  text-align: center;
+  line-height: 1;
+}
+
+.theForm {
+  max-width: 70%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.formikForm {
+  display: flex;
+  width: 100%;
+  position: relative;
+  justify-content: space-between;
+}
+
+.formikForm::after {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  bottom: 0px;
+  right: 0.2rem;
+  margin: auto;
+  background: #000;
+  height: 1px;
+}
+
+.formikField {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border: 0;
+  background-color: var(--color-off-white);
+  font-size: var(--font-size-h5);
+  opacity: 1;
+}
+
+.formikField:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 1700px) {
+  .formikField {
+    font-size: 3vw;
+  }
+}
+
+.styledForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border: 0;
+  background-color: var(--color-off-white);
+  font-size: var(--font-size-h5);
+  opacity: 1;
+}
+
+.input:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 1700px) {
+  .input {
+    font-size: 3vw;
+  }
+}
+
+.button {
+  font-size: var(--font-size-h5);
+  border: 0;
+  background-color: var(--color-off-white);
+  border-radius: 3px;
+}
+
+.button:hover {
+  opacity: 50%;
+}
+
+@media only screen and (max-width: 1700px) {
+  .button {
+    font-size: 3vw;
+  }
+}
+
+.errMessage {
+  color: red;
+  font-size: 1.5rem;
+}
+
+.formikError {
+  color: red;
+  font-family: var(--font-text);
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  position: absolute;
+}
+
+@media only screen and (max-width: 750px) {
+  .formikError {
+    font-size: 2vw;
+  }
+}
+
+.mailChimpResult {
+  color: red;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  position: absolute;
+}
+
+@media only screen and (max-width: 750px) {
+  .mailChimpResult {
+    font-size: 2vw;
+  }
+}

@@ -1,0 +1,84 @@
+.background {
+  z-index: 1005;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  grid-template-rows: 100px 1fr 100px;
+  grid-template-areas: 'none none close' 'prev video next' 'vidCount vidTitle vidSound';
+  justify-items: center;
+  align-items: center;
+}
+
+.close {
+  grid-area: close;
+}
+
+.closeButton {
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+}
+
+.prev {
+  grid-area: prev;
+  color: white;
+}
+
+.next {
+  grid-area: next;
+  color: white;
+}
+
+.count {
+  grid-area: vidCount;
+  color: white;
+}
+
+.title {
+  grid-area: vidTitle;
+  color: white;
+}
+
+.sound {
+  grid-area: vidSound;
+  text-align: center;
+  overflow: visible;
+  white-space: nowrap;
+}
+
+.sound button {
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+}
+
+.video {
+  grid-area: video;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.video .react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.nextAndPrevButtons {
+  position: relative;
+  width: 100%;
+  all: unset;
+  cursor: pointer;
+}

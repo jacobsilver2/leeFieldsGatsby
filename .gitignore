@@ -54,9 +54,15 @@ typings/
 # dotenv environment variable files
 .env*
 
-# gatsby files
+# gatsby files (legacy)
 .cache/
-public
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
 
 # Mac files
 .DS_Store
@@ -67,3 +73,13 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Local Netlify folder
+.netlify

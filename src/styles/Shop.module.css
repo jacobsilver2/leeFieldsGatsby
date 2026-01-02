@@ -1,0 +1,83 @@
+.wrapper {
+  width: 100%;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "image"
+    "content"
+    "purchase";
+  grid-gap: 20px;
+}
+
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card {
+  margin: 2rem 0;
+}
+
+.purchase {
+  align-self: end;
+  height: 4rem;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.purchaseText {
+  width: 100%;
+  text-align: center;
+}
+
+.purchase:hover {
+  background-color: black;
+}
+
+.purchase:hover .purchaseText {
+  color: white;
+}
+
+.image {
+  width: 100%;
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 2rem;
+}
+
+.title {
+  line-height: 5rem;
+  font-size: 2.4rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+}
+
+.content br {
+  line-height: 2.4rem;
+}
+
+.itemName {
+  font-weight: 500;
+}

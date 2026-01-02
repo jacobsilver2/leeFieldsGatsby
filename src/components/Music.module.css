@@ -1,0 +1,110 @@
+.wrapper {
+  display: block;
+}
+
+.card {
+  border-bottom: 1px solid black;
+}
+
+.card:last-of-type {
+  border-bottom: none;
+}
+
+.content {
+  display: grid;
+  margin: 4rem 0;
+  grid-template-columns: minmax(400px, 2fr) 4fr;
+  grid-gap: 2rem;
+}
+
+@media (max-width: 868px) {
+  .content {
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+  }
+}
+
+.image {
+  width: 100%;
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.text {
+}
+
+@media only screen and (min-width: 869px) {
+  .text {
+    display: block;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 868px) {
+  .text {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.links {
+  justify-self: end;
+  align-self: end;
+  display: flex;
+  text-align: right;
+}
+
+@media only screen and (min-width: 869px) {
+  .links {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.title h3 {
+}
+
+@media only screen and (max-width: 1600px) {
+  .title h3 {
+    font-size: 5vw;
+    line-height: 1;
+  }
+}
+
+@media only screen and (max-width: 868px) {
+  .title h3 {
+    letter-spacing: 0.15rem;
+  }
+}
+
+.listenLink {
+  line-height: 1;
+}
+
+.listenLink:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1600px) {
+  .listenLink {
+    font-size: 4.5vw;
+    line-height: 1;
+  }
+}
+
+.buyLink h5 {
+  margin-right: 3.5rem;
+  line-height: 1;
+}
+
+.buyLink h5:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1600px) {
+  .buyLink h5 {
+    font-size: 4.5vw;
+    line-height: 1;
+  }
+}

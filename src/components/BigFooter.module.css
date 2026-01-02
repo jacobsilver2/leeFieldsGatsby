@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+}
+
+.item {
+  padding: 0 1rem;
+}
+
+.item:hover {
+  text-decoration: underline;
+}
+
+.item:last-child {
+  padding-right: 0;
+}

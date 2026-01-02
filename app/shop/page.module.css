@@ -1,0 +1,46 @@
+.ulWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 828px) {
+  .ulWrapper {
+    width: 100%;
+    max-height: 6rem;
+  }
+}
+
+.liElement {
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+.liElement h5 {
+  margin-top: 1rem;
+}
+
+.liActive {
+  opacity: 1;
+}
+
+.liInactive {
+  opacity: 50%;
+}
+
+@media only screen and (max-width: 828px) {
+  .liElement h5 {
+    margin-top: 1rem;
+    font-size: 4vw;
+  }
+}
+
+.shopContainer {
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+}
+
+@media (max-width: 828px) {
+  .shopContainer {
+    margin-top: 0;
+  }
+}

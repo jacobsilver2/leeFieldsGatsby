@@ -1,0 +1,176 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gatsbyLink {
+  position: relative;
+  text-align: center;
+}
+
+.gatsbyLink:hover {
+  text-decoration: underline;
+}
+
+.gatsbyLinkSecondary {
+  position: relative;
+}
+
+.gatsbyLinkSecondary:hover {
+  text-decoration: none;
+}
+
+.gatsbyLinkSecondary:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  right: 0;
+  margin: auto;
+  background: #000;
+  height: 2px;
+}
+
+.isLeft {
+  padding-right: var(--spacing-8);
+}
+
+.isRight {
+  padding-left: var(--spacing-8);
+}
+
+.navElement {
+  position: relative;
+  cursor: pointer;
+  padding-right: var(--spacing-8);
+  text-align: center;
+}
+
+.navElement:hover {
+  text-decoration: underline;
+}
+
+.navElementSecondary {
+  position: relative;
+  cursor: pointer;
+}
+
+.navElementSecondary:hover {
+  text-decoration: none;
+}
+
+.navElementSecondary:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  right: 0;
+  margin: auto;
+  background: #000;
+  height: 2px;
+}
+
+.videoText {
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: var(--color-off-white);
+}
+
+.videoText:hover {
+  text-decoration: underline;
+}
+
+.videoTextSecondary {
+  font-size: 1.8rem;
+}
+
+.logo {
+  font-size: 2.8rem;
+  margin-top: 0.4rem;
+  letter-spacing: 1px;
+}
+
+.logo:hover {
+  opacity: 50%;
+}
+
+.logoVisible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
+.logoHidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+@media only screen and (max-width: 828px) {
+  .logo {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 828px) {
+  .gatsbyLink,
+  .navElement {
+    text-align: center;
+    padding-right: 0;
+  }
+}
+
+.link {
+  color: var(--color-black);
+  padding: 0 var(--spacing-2);
+  font-size: var(--font-size-2xl);
+  text-align: center;
+  font-weight: var(--font-weight-light);
+}
+
+.linkOpen {
+  letter-spacing: 0.5rem;
+}
+
+@media (max-width: 828px) {
+  .link {
+    font-size: var(--font-size-xl);
+    text-align: center;
+  }
+}
+
+.navButton {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-black);
+  padding: 0 1rem;
+  margin: 0 1rem;
+  border: 1px solid var(--color-black);
+  background: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.navButton:hover {
+  background: white;
+  color: var(--color-blue);
+}
+
+.navButtonClosed {
+  color: var(--color-off-white);
+  border: 1px solid var(--color-off-white);
+}
+
+.navButtonOpen {
+  letter-spacing: 0.5rem;
+}
+
+.navText {
+  font-size: 1.4rem;
+}
+
+.navTextSecondary {
+  font-size: 5rem;
+  padding: 2rem 0;
+}

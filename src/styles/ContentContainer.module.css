@@ -1,0 +1,10 @@
+.container {
+  flex: 1;
+  margin: 0 var(--spacing-4);
+  margin-top: 3.6rem;
+  display: block;
+}
+
+.tickerOpen {
+  margin-top: 8rem;
+}

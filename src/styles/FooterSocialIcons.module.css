@@ -1,0 +1,30 @@
+.icon {
+  stroke: black;
+  stroke-width: 0.4px;
+  fill: black;
+  height: 2rem;
+  width: 2rem;
+}
+
+.icon:hover {
+  opacity: 50%;
+}
+
+.iconLarge {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.appleMusic {
+  padding-bottom: 0.35rem;
+}
+
+.spotify {
+  height: 3rem;
+  width: 3rem;
+  padding-top: 0.25rem;
+}
+
+.soundcloud {
+  padding-bottom: 0.3rem;
+}

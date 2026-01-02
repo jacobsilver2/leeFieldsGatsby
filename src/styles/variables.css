@@ -1,0 +1,95 @@
+:root {
+  --font-banner: var(--font-forma-banner);
+  --font-banner-medium: var(--font-forma-banner);
+  --font-bold: var(--font-forma-text);
+  --font-text: var(--font-forma-text);
+
+  --font-weight-hairline: 100;
+  --font-weight-thin: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 4rem;
+  --font-size-8xl: 6rem;
+  --font-size-header: 8rem;
+  --font-size-cnnlite: 6.5rem;
+  --font-size-cnnvw: 14vw;
+  --font-size-p: 2rem;
+  --font-size-p-large: 9rem;
+  --font-size-h1: 27.5rem;
+  --font-size-h2: 26rem;
+  --font-size-h3: 12.5rem;
+  --font-size-h4: 4.8rem;
+  --font-size-h5: 4.5rem;
+
+  --letter-spacing-tightest: -0.10em;
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  --line-height-tiny: 0.75;
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  --line-height-h1: 22rem;
+
+  --color-primary-dark: #0D0C1D;
+  --color-primary-light: #EFFFFA;
+  --color-primary-hover: #343078;
+  --color-black: #000000;
+  --color-grey: #3A3A3A;
+  --color-medium-grey: #7e7b79;
+  --color-light-grey: #E1E1E1;
+  --color-off-white: #fdf6f2;
+  --color-white: #ffffff;
+  --color-red: #FF0000;
+  --color-blue: #017ad9;
+
+  --spacing-px: 1px;
+  --spacing-0: 0;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-20: 5rem;
+  --spacing-24: 6rem;
+  --spacing-32: 8rem;
+  --spacing-40: 10rem;
+  --spacing-48: 12rem;
+  --spacing-56: 14rem;
+  --spacing-64: 16rem;
+
+  --max-width: 1800px;
+  --box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.09);
+  --header-height: 10rem;
+  --footer-height: 5rem;
+  --mobile-width: 1280px;
+  --mobile: 828px;
+  --fluid-typography-ratio: 0.7;
+}
