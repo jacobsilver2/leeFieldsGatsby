@@ -7,3 +7,15 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+[[redirects]]
+  from = "http://leefieldsandtheexpressions.com/*"
+  to = "https://leefieldsandtheexpressions.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.leefieldsandtheexpressions.com/*"
+  to = "https://leefieldsandtheexpressions.com/:splat"
+  status = 301
+  force = true
