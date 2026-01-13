@@ -6,22 +6,35 @@ import { SEO as Seo } from '../../src/components/seo'
 import { ShopComponent } from '../../src/components/Shop'
 import { useGlobalDispatch } from '../../src/hooks'
 import { ShopRecord } from '../../src/types'
+import { fetchShopData } from '../../src/lib/airtable'
 import styles from './page.module.css'
 
 type Category = 'all' | 'music' | 'apparel' | 'posters' | 'etc'
 
-interface ShopClientProps {
-  items: ShopRecord[]
-}
-
-export const ShopClient = ({ items }: ShopClientProps) => {
+export const ShopClient = () => {
   const [category, setCategory] = useState<Category>('all')
+  const [items, setItems] = useState<ShopRecord[]>([])
+  const [loading, setLoading] = useState(true)
   const dispatch = useGlobalDispatch()
 
   useEffect(() => {
     dispatch({ type: 'CNN_OFF' })
     dispatch({ type: 'TICKER_OFF' })
   }, [dispatch])
+
+  useEffect(() => {
+    const loadShopData = async () => {
+      try {
+        const data = await fetchShopData()
+        setItems(data)
+      } catch (error) {
+        console.error('Failed to fetch shop data:', error)
+      } finally {
+        setLoading(false)
+      }
+    }
+    loadShopData()
+  }, [])
 
   let filteredItems: ShopRecord[]
   switch (category) {
@@ -43,6 +56,17 @@ export const ShopClient = ({ items }: ShopClientProps) => {
     default:
       filteredItems = items
       break
+  }
+
+  if (loading) {
+    return (
+      <FadeWrapper>
+        <Seo title="Shop" />
+        <div className={styles.shopContainer}>
+          <p>Loading...</p>
+        </div>
+      </FadeWrapper>
+    )
   }
 
   return (
