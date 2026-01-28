@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Upcoming tour dates and shows for Lee Fields & The Expressions',
 }
 
-export const revalidate = 3600
+export const revalidate = 0
 
 export default async function TourPage() {
   let showsData: Awaited<ReturnType<typeof fetchShowsData>> = []
